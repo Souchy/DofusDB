@@ -1,5 +1,7 @@
 export class db {
 
+	public static rootUrlPath: string = "";
+
 	public static insertEntityIcon(mod: string) {
 		mod = mod.replace("{enemy}", "<img src='/src/DofusDB/scraped/enemy.png' />");
 		mod = mod.replace("{ally}", "<img src='/src/DofusDB/scraped/ally.png' />");
@@ -53,7 +55,7 @@ export class db {
 
 	private static sprite(x: number, y: number) {
 		// return "display: inline-block; zoom: 1.0; vertical-align: middle; width: 22px; height: 22px; background-image: url('/src/DofusDB/scraped/icons.png'); background-position: -" + x + "px; background-position-y: -" + y + "px;"
-		return "vertical-align: middle; width: 22px; height: 22px; background-image: url('/src/DofusDB/scraped/icons.png'); background-position: -" + x + "px; background-position-y: -" + y + "px;"
+		return "vertical-align: middle; width: 22px; height: 22px; background-image: url('src/DofusDB/scraped/icons.png'); background-position: -" + x + "px; background-position-y: -" + y + "px;"
 	}
 
 
