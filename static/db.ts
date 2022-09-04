@@ -2,12 +2,17 @@ export class db {
 
 	public static rootUrlPath: string = "";
 
-	public static insertEntityIcon(mod: string) {
-		mod = mod.replace("{enemy}", "<img src='/src/DofusDB/scraped/enemy.png' />");
-		mod = mod.replace("{ally}", "<img src='/src/DofusDB/scraped/ally.png' />");
-		mod = mod.replace("{fighter}", "<img src='/src/DofusDB/scraped/fighter.png' />");
-		mod = mod.replace("{caster}", "<img src='/src/DofusDB/scraped/caster.png' />");
-		return mod;
+	public static getEntityIconStyle(mod: string) {
+		if(mod.includes("{enemy}")) return db.fighterSprite('src/DofusDB/scraped/enemy.png', 0, 9);
+		if(mod.includes("{ally}")) return db.fighterSprite('src/DofusDB/scraped/ally.png', 0, 9);
+		if(mod.includes("{fighter}")) return db.fighterSprite('src/DofusDB/scraped/fighter.png', 0, 9);
+		if(mod.includes("{caster}")) return db.fighterSprite('src/DofusDB/scraped/caster.png', 0, 9);
+		return "";
+	}
+	
+	private static fighterSprite(path: string, x: number, y: number) {
+		return "vertical-align: middle; width: 22px; height: 22px; background-image: url('"+path+"'); background-repeat: no-repeat;"
+				+ "background-position: " + x + "px; background-position-y: " + y + "px;";
 	}
 	
 	public static getModIconStyle(mod: string) {
@@ -54,8 +59,10 @@ export class db {
 
 
 	private static sprite(x: number, y: number) {
+		y -= 6;
 		// return "display: inline-block; zoom: 1.0; vertical-align: middle; width: 22px; height: 22px; background-image: url('/src/DofusDB/scraped/icons.png'); background-position: -" + x + "px; background-position-y: -" + y + "px;"
-		return "vertical-align: middle; width: 22px; height: 22px; background-image: url('src/DofusDB/scraped/icons.png'); background-position: -" + x + "px; background-position-y: -" + y + "px;"
+		return "vertical-align: middle; width: 22px; height: 22px; background-image: url('src/DofusDB/scraped/icons.png');" 
+				+ "background-position: -" + x + "px; background-position-y: -" + y + "px;"
 	}
 
 
