@@ -30,10 +30,10 @@ export class db {
 		if (mod.toLowerCase().includes("sagesse")) return db.sprite(97, 358);
 
 		if (mod.toLowerCase().includes("neutre")) return db.sprite(95, 15);
-		if (mod.toLowerCase().includes("force") || mod.toLowerCase().includes("terre")) return db.sprite(97, 432);
-		if (mod.toLowerCase().includes("intelligence") || mod.toLowerCase().includes("feu")) return db.sprite(97, 394);
-		if (mod.toLowerCase().includes("chance") || mod.toLowerCase().includes("eau")) return db.sprite(97, 89);
-		if (mod.toLowerCase().includes("agilité") || mod.toLowerCase().includes("air")) return db.sprite(97, 167);
+		if (mod.toLowerCase().includes("force") || mod.toLowerCase().includes(" terre")) return db.sprite(97, 432);
+		if (mod.toLowerCase().includes("intelligence") || mod.toLowerCase().includes(" feu")) return db.sprite(97, 394);
+		if (mod.toLowerCase().includes("chance") || mod.toLowerCase().includes(" eau")) return db.sprite(97, 89);
+		if (mod.toLowerCase().includes("agilité") || mod.toLowerCase().includes(" air")) return db.sprite(97, 167);
 		if (mod == "Puissance") return db.sprite(97, 1108);
 
 		if (mod.toLowerCase().includes("tacle")) return db.sprite(97, 545);
