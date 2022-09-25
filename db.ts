@@ -19,8 +19,12 @@ export class db {
 	public jsonSpellsName = "spells.json";
 	public jsonSpellsDetailsName = "spellsDetails.json";
 
+	public constructor() {
+
+	}
+
 	public setLanguage(lang: string) {
-		if(lang == this.lang) {
+		if (lang == this.lang) {
 			// do nothing
 		} else {
 			this.lang = lang;
@@ -32,35 +36,35 @@ export class db {
 		this.setVersion(version.latest);
 	}
 	public setVersion(version: string) {
-		if(version == this.version) {
+		if (version == this.version) {
 			// do nothing
 		} else {
 			this.version = version;
 			this.loadJson();
 		}
 	}
-	
+
 	// need to implement this in every aurelia app using this module
 	// public loadJson = () => {
 	// 	console.log("Json fetching unimplemented");
 	// };
-	
-	public loadJson() {
-		let result = this.loadSpells(this.getJsonFolderPath());
-		if (!result) result = this.loadSpells(this.getJsonFolderPathFallback());
+
+	public async loadJson() {
+		let result = await this.loadSpells(this.getJsonFolderPath());
+		if (!result) result = await this.loadSpells(this.getJsonFolderPathDefaultLang());
 		console.log("db loaded json spells: " + result);
 		// App.jsonMessage = JSON.stringify(db.jsonSpells);
 
-		result = this.loadSpellsDetails();
-		if (!result) result = this.loadSpellsDetails();
+		result = await this.loadSpellsDetails();
+		if (!result) result = await this.loadSpellsDetails();
 		console.log("db loaded json spells details: " + result);
 	}
 
-	public loadSpells(folderpath: string) {
-		return this.http.fetch(folderpath + this.jsonSpellsName)
+	public async loadSpells(folderpath: string): Promise<boolean> {
+		return await this.http.fetch(folderpath + this.jsonSpellsName)
 			.then(response => response.status == 404 ? null : response.text())
 			.then(data => {
-				if(data == null) return false;
+				if (data == null) return false;
 				this.jsonSpells = JSON.parse(data);
 				console.log("loaded spells"); // + this.jsonSpells["feca"]);
 				return true;
@@ -69,11 +73,11 @@ export class db {
 			});
 	};
 
-	public loadSpellsDetails() {
+	public loadSpellsDetails(): Promise<boolean> {
 		return this.http.fetch(this.getJsonFolderPath() + this.jsonSpellsDetailsName)
-		.then(response => response.status == 404 ? null : response.text())
+			.then(response => response.status == 404 ? null : response.text())
 			.then(data => {
-				if(data == null) return false;
+				if (data == null) return false;
 				this.jsonSpellsDetails = JSON.parse(data);
 				// console.log("loaded spells details : " + JSON.stringify(data))
 				return true;
@@ -86,18 +90,18 @@ export class db {
 		return "src/DofusDB/scraped/" + this.version + "/" + this.lang + "/";
 		//       src/DofusDB/scraped/      2.64/             fr/    spells.json
 	}
-	public getJsonFolderPathFallback() {
+	public getJsonFolderPathDefaultLang() {
 		return "src/DofusDB/scraped/" + this.version + "/" + this.lang_default + "/";
 	}
 
 
 
-	
+
 	private scrapedUrlPath: string = "src/DofusDB/scraped/";
 	private commonUrlPath: string = "src/DofusDB/scraped/common/";
 
-	public getSpellIconPath(spellId: string) {
-		return "src/DofusDB/scraped/spellIcons/" + spellId + ".png";
+	public getSpellIconPath(spellId: string): string {
+		return "src/DofusDB/scraped/" + this.version + "/spellIcons/" + spellId + ".png";
 	}
 
 	// public getBreedIconStyle(breedIndex: number) {
@@ -107,24 +111,24 @@ export class db {
 	public getBreedIconStyle(breedIndex: number) {
 		// console.log("db getBreedIconStyle")
 		return "height: 54px; width: 54px;" +
-		"margin-bottom: 5px; margin-left: 2px; margin-right: 3px;" +
-		"box-sizing: border-box;" +
-		"background: transparent url("+ this.commonUrlPath + "big.png" +") 0 0 no-repeat; background-position: -56px " + Math.ceil(-56.8 * breedIndex) + "px;";
+			"margin-bottom: 5px; margin-left: 2px; margin-right: 3px;" +
+			"box-sizing: border-box;" +
+			"background: transparent url(" + this.commonUrlPath + "big.png" + ") 0 0 no-repeat; background-position: -56px " + Math.ceil(-56.8 * breedIndex) + "px;";
 	}
 
 	public getFighterIconStyle(mod: string) {
-		if(mod.includes("{enemy}")) return this.fighterSprite(this.commonUrlPath + 'enemy.png', 0, 9);
-		if(mod.includes("{ally}")) return this.fighterSprite(this.commonUrlPath + 'ally.png', 0, 9);
-		if(mod.includes("{fighter}")) return this.fighterSprite(this.commonUrlPath + 'fighter.png', 0, 9);
-		if(mod.includes("{caster}")) return this.fighterSprite(this.commonUrlPath + 'caster.png', 0, 9);
+		if (mod.includes("{enemy}")) return this.fighterSprite(this.commonUrlPath + 'enemy.png', 0, 9);
+		if (mod.includes("{ally}")) return this.fighterSprite(this.commonUrlPath + 'ally.png', 0, 9);
+		if (mod.includes("{fighter}")) return this.fighterSprite(this.commonUrlPath + 'fighter.png', 0, 9);
+		if (mod.includes("{caster}")) return this.fighterSprite(this.commonUrlPath + 'caster.png', 0, 9);
 		return "";
 	}
-	
+
 	private fighterSprite(path: string, x: number, y: number) {
 		return "vertical-align: middle; width: 22px; height: 22px; background-image: url('" + this.commonUrlPath + path + "'); background-repeat: no-repeat;"
-				+ "background-position: " + x + "px; background-position-y: " + y + "px;";
+			+ "background-position: " + x + "px; background-position-y: " + y + "px;";
 	}
-	
+
 	public getModIconStyle(mod: string) {
 		if (mod.toLowerCase().includes(" pa ")) return this.modSprite(97, 243);
 		if (mod.toLowerCase().includes(" pm ")) return this.modSprite(97, 52);
@@ -169,8 +173,8 @@ export class db {
 	private modSprite(x: number, y: number) {
 		y -= 6;
 		// return "display: inline-block; zoom: 1.0; vertical-align: middle; width: 22px; height: 22px; background-image: url('/src/DofusDB/scraped/icons.png'); background-position: -" + x + "px; background-position-y: -" + y + "px;"
-		return "vertical-align: middle; width: 22px; height: 22px; background-image: url(" + this.commonUrlPath + "icons.png');" 
-				+ "background-position: -" + x + "px; background-position-y: -" + y + "px;"
+		return "vertical-align: middle; width: 22px; height: 22px; background-image: url(" + this.commonUrlPath + "icons.png');"
+			+ "background-position: -" + x + "px; background-position-y: -" + y + "px;"
 	}
 
 
