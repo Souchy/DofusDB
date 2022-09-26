@@ -22,6 +22,12 @@ export class db {
 	public constructor() {
 
 	}
+	
+	public promiseLoadingSpells: Promise<boolean>;
+	public promiseLoadingSpellsDetails: Promise<boolean>;
+	public get isLoaded() {
+		return this.jsonSpells && this.jsonSpellsDetails;
+	}
 
 	public setLanguage(lang: string) {
 		if (lang == this.lang) {
@@ -50,18 +56,27 @@ export class db {
 	// };
 
 	public async loadJson() {
-		let result = await this.loadSpells(this.getJsonFolderPath());
-		if (!result) result = await this.loadSpells(this.getJsonFolderPathDefaultLang());
-		console.log("db loaded json spells: " + result);
-		// App.jsonMessage = JSON.stringify(db.jsonSpells);
+		this.promiseLoadingSpells = this.loadSpells(this.getJsonFolderPath());
+		this.promiseLoadingSpellsDetails = this.loadSpellsDetails(this.getJsonFolderPath());
+		console.log("loaded = promise: " + this.promiseLoadingSpells)
 
-		result = await this.loadSpellsDetails();
-		if (!result) result = await this.loadSpellsDetails();
+		let result = await this.promiseLoadingSpells;
+		if (!result) {
+			this.promiseLoadingSpells = this.loadSpells(this.getJsonFolderPathDefaultLang());
+			result = await this.promiseLoadingSpells;
+		}
+		console.log("db loaded json spells: " + result);
+
+		result = await this.promiseLoadingSpellsDetails;
+		if(!result) {
+			this.promiseLoadingSpellsDetails = this.loadSpellsDetails(this.getJsonFolderPathDefaultLang());
+			result = await this.promiseLoadingSpellsDetails;
+		}
 		console.log("db loaded json spells details: " + result);
 	}
 
 	public async loadSpells(folderpath: string): Promise<boolean> {
-		return await this.http.fetch(folderpath + this.jsonSpellsName)
+		return this.http.fetch(folderpath + this.jsonSpellsName)
 			.then(response => response.status == 404 ? null : response.text())
 			.then(data => {
 				if (data == null) return false;
@@ -73,8 +88,8 @@ export class db {
 			});
 	};
 
-	public loadSpellsDetails(): Promise<boolean> {
-		return this.http.fetch(this.getJsonFolderPath() + this.jsonSpellsDetailsName)
+	public loadSpellsDetails(folderpath: string): Promise<boolean> {
+		return this.http.fetch(folderpath + this.jsonSpellsDetailsName)
 			.then(response => response.status == 404 ? null : response.text())
 			.then(data => {
 				if (data == null) return false;
@@ -113,19 +128,19 @@ export class db {
 		return "height: 54px; width: 54px;" +
 			"margin-bottom: 5px; margin-left: 2px; margin-right: 3px;" +
 			"box-sizing: border-box;" +
-			"background: transparent url(" + this.commonUrlPath + "big.png" + ") 0 0 no-repeat; background-position: -56px " + Math.ceil(-56.8 * breedIndex) + "px;";
+			"background: transparent url('" + this.commonUrlPath + "big.png') 0 0 no-repeat; background-position: -56px " + Math.ceil(-56.8 * breedIndex) + "px;";
 	}
 
 	public getFighterIconStyle(mod: string) {
-		if (mod.includes("{enemy}")) return this.fighterSprite(this.commonUrlPath + 'enemy.png', 0, 9);
-		if (mod.includes("{ally}")) return this.fighterSprite(this.commonUrlPath + 'ally.png', 0, 9);
-		if (mod.includes("{fighter}")) return this.fighterSprite(this.commonUrlPath + 'fighter.png', 0, 9);
-		if (mod.includes("{caster}")) return this.fighterSprite(this.commonUrlPath + 'caster.png', 0, 9);
+		if (mod.includes("{enemy}")) return this.fighterSprite('enemy.png', 0, 9);
+		if (mod.includes("{ally}")) return this.fighterSprite('ally.png', 0, 9);
+		if (mod.includes("{fighter}")) return this.fighterSprite('fighter.png', 0, 9);
+		if (mod.includes("{caster}")) return this.fighterSprite('caster.png', 0, 9);
 		return "";
 	}
 
-	private fighterSprite(path: string, x: number, y: number) {
-		return "vertical-align: middle; width: 22px; height: 22px; background-image: url('" + this.commonUrlPath + path + "'); background-repeat: no-repeat;"
+	private fighterSprite(imgName: string, x: number, y: number) {
+		return "vertical-align: middle; width: 22px; height: 22px; background-image: url('" + this.commonUrlPath + imgName + "'); background-repeat: no-repeat;"
 			+ "background-position: " + x + "px; background-position-y: " + y + "px;";
 	}
 
@@ -173,7 +188,7 @@ export class db {
 	private modSprite(x: number, y: number) {
 		y -= 6;
 		// return "display: inline-block; zoom: 1.0; vertical-align: middle; width: 22px; height: 22px; background-image: url('/src/DofusDB/scraped/icons.png'); background-position: -" + x + "px; background-position-y: -" + y + "px;"
-		return "vertical-align: middle; width: 22px; height: 22px; background-image: url(" + this.commonUrlPath + "icons.png');"
+		return "vertical-align: middle; width: 22px; height: 22px; background-image: url('" + this.commonUrlPath + "icons.png');"
 			+ "background-position: -" + x + "px; background-position-y: -" + y + "px;"
 	}
 
