@@ -1,5 +1,5 @@
 import { loadavg } from "os";
-import versions from './scraped/versions.json'
+import versions from './versions.json'
 
 import { DI, Registration } from 'aurelia';
 import { HttpClient } from '@aurelia/fetch-client';
