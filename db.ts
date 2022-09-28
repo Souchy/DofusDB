@@ -67,21 +67,21 @@ export class db {
 	public async loadJson() {
 		this.promiseLoadingSpells = this.loadSpells(this.getJsonFolderPath());
 		this.promiseLoadingSpellsDetails = this.loadSpellsDetails(this.getJsonFolderPath());
-		console.log("loaded = promise: " + this.promiseLoadingSpells)
+		// console.log("loaded = promise: " + this.promiseLoadingSpells)
 
 		let result = await this.promiseLoadingSpells;
 		if (!result) {
 			this.promiseLoadingSpells = this.loadSpells(this.getJsonFolderPathDefaultLang());
 			result = await this.promiseLoadingSpells;
 		}
-		console.log("db loaded json spells: " + result);
+		// console.log("db loaded json spells: " + result);
 
 		result = await this.promiseLoadingSpellsDetails;
 		if(!result) {
 			this.promiseLoadingSpellsDetails = this.loadSpellsDetails(this.getJsonFolderPathDefaultLang());
 			result = await this.promiseLoadingSpellsDetails;
 		}
-		console.log("db loaded json spells details: " + result);
+		// console.log("db loaded json spells details: " + result);
 	}
 
 	public async loadSpells(folderpath: string): Promise<boolean> {
@@ -90,7 +90,7 @@ export class db {
 			.then(data => {
 				if (data == null) return false;
 				this.jsonSpells = JSON.parse(data);
-				console.log("loaded spells"); // + this.jsonSpells["feca"]);
+				// console.log("loaded spells"); // + this.jsonSpells["feca"]);
 				return true;
 			}).catch(() => {
 				return false;
@@ -111,21 +111,25 @@ export class db {
 	};
 
 	public getJsonFolderPath() {
-		return "src/DofusDB/scraped/" + this.version + "/" + this.lang + "/";
-		//       src/DofusDB/scraped/      2.64/             fr/    spells.json
+		// return "src/DofusDB/scraped/" + this.version + "/" + this.lang + "/";
+		return this.githubScrapedUrlPath + this.version + "/" + this.lang + "/";
 	}
 	public getJsonFolderPathDefaultLang() {
-		return "src/DofusDB/scraped/" + this.version + "/" + this.lang_default + "/";
+		// return "src/DofusDB/scraped/" + this.version + "/" + this.lang_default + "/";
+		return this.githubScrapedUrlPath + this.version + "/" + this.lang_default + "/";
 	}
 
 
 
-
+	private dofusDBGithubUrl = "https://raw.githubusercontent.com/Souchy/DofusDB/919dafbaf046958782d960423622107b19c77bd8/";
+	private githubScrapedUrlPath = this.dofusDBGithubUrl + "scraped/";
+	private commonUrlPath: string =this. githubScrapedUrlPath + "common/";
 	private scrapedUrlPath: string = "src/DofusDB/scraped/";
-	private commonUrlPath: string = "src/DofusDB/scraped/common/";
+	// private commonUrlPath: string = "src/DofusDB/scraped/common/";
 
 	public getSpellIconPath(spellId: string): string {
-		return "src/DofusDB/scraped/" + this.version + "/spellIcons/" + spellId + ".png";
+		// return "src/DofusDB/scraped/" + this.version + "/spellIcons/" + spellId + ".png";
+		return this.githubScrapedUrlPath + this.version + "/spellIcons/" + spellId + ".png";
 	}
 
 	// public getBreedIconStyle(breedIndex: number) {
