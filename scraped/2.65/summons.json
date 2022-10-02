@@ -1,0 +1,5889 @@
+{
+    "434": {
+        "id": 434,
+        "nameId": 835739,
+        "race": 0,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 434,
+                "level": 1,
+                "lifePoints": 420,
+                "actionPoints": 4,
+                "movementPoints": 4,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 120,
+                "earthResistance": 0,
+                "airResistance": 0,
+                "fireResistance": 0,
+                "waterResistance": 0,
+                "neutralResistance": 0,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 400,
+                "intelligence": 400,
+                "chance": 400,
+                "agility": 400,
+                "bonusRange": 0,
+                "startingSpellId": 0,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{3866}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            12705
+        ],
+        "spellGrades": [
+            "1,1;2,1;3,1;3,4;3,5;6,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                215
+            ],
+            [
+                10,
+                25
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                7.5
+            ],
+            [
+                13,
+                25
+            ],
+            [
+                14,
+                25
+            ],
+            [
+                15,
+                25
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "3958": {
+        "id": 3958,
+        "nameId": 505475,
+        "race": 0,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 3958,
+                "level": 1,
+                "lifePoints": 450,
+                "actionPoints": 0,
+                "movementPoints": -1,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 0,
+                "airResistance": 0,
+                "fireResistance": 0,
+                "waterResistance": 0,
+                "neutralResistance": 0,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 500,
+                "bonusRange": 0,
+                "startingSpellId": 41596,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{3016|||50}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                300
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                37.5
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "3960": {
+        "id": 3960,
+        "nameId": 504833,
+        "race": 0,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 3960,
+                "level": 1,
+                "lifePoints": 450,
+                "actionPoints": 0,
+                "movementPoints": -1,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 20,
+                "airResistance": 20,
+                "fireResistance": 20,
+                "waterResistance": 20,
+                "neutralResistance": 20,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 150,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 41594,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{404|||100}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                300
+            ],
+            [
+                10,
+                3.75
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5109": {
+        "id": 5109,
+        "nameId": 737519,
+        "race": 0,
+        "grades": [
+            {
+                "grade": 1,
+                "monsterId": 5109,
+                "level": 1,
+                "lifePoints": 600,
+                "actionPoints": 6,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 0,
+                "airResistance": 0,
+                "fireResistance": 0,
+                "waterResistance": 0,
+                "neutralResistance": 0,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 44446,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4821}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                600
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5129": {
+        "id": 5129,
+        "nameId": 739000,
+        "race": 0,
+        "grades": [
+            {
+                "grade": 1,
+                "monsterId": 5129,
+                "level": 1,
+                "lifePoints": 500,
+                "actionPoints": 10,
+                "movementPoints": 6,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 150,
+                "earthResistance": 15,
+                "airResistance": 15,
+                "fireResistance": 15,
+                "waterResistance": 15,
+                "neutralResistance": 15,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 300,
+                "intelligence": 300,
+                "chance": 300,
+                "agility": 300,
+                "bonusRange": 0,
+                "startingSpellId": 0,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4823|||60}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            13734
+        ],
+        "spellGrades": [
+            "1,1;1,1;1,1;1,1;1,1"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                500
+            ],
+            [
+                10,
+                37.5
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                18.75
+            ],
+            [
+                13,
+                37.5
+            ],
+            [
+                14,
+                37.5
+            ],
+            [
+                15,
+                37.5
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5130": {
+        "id": 5130,
+        "nameId": 739208,
+        "race": 0,
+        "grades": [
+            {
+                "grade": 1,
+                "monsterId": 5130,
+                "level": 1,
+                "lifePoints": 700,
+                "actionPoints": 0,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 0,
+                "airResistance": 0,
+                "fireResistance": 0,
+                "waterResistance": 0,
+                "neutralResistance": 0,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 52854,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4816}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                700
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5144": {
+        "id": 5144,
+        "nameId": 745583,
+        "race": 0,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5144,
+                "level": 1,
+                "lifePoints": 250,
+                "actionPoints": 0,
+                "movementPoints": -1,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 20,
+                "airResistance": 20,
+                "fireResistance": 20,
+                "waterResistance": 20,
+                "neutralResistance": 20,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 0,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4589}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": false,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                130
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5152": {
+        "id": 5152,
+        "nameId": 741775,
+        "race": 0,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5152,
+                "level": 1,
+                "lifePoints": 400,
+                "actionPoints": 6,
+                "movementPoints": 6,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 20,
+                "airResistance": 20,
+                "fireResistance": 20,
+                "waterResistance": 20,
+                "neutralResistance": 20,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 41872,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4754}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                300
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5192": {
+        "id": 5192,
+        "nameId": 835744,
+        "race": 0,
+        "grades": [
+            {
+                "grade": 2,
+                "monsterId": 5192,
+                "level": 1,
+                "lifePoints": 420,
+                "actionPoints": 4,
+                "movementPoints": 5,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 120,
+                "earthResistance": 0,
+                "airResistance": 0,
+                "fireResistance": 0,
+                "waterResistance": 0,
+                "neutralResistance": 0,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 400,
+                "intelligence": 400,
+                "chance": 400,
+                "agility": 400,
+                "bonusRange": 0,
+                "startingSpellId": 0,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{3870}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            8153
+        ],
+        "spellGrades": [
+            "1,1;1,1;1,1;1,4;1,5;6,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                315
+            ],
+            [
+                10,
+                37.5
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                11.25
+            ],
+            [
+                13,
+                37.5
+            ],
+            [
+                14,
+                37.5
+            ],
+            [
+                15,
+                37.5
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5814": {
+        "id": 5814,
+        "nameId": 800594,
+        "race": 199,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5814,
+                "level": 1,
+                "lifePoints": 150,
+                "actionPoints": 6,
+                "movementPoints": 3,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 0,
+                "airResistance": 0,
+                "fireResistance": 0,
+                "waterResistance": 0,
+                "neutralResistance": 0,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 40482,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{666|||100}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            12580,
+            12696
+        ],
+        "spellGrades": [
+            "1,1;1,1;1,1;1,4;1,5",
+            "1,1;1,1;1,1;1,4;1,5"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 8,
+        "creatureBoneId": 0,
+        "fastAnimsFun": true,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                150
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5829": {
+        "id": 5829,
+        "nameId": 937128,
+        "race": 204,
+        "grades": [
+            {
+                "grade": 1,
+                "monsterId": 5829,
+                "level": 1,
+                "lifePoints": 25,
+                "actionPoints": 0,
+                "movementPoints": -1,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 0,
+                "airResistance": 0,
+                "fireResistance": 0,
+                "waterResistance": 0,
+                "neutralResistance": 0,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 41782,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{5408}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": false,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                25
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5830": {
+        "id": 5830,
+        "nameId": 802346,
+        "race": 204,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5830,
+                "level": 1,
+                "lifePoints": 220,
+                "actionPoints": 5,
+                "movementPoints": 6,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 20,
+                "airResistance": 25,
+                "fireResistance": 35,
+                "waterResistance": 25,
+                "neutralResistance": 55,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 41757,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4147}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                80
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5831": {
+        "id": 5831,
+        "nameId": 802349,
+        "race": 221,
+        "grades": [
+            {
+                "grade": 1,
+                "monsterId": 5831,
+                "level": 1,
+                "lifePoints": 50,
+                "actionPoints": 6,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 10,
+                "airResistance": 10,
+                "fireResistance": 10,
+                "waterResistance": 10,
+                "neutralResistance": 10,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 43721,
+                "bonusCharacteristics": {
+                    "lifePoints": 40,
+                    "strength": 100,
+                    "wisdom": 100,
+                    "chance": 100,
+                    "agility": 100,
+                    "intelligence": 100,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 100,
+                    "bonusFireDamage": 100,
+                    "bonusWaterDamage": 100,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4707}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            13889
+        ],
+        "spellGrades": [
+            "1,1;1,1;1,1;1,1;1,1"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": false,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": false,
+        "canUsePortal": false,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 5,
+        "characRatios": [
+            [
+                0,
+                2.700000047683716
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5832": {
+        "id": 5832,
+        "nameId": 802350,
+        "race": 221,
+        "grades": [
+            {
+                "grade": 2,
+                "monsterId": 5832,
+                "level": 1,
+                "lifePoints": 50,
+                "actionPoints": 6,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 10,
+                "airResistance": 10,
+                "fireResistance": 10,
+                "waterResistance": 10,
+                "neutralResistance": 10,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 44704,
+                "bonusCharacteristics": {
+                    "lifePoints": 40,
+                    "strength": 100,
+                    "wisdom": 100,
+                    "chance": 100,
+                    "agility": 100,
+                    "intelligence": 100,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 100,
+                    "bonusFireDamage": 100,
+                    "bonusWaterDamage": 100,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4694}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            13883
+        ],
+        "spellGrades": [
+            "1,1;1,1;1,1;1,1;1,1"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": false,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": false,
+        "canUsePortal": false,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 5,
+        "characRatios": [
+            [
+                0,
+                50
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5833": {
+        "id": 5833,
+        "nameId": 802351,
+        "race": 221,
+        "grades": [
+            {
+                "grade": 2,
+                "monsterId": 5833,
+                "level": 1,
+                "lifePoints": 50,
+                "actionPoints": 6,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 10,
+                "airResistance": 10,
+                "fireResistance": 10,
+                "waterResistance": 10,
+                "neutralResistance": 10,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 44694,
+                "bonusCharacteristics": {
+                    "lifePoints": 40,
+                    "strength": 100,
+                    "wisdom": 100,
+                    "chance": 100,
+                    "agility": 100,
+                    "intelligence": 100,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 100,
+                    "bonusFireDamage": 100,
+                    "bonusWaterDamage": 100,
+                    "bonusAirDamage": 100,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4696}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            13894,
+            13895,
+            13896,
+            13897
+        ],
+        "spellGrades": [
+            "1,1;1,1;1,1;1,1;1,1",
+            "1,1;1,1;1,1;1,1;1,1",
+            "1,1;1,1;1,1;1,1;1,1",
+            "1,1;1,1;1,1;1,1;1,1"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": false,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": false,
+        "canUsePortal": false,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 5,
+        "characRatios": [
+            [
+                0,
+                2.700000047683716
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5834": {
+        "id": 5834,
+        "nameId": 936761,
+        "race": 204,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5834,
+                "level": 1,
+                "lifePoints": 320,
+                "actionPoints": 4,
+                "movementPoints": 5,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 90,
+                "earthResistance": 13,
+                "airResistance": 13,
+                "fireResistance": 13,
+                "waterResistance": 13,
+                "neutralResistance": 13,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 41782,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4156}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            13348
+        ],
+        "spellGrades": [
+            "1,1;2,1;3,1;3,4;3,5;3,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                180
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                7.5
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5835": {
+        "id": 5835,
+        "nameId": 802353,
+        "race": 221,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5835,
+                "level": 1,
+                "lifePoints": 50,
+                "actionPoints": 6,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 10,
+                "airResistance": 10,
+                "fireResistance": 10,
+                "waterResistance": 10,
+                "neutralResistance": 10,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 44708,
+                "bonusCharacteristics": {
+                    "lifePoints": 40,
+                    "strength": 100,
+                    "wisdom": 100,
+                    "chance": 100,
+                    "agility": 100,
+                    "intelligence": 100,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 100,
+                    "bonusFireDamage": 100,
+                    "bonusWaterDamage": 100,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{1928}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            13847
+        ],
+        "spellGrades": [
+            "1,1;2,1;3,1;3,4;3,5;3,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": false,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": false,
+        "canUsePortal": false,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 5,
+        "characRatios": [
+            [
+                0,
+                50
+            ],
+            [
+                10,
+                0.06850229203701019
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.06850229203701019
+            ],
+            [
+                13,
+                0.06850229203701019
+            ],
+            [
+                14,
+                0.06850229203701019
+            ],
+            [
+                15,
+                0.06850229203701019
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.06850229203701019
+            ]
+        ]
+    },
+    "5836": {
+        "id": 5836,
+        "nameId": 802354,
+        "race": 221,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5836,
+                "level": 1,
+                "lifePoints": 50,
+                "actionPoints": 6,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 10,
+                "airResistance": 10,
+                "fireResistance": 10,
+                "waterResistance": 10,
+                "neutralResistance": 10,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 44689,
+                "bonusCharacteristics": {
+                    "lifePoints": 40,
+                    "strength": 100,
+                    "wisdom": 100,
+                    "chance": 100,
+                    "agility": 100,
+                    "intelligence": 100,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 100,
+                    "bonusFireDamage": 100,
+                    "bonusWaterDamage": 100,
+                    "bonusAirDamage": 100,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{1930}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            13839,
+            13840,
+            13841,
+            13892
+        ],
+        "spellGrades": [
+            "1,1;2,1;3,1;3,4;3,5;3,6",
+            "1,1;2,1;3,1;3,4;3,5;3,6",
+            "1,1;2,1;3,1;3,4;3,5;3,6",
+            "1,1;2,1;3,1;3,4;3,5;3,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": false,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": false,
+        "canUsePortal": false,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 5,
+        "characRatios": [
+            [
+                0,
+                2.700000047683716
+            ],
+            [
+                10,
+                0.06850229203701019
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.06850229203701019
+            ],
+            [
+                13,
+                0.06850229203701019
+            ],
+            [
+                14,
+                0.06850229203701019
+            ],
+            [
+                15,
+                0.06850229203701019
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.06850229203701019
+            ]
+        ]
+    },
+    "5837": {
+        "id": 5837,
+        "nameId": 802355,
+        "race": 221,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5837,
+                "level": 1,
+                "lifePoints": 50,
+                "actionPoints": 6,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 10,
+                "airResistance": 10,
+                "fireResistance": 10,
+                "waterResistance": 10,
+                "neutralResistance": 10,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 44698,
+                "bonusCharacteristics": {
+                    "lifePoints": 40,
+                    "strength": 100,
+                    "wisdom": 100,
+                    "chance": 100,
+                    "agility": 100,
+                    "intelligence": 100,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 100,
+                    "bonusFireDamage": 100,
+                    "bonusWaterDamage": 100,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{1926}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            13844
+        ],
+        "spellGrades": [
+            "1,1;1,1;1,1;1,4;1,5;1,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": false,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": false,
+        "canUsePortal": false,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 5,
+        "characRatios": [
+            [
+                0,
+                2.9229836463928223
+            ],
+            [
+                10,
+                0.06850229203701019
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.06850229203701019
+            ],
+            [
+                13,
+                0.06850229203701019
+            ],
+            [
+                14,
+                0.06850229203701019
+            ],
+            [
+                15,
+                0.06850229203701019
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.06850229203701019
+            ]
+        ]
+    },
+    "5838": {
+        "id": 5838,
+        "nameId": 802356,
+        "race": 204,
+        "grades": [
+            {
+                "grade": 2,
+                "monsterId": 5838,
+                "level": 2,
+                "lifePoints": 220,
+                "actionPoints": 5,
+                "movementPoints": 6,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 17,
+                "airResistance": 17,
+                "fireResistance": 22,
+                "waterResistance": 17,
+                "neutralResistance": 32,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 41779,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4524}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                200
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5839": {
+        "id": 5839,
+        "nameId": 936825,
+        "race": 204,
+        "grades": [
+            {
+                "grade": 6,
+                "monsterId": 5839,
+                "level": 6,
+                "lifePoints": 320,
+                "actionPoints": 4,
+                "movementPoints": 5,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 90,
+                "earthResistance": 15,
+                "airResistance": 15,
+                "fireResistance": 15,
+                "waterResistance": 15,
+                "neutralResistance": 15,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 41782,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4543}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            13381
+        ],
+        "spellGrades": [
+            "1,1;1,2;1,3;1,4;1,5;1,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                149.99600219726562
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                7.5
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5840": {
+        "id": 5840,
+        "nameId": 802368,
+        "race": 204,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5840,
+                "level": 1,
+                "lifePoints": 400,
+                "actionPoints": 5,
+                "movementPoints": 5,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 20,
+                "airResistance": 20,
+                "fireResistance": 20,
+                "waterResistance": 20,
+                "neutralResistance": 20,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 250,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 41782,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4166}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [
+            {
+                "animId": 22917,
+                "entityId": 5840,
+                "animName": "AnimAttaque2",
+                "animWeight": 1
+            }
+        ],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            13350
+        ],
+        "spellGrades": [
+            "1,1;2,1;3,1;3,4;3,5;3,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                200
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                18.75
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5841": {
+        "id": 5841,
+        "nameId": 802374,
+        "race": 204,
+        "grades": [
+            {
+                "grade": 1,
+                "monsterId": 5841,
+                "level": 1,
+                "lifePoints": 320,
+                "actionPoints": 4,
+                "movementPoints": 5,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 90,
+                "earthResistance": 10,
+                "airResistance": 10,
+                "fireResistance": 10,
+                "waterResistance": 10,
+                "neutralResistance": 10,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 250,
+                "intelligence": 250,
+                "chance": 250,
+                "agility": 250,
+                "bonusRange": 0,
+                "startingSpellId": 41782,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4531}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            13377
+        ],
+        "spellGrades": [
+            "1,1;1,2;1,3;1,4;1,5;1,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                320
+            ],
+            [
+                10,
+                31.25
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                11.25
+            ],
+            [
+                13,
+                31.25
+            ],
+            [
+                14,
+                31.25
+            ],
+            [
+                15,
+                31.25
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5843": {
+        "id": 5843,
+        "nameId": 966970,
+        "race": 206,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5843,
+                "level": 1,
+                "lifePoints": 200,
+                "actionPoints": 0,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": -10,
+                "airResistance": 30,
+                "fireResistance": 20,
+                "waterResistance": -10,
+                "neutralResistance": 20,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 55638,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{133}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                100
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5844": {
+        "id": 5844,
+        "nameId": 966972,
+        "race": 206,
+        "grades": [
+            {
+                "grade": 1,
+                "monsterId": 5844,
+                "level": 1,
+                "lifePoints": 200,
+                "actionPoints": 0,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 30,
+                "airResistance": -10,
+                "fireResistance": -10,
+                "waterResistance": 20,
+                "neutralResistance": 20,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 40734,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4575|||130}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                200
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5845": {
+        "id": 5845,
+        "nameId": 802772,
+        "race": 206,
+        "grades": [
+            {
+                "grade": 2,
+                "monsterId": 5845,
+                "level": 1,
+                "lifePoints": 280,
+                "actionPoints": 6,
+                "movementPoints": 5,
+                "vitality": 0,
+                "paDodge": 60,
+                "pmDodge": 60,
+                "wisdom": 0,
+                "earthResistance": 35,
+                "airResistance": 35,
+                "fireResistance": 35,
+                "waterResistance": 35,
+                "neutralResistance": 35,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 135,
+                "bonusRange": 0,
+                "startingSpellId": 61298,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{452|||110}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            12778,
+            12779,
+            12800
+        ],
+        "spellGrades": [
+            "1,1;2,1;3,1;3,4;3,5;3,6",
+            "1,1;1,1;1,1;1,4;1,5;1,6",
+            "1,1;2,1;3,1;3,4;3,5;3,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                250
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                14.375
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5846": {
+        "id": 5846,
+        "nameId": 802773,
+        "race": 206,
+        "grades": [
+            {
+                "grade": 1,
+                "monsterId": 5846,
+                "level": 1,
+                "lifePoints": 150,
+                "actionPoints": 0,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 0,
+                "airResistance": 0,
+                "fireResistance": 0,
+                "waterResistance": 0,
+                "neutralResistance": 0,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 40730,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4577}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": false,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                150
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5847": {
+        "id": 5847,
+        "nameId": 803104,
+        "race": 207,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5847,
+                "level": 1,
+                "lifePoints": 250,
+                "actionPoints": 10,
+                "movementPoints": 4,
+                "vitality": 0,
+                "paDodge": 40,
+                "pmDodge": 40,
+                "wisdom": 0,
+                "earthResistance": 35,
+                "airResistance": -5,
+                "fireResistance": 40,
+                "waterResistance": -5,
+                "neutralResistance": 35,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 100,
+                "chance": 200,
+                "agility": 70,
+                "bonusRange": 0,
+                "startingSpellId": 0,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{289|||100}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            12860
+        ],
+        "spellGrades": [
+            "1,1;2,1;3,1;3,4;3,5;3,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                80
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                12.5
+            ],
+            [
+                14,
+                3.75
+            ],
+            [
+                15,
+                12.5
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5848": {
+        "id": 5848,
+        "nameId": 803105,
+        "race": 207,
+        "grades": [
+            {
+                "grade": 2,
+                "monsterId": 5848,
+                "level": 1,
+                "lifePoints": 220,
+                "actionPoints": 10,
+                "movementPoints": 4,
+                "vitality": 0,
+                "paDodge": 22,
+                "pmDodge": 22,
+                "wisdom": 0,
+                "earthResistance": 6,
+                "airResistance": -14,
+                "fireResistance": 11,
+                "waterResistance": -14,
+                "neutralResistance": 6,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 100,
+                "chance": 200,
+                "agility": 20,
+                "bonusRange": 0,
+                "startingSpellId": 0,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4813}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            12884
+        ],
+        "spellGrades": [
+            "1,1;2,1;3,3;4,4;5,5;6,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                200
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                18.75
+            ],
+            [
+                14,
+                2.5
+            ],
+            [
+                15,
+                9.375
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5849": {
+        "id": 5849,
+        "nameId": 803119,
+        "race": 207,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5849,
+                "level": 1,
+                "lifePoints": 300,
+                "actionPoints": 0,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 0,
+                "airResistance": 0,
+                "fireResistance": 0,
+                "waterResistance": 0,
+                "neutralResistance": 0,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 40878,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4305}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": false,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                100
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5865": {
+        "id": 5865,
+        "nameId": 803914,
+        "race": 209,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5865,
+                "level": 1,
+                "lifePoints": 300,
+                "actionPoints": 6,
+                "movementPoints": 4,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 250,
+                "earthResistance": 20,
+                "airResistance": 5,
+                "fireResistance": 30,
+                "waterResistance": -5,
+                "neutralResistance": 10,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 250,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 150,
+                "bonusRange": 0,
+                "startingSpellId": 0,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{3907|||140}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            13752
+        ],
+        "spellGrades": [
+            "1,1;2,1;3,1;3,4;3,5;3,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                5.438814163208008
+            ],
+            [
+                10,
+                4.2269816398620605
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                6.038545608520508
+            ],
+            [
+                13,
+                0.06038545444607735
+            ],
+            [
+                14,
+                3.019272804260254
+            ],
+            [
+                15,
+                0.06038545444607735
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.06038545444607735
+            ]
+        ]
+    },
+    "5894": {
+        "id": 5894,
+        "nameId": 804591,
+        "race": 210,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5894,
+                "level": 1,
+                "lifePoints": 430,
+                "actionPoints": 0,
+                "movementPoints": -1,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 20,
+                "airResistance": 20,
+                "fireResistance": 20,
+                "waterResistance": 20,
+                "neutralResistance": 20,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 50,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 42133,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{3163|||60}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": false,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": false,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 6,
+        "characRatios": [
+            [
+                0,
+                0.6059309244155884
+            ],
+            [
+                10,
+                0.006884122267365456
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.006884122267365456
+            ],
+            [
+                13,
+                0.006884122267365456
+            ],
+            [
+                14,
+                0.006884122267365456
+            ],
+            [
+                15,
+                0.006884122267365456
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.006884122267365456
+            ]
+        ]
+    },
+    "5895": {
+        "id": 5895,
+        "nameId": 804596,
+        "race": 210,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5895,
+                "level": 1,
+                "lifePoints": 350,
+                "actionPoints": 4,
+                "movementPoints": 5,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 200,
+                "earthResistance": 30,
+                "airResistance": 30,
+                "fireResistance": 30,
+                "waterResistance": 30,
+                "neutralResistance": 30,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 250,
+                "bonusRange": 0,
+                "startingSpellId": 51274,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{417|||160}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            18669
+        ],
+        "spellGrades": [
+            "1,1;1,1;1,1;1,4;1,5;1,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                190
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                12.5
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                18.75
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5896": {
+        "id": 5896,
+        "nameId": 804599,
+        "race": 210,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5896,
+                "level": 1,
+                "lifePoints": 300,
+                "actionPoints": 6,
+                "movementPoints": 3,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 200,
+                "earthResistance": 30,
+                "airResistance": 15,
+                "fireResistance": 10,
+                "waterResistance": -5,
+                "neutralResistance": 20,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 0,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{292|||130}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            14380
+        ],
+        "spellGrades": [
+            "2,1;4,1;6,1;4,4;5,5;6,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                160
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                15
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5897": {
+        "id": 5897,
+        "nameId": 804606,
+        "race": 210,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5897,
+                "level": 1,
+                "lifePoints": 200,
+                "actionPoints": 6,
+                "movementPoints": 4,
+                "vitality": 0,
+                "paDodge": 40,
+                "pmDodge": 40,
+                "wisdom": 0,
+                "earthResistance": -5,
+                "airResistance": 30,
+                "fireResistance": 10,
+                "waterResistance": 20,
+                "neutralResistance": 30,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 200,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 0,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{416|||160}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            14381,
+            14383
+        ],
+        "spellGrades": [
+            "1,1;2,1;3,1;3,4;3,5;3,6",
+            "1,1;1,1;1,1;1,4;1,5;1,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                120
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                12.5
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5898": {
+        "id": 5898,
+        "nameId": 804611,
+        "race": 210,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5898,
+                "level": 1,
+                "lifePoints": 200,
+                "actionPoints": 6,
+                "movementPoints": 3,
+                "vitality": 0,
+                "paDodge": 40,
+                "pmDodge": 40,
+                "wisdom": 0,
+                "earthResistance": 20,
+                "airResistance": -5,
+                "fireResistance": 30,
+                "waterResistance": 20,
+                "neutralResistance": 25,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 500,
+                "bonusRange": 0,
+                "startingSpellId": 42146,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{415|||160}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            14385
+        ],
+        "spellGrades": [
+            "1,1;2,1;3,1;3,4;3,5;3,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                100
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                62.5
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5899": {
+        "id": 5899,
+        "nameId": 804621,
+        "race": 210,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5899,
+                "level": 1,
+                "lifePoints": 250,
+                "actionPoints": 6,
+                "movementPoints": 4,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 200,
+                "earthResistance": 20,
+                "airResistance": 30,
+                "fireResistance": -10,
+                "waterResistance": 25,
+                "neutralResistance": 10,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 100,
+                "bonusRange": 0,
+                "startingSpellId": 0,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{414|||160}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            14387
+        ],
+        "spellGrades": [
+            "1,1;1,1;1,1;1,1;1,1;1,1"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                140
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                15
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                6.25
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5903": {
+        "id": 5903,
+        "nameId": 805276,
+        "race": 211,
+        "grades": [
+            {
+                "grade": 1,
+                "monsterId": 5903,
+                "level": 1,
+                "lifePoints": 600,
+                "actionPoints": 0,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 10,
+                "airResistance": 10,
+                "fireResistance": 10,
+                "waterResistance": 10,
+                "neutralResistance": 10,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 41155,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4419|||100}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": false,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                600
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5904": {
+        "id": 5904,
+        "nameId": 805281,
+        "race": 212,
+        "grades": [
+            {
+                "grade": 3,
+                "monsterId": 5904,
+                "level": 1,
+                "lifePoints": 400,
+                "actionPoints": 5,
+                "movementPoints": 4,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 250,
+                "earthResistance": 20,
+                "airResistance": 30,
+                "fireResistance": 5,
+                "waterResistance": -5,
+                "neutralResistance": 20,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 41472,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{555|||140}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            13188
+        ],
+        "spellGrades": [
+            "1,1;2,1;3,1;3,4;3,5;3,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                140
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                18.75
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5905": {
+        "id": 5905,
+        "nameId": 873124,
+        "race": 212,
+        "grades": [
+            {
+                "grade": 2,
+                "monsterId": 5905,
+                "level": 1,
+                "lifePoints": 400,
+                "actionPoints": 5,
+                "movementPoints": 4,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 250,
+                "earthResistance": 15,
+                "airResistance": 25,
+                "fireResistance": 0,
+                "waterResistance": -10,
+                "neutralResistance": 10,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 41471,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4278|||130}",
+        "useSummonSlot": true,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [
+            14442
+        ],
+        "spellGrades": [
+            "1,1;1,1;1,3;1,4;1,5;1,6"
+        ],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": true,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                300
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                23.75
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5906": {
+        "id": 5906,
+        "nameId": 805289,
+        "race": 212,
+        "grades": [
+            {
+                "grade": 2,
+                "monsterId": 5906,
+                "level": 1,
+                "lifePoints": 210,
+                "actionPoints": 6,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 300,
+                "earthResistance": 0,
+                "airResistance": 0,
+                "fireResistance": 0,
+                "waterResistance": 0,
+                "neutralResistance": 0,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 300,
+                "intelligence": 300,
+                "chance": 300,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 44496,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4283}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": false,
+        "canTackle": true,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                180
+            ],
+            [
+                10,
+                37.5
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                31.25
+            ],
+            [
+                13,
+                37.5
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                37.5
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5907": {
+        "id": 5907,
+        "nameId": 805503,
+        "race": 213,
+        "grades": [
+            {
+                "grade": 1,
+                "monsterId": 5907,
+                "level": 1,
+                "lifePoints": 400,
+                "actionPoints": 0,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 10,
+                "airResistance": 10,
+                "fireResistance": 10,
+                "waterResistance": 10,
+                "neutralResistance": 10,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 0,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4814|||75}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": false,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                400
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5908": {
+        "id": 5908,
+        "nameId": 805507,
+        "race": 213,
+        "grades": [
+            {
+                "grade": 1,
+                "monsterId": 5908,
+                "level": 1,
+                "lifePoints": 250,
+                "actionPoints": 0,
+                "movementPoints": -1,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 10,
+                "airResistance": 10,
+                "fireResistance": 10,
+                "waterResistance": 10,
+                "neutralResistance": 10,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 41256,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{4815|||55}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": false,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                250
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "5910": {
+        "id": 5910,
+        "nameId": 805938,
+        "race": 211,
+        "grades": [
+            {
+                "grade": 1,
+                "monsterId": 5910,
+                "level": 1,
+                "lifePoints": 1,
+                "actionPoints": 0,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 0,
+                "airResistance": 0,
+                "fireResistance": 0,
+                "waterResistance": 0,
+                "neutralResistance": 0,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 41163,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{6894|||100}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": false,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 0,
+        "aggressiveLevelDiff": 0,
+        "aggressiveImmunityCriterion": "null",
+        "aggressiveAttackDelay": 0,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                1
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    },
+    "6889": {
+        "id": 6889,
+        "nameId": 931865,
+        "race": 207,
+        "grades": [
+            {
+                "grade": 1,
+                "monsterId": 6889,
+                "level": 1,
+                "lifePoints": 400,
+                "actionPoints": 0,
+                "movementPoints": 0,
+                "vitality": 0,
+                "paDodge": 0,
+                "pmDodge": 0,
+                "wisdom": 0,
+                "earthResistance": 0,
+                "airResistance": 0,
+                "fireResistance": 0,
+                "waterResistance": 0,
+                "neutralResistance": 0,
+                "gradeXp": 0,
+                "damageReflect": 0,
+                "hiddenLevel": 0,
+                "strength": 0,
+                "intelligence": 0,
+                "chance": 0,
+                "agility": 0,
+                "bonusRange": 0,
+                "startingSpellId": 40860,
+                "bonusCharacteristics": {
+                    "lifePoints": 0,
+                    "strength": 0,
+                    "wisdom": 0,
+                    "chance": 0,
+                    "agility": 0,
+                    "intelligence": 0,
+                    "earthResistance": 0,
+                    "fireResistance": 0,
+                    "waterResistance": 0,
+                    "airResistance": 0,
+                    "neutralResistance": 0,
+                    "tackleEvade": 0,
+                    "tackleBlock": 0,
+                    "bonusEarthDamage": 0,
+                    "bonusFireDamage": 0,
+                    "bonusWaterDamage": 0,
+                    "bonusAirDamage": 0,
+                    "APRemoval": 0
+                }
+            }
+        ],
+        "look": "{6892}",
+        "useSummonSlot": false,
+        "useBombSlot": false,
+        "animFunList": [],
+        "isBoss": false,
+        "drops": [],
+        "temporisDrops": [],
+        "subareas": [],
+        "spells": [],
+        "spellGrades": [],
+        "favoriteSubareaId": 0,
+        "isMiniBoss": false,
+        "isQuestMonster": false,
+        "correspondingMiniBossId": 0,
+        "speedAdjust": 0,
+        "creatureBoneId": 0,
+        "fastAnimsFun": false,
+        "canPlay": false,
+        "canTackle": false,
+        "canBePushed": true,
+        "canSwitchPos": true,
+        "canSwitchPosOnTarget": true,
+        "canBeCarried": true,
+        "canUsePortal": true,
+        "incompatibleIdols": [],
+        "allIdolsDisabled": false,
+        "incompatibleChallenges": [],
+        "useRaceValues": false,
+        "aggressiveZoneSize": 3,
+        "aggressiveLevelDiff": 50,
+        "aggressiveImmunityCriterion": "PO=9910",
+        "aggressiveAttackDelay": 10000,
+        "scaleGradeRef": 1,
+        "characRatios": [
+            [
+                0,
+                400
+            ],
+            [
+                10,
+                0.125
+            ],
+            [
+                11,
+                0
+            ],
+            [
+                12,
+                0.125
+            ],
+            [
+                13,
+                0.125
+            ],
+            [
+                14,
+                0.125
+            ],
+            [
+                15,
+                0.125
+            ],
+            [
+                19,
+                1
+            ],
+            [
+                23,
+                1
+            ],
+            [
+                25,
+                0.125
+            ]
+        ]
+    }
+}
