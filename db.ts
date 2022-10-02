@@ -95,14 +95,13 @@ export class db {
 			});
 	}
 
-
-	private dofusDBGithubUrl = "https://raw.githubusercontent.com/Souchy/DofusDB/919dafbaf046958782d960423622107b19c77bd8/";
+							 // https://raw.githubusercontent.com/Souchy/DofusDB/master/scraped/2.65/fr/spellsDetails.json
+	private dofusDBGithubUrl = "https://raw.githubusercontent.com/Souchy/DofusDB/master/";
 	private githubScrapedUrlPath = this.dofusDBGithubUrl + "scraped/";
-	private commonUrlPath: string =this. githubScrapedUrlPath + "common/";
+	private commonUrlPath: string = this. githubScrapedUrlPath + "common/";
 	public get gitFolderPath() {
 		return this.githubScrapedUrlPath + this.version + "/";
 	}
-
 
 	public getSpellIconPath(spellId: string): string {
 		// return "src/DofusDB/scraped/" + this.version + "/spellIcons/" + spellId + ".png";
