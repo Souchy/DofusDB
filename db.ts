@@ -16,8 +16,15 @@ export class db {
 	// actual json fetched 
 	public jsonSpells: any;
 	public jsonSpellsDetails: any;
+	public jsonBreeds: any;
+	public jsonSummons: any;
+	public i18n_fr: any;
+	public i18n_en: any;
+	// json names
 	public jsonSpellsName = "spells.json";
 	public jsonSpellsDetailsName = "spellsDetails.json";
+	public jsonBreedsName = "breeds.json";
+	public jsonSummonsName = "summons.json";
 
 	public constructor() {
 		// load cached version and language
@@ -29,6 +36,9 @@ export class db {
 
 	public promiseLoadingSpells: Promise<boolean>;
 	public promiseLoadingSpellsDetails: Promise<boolean>;
+	public promiseLoadingBreeds: Promise<boolean>;
+	public promiseLoadingSummons: Promise<boolean>;
+
 	public get isLoaded() {
 		return this.jsonSpells && this.jsonSpellsDetails;
 	}
@@ -49,92 +59,70 @@ export class db {
 	public setVersion(version: string) {
 		if (this.version == version) {
 			// do nothing
-		} else 
-		if(!versions.includes(version)) {
-			alert("Invalid version")
-		} else {
-			this._version = version;
-			localStorage.setItem("version", version);
-			this.loadJson();
-		}
+		} else
+			if (!versions.includes(version)) {
+				alert("Invalid version")
+			} else {
+				this._version = version;
+				localStorage.setItem("version", version);
+				this.loadJson();
+			}
 	}
-
-	// need to implement this in every aurelia app using this module
-	// public loadJson = () => {
-	// 	console.log("Json fetching unimplemented");
-	// };
 
 	public async loadJson() {
-		this.promiseLoadingSpells = this.loadSpells(this.getJsonFolderPath());
-		this.promiseLoadingSpellsDetails = this.loadSpellsDetails(this.getJsonFolderPath());
+		this.promiseLoadingSpells = this.fetchJson(this.gitFolderPath + this.jsonSpellsName, (json) => this.jsonSpells = json);
+		this.promiseLoadingSpellsDetails = this.fetchJson(this.gitFolderPath + this.lang + "/" + this.jsonSpellsDetailsName,
+			(json) => this.jsonSpellsDetails = json
+		);
+		this.promiseLoadingBreeds = this.fetchJson(this.gitFolderPath + this.jsonBreedsName, (json) => this.jsonBreeds = json);
+		this.promiseLoadingSummons = this.fetchJson(this.gitFolderPath + this.jsonSummonsName, (json) => this.jsonSummons = json);
 		// console.log("loaded = promise: " + this.promiseLoadingSpells)
 
+		await this.promiseLoadingBreeds;
+		await this.promiseLoadingSummons;
+
 		let result = await this.promiseLoadingSpells;
-		if (!result) {
-			this.promiseLoadingSpells = this.loadSpells(this.getJsonFolderPathDefaultLang());
-			result = await this.promiseLoadingSpells;
-		}
-		// console.log("db loaded json spells: " + result);
-
 		result = await this.promiseLoadingSpellsDetails;
-		if(!result) {
-			this.promiseLoadingSpellsDetails = this.loadSpellsDetails(this.getJsonFolderPathDefaultLang());
-			result = await this.promiseLoadingSpellsDetails;
-		}
-		// console.log("db loaded json spells details: " + result);
+
+		await this.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.i18n_fr = json);
+		await this.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.i18n_en = json);
 	}
 
-	public async loadSpells(folderpath: string): Promise<boolean> {
-		return this.http.fetch(folderpath + this.jsonSpellsName)
+	public async fetchJson(path: string, setter: (json) => any) {
+		return this.http.fetch(path)
 			.then(response => response.status == 404 ? null : response.text())
 			.then(data => {
 				if (data == null) return false;
-				this.jsonSpells = JSON.parse(data);
-				// console.log("loaded spells"); // + this.jsonSpells["feca"]);
+				setter(JSON.parse(data));
 				return true;
 			}).catch(() => {
 				return false;
 			});
-	};
-
-	public loadSpellsDetails(folderpath: string): Promise<boolean> {
-		return this.http.fetch(folderpath + this.jsonSpellsDetailsName)
-			.then(response => response.status == 404 ? null : response.text())
-			.then(data => {
-				if (data == null) return false;
-				this.jsonSpellsDetails = JSON.parse(data);
-				// console.log("loaded spells details : " + JSON.stringify(data))
-				return true;
-			}).catch(() => {
-				return false;
-			});
-	};
-
-	public getJsonFolderPath() {
-		// return "src/DofusDB/scraped/" + this.version + "/" + this.lang + "/";
-		return this.githubScrapedUrlPath + this.version + "/" + this.lang + "/";
-	}
-	public getJsonFolderPathDefaultLang() {
-		// return "src/DofusDB/scraped/" + this.version + "/" + this.lang_default + "/";
-		return this.githubScrapedUrlPath + this.version + "/" + this.lang_default + "/";
 	}
 
-
-
-	private dofusDBGithubUrl = "https://raw.githubusercontent.com/Souchy/DofusDB/919dafbaf046958782d960423622107b19c77bd8/";
+	// https://raw.githubusercontent.com/Souchy/DofusDB/master/scraped/2.65/fr/spellsDetails.json
+	private dofusDBGithubUrl = "https://raw.githubusercontent.com/Souchy/DofusDB/master/";
 	private githubScrapedUrlPath = this.dofusDBGithubUrl + "scraped/";
-	private commonUrlPath: string =this. githubScrapedUrlPath + "common/";
-	private scrapedUrlPath: string = "src/DofusDB/scraped/";
-	// private commonUrlPath: string = "src/DofusDB/scraped/common/";
-
-	public getSpellIconPath(spellId: string): string {
-		// return "src/DofusDB/scraped/" + this.version + "/spellIcons/" + spellId + ".png";
-		return this.githubScrapedUrlPath + this.version + "/spellIcons/" + spellId + ".png";
+	private commonUrlPath: string = this.githubScrapedUrlPath + "common/";
+	public get gitFolderPath() {
+		return this.githubScrapedUrlPath + this.version + "/";
 	}
 
-	// public getBreedIconStyle(breedIndex: number) {
-	// 	return "background: transparent url(this.rootUrlPath + 'big.png') 0 0 no-repeat; background-position: -56px ${-57 * " + breedIndex + "}px;";
-	// }
+	public getSpellIconPath(spellId: number): string {
+		console.log("getSpellIconPath " + spellId + " = " + JSON.stringify(this.jsonSpells[spellId]));
+		let iconid = this.jsonSpells[spellId].iconId;
+		return this.githubScrapedUrlPath + this.version + "/sprites/spells/" + iconid + ".png";
+	}
+	public getMonsterIconPath(monsterId: number): string {
+		return this.githubScrapedUrlPath + this.version + "/sprites/monster/" + monsterId + ".png";
+	}
+
+	public getI18n(id: number): string {
+		if (this.lang == "fr")
+			return this.i18n_fr[id];
+		if (this.lang == "en")
+			return this.i18n_en[id];
+	}
 
 	public getBreedIconStyle(breedIndex: number) {
 		// console.log("db getBreedIconStyle")
