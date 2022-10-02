@@ -1,6 +1,5 @@
-[
-    {
-        "breedId": 1,
+{
+    "1": {
         "nameId": 685,
         "mecanicsId": 888597,
         "spells": [
@@ -50,8 +49,7 @@
             13026
         ]
     },
-    {
-        "breedId": 2,
+    "2": {
         "nameId": 697,
         "mecanicsId": 832335,
         "spells": [
@@ -101,8 +99,7 @@
             14010
         ]
     },
-    {
-        "breedId": 3,
+    "3": {
         "nameId": 681,
         "mecanicsId": 958243,
         "spells": [
@@ -152,8 +149,7 @@
             13371
         ]
     },
-    {
-        "breedId": 4,
+    "4": {
         "nameId": 701,
         "mecanicsId": 939085,
         "spells": [
@@ -203,8 +199,7 @@
             12947
         ]
     },
-    {
-        "breedId": 5,
+    "5": {
         "nameId": 705,
         "mecanicsId": 891450,
         "spells": [
@@ -254,8 +249,7 @@
             13300
         ]
     },
-    {
-        "breedId": 6,
+    "6": {
         "nameId": 677,
         "mecanicsId": 903655,
         "spells": [
@@ -305,8 +299,7 @@
             12882
         ]
     },
-    {
-        "breedId": 7,
+    "7": {
         "nameId": 673,
         "mecanicsId": 888306,
         "spells": [
@@ -356,8 +349,7 @@
             13219
         ]
     },
-    {
-        "breedId": 8,
+    "8": {
         "nameId": 693,
         "mecanicsId": 836505,
         "spells": [
@@ -407,8 +399,7 @@
             13132
         ]
     },
-    {
-        "breedId": 9,
+    "9": {
         "nameId": 689,
         "mecanicsId": 836506,
         "spells": [
@@ -458,8 +449,7 @@
             14636
         ]
     },
-    {
-        "breedId": 10,
+    "10": {
         "nameId": 661,
         "mecanicsId": 930660,
         "spells": [
@@ -509,8 +499,7 @@
             13520
         ]
     },
-    {
-        "breedId": 11,
+    "11": {
         "nameId": 665,
         "mecanicsId": 883391,
         "spells": [
@@ -560,8 +549,7 @@
             12753
         ]
     },
-    {
-        "breedId": 12,
+    "12": {
         "nameId": 669,
         "mecanicsId": 968705,
         "spells": [
@@ -611,8 +599,7 @@
             24039
         ]
     },
-    {
-        "breedId": 13,
+    "13": {
         "nameId": 653,
         "mecanicsId": 958242,
         "spells": [
@@ -662,8 +649,7 @@
             13486
         ]
     },
-    {
-        "breedId": 14,
+    "14": {
         "nameId": 657,
         "mecanicsId": 888304,
         "spells": [
@@ -713,8 +699,7 @@
             13385
         ]
     },
-    {
-        "breedId": 15,
+    "15": {
         "nameId": 92496,
         "mecanicsId": 964519,
         "spells": [
@@ -764,8 +749,7 @@
             13876
         ]
     },
-    {
-        "breedId": 16,
+    "16": {
         "nameId": 504829,
         "mecanicsId": 850531,
         "spells": [
@@ -815,8 +799,7 @@
             14621
         ]
     },
-    {
-        "breedId": 17,
+    "17": {
         "nameId": 577229,
         "mecanicsId": 888307,
         "spells": [
@@ -866,8 +849,7 @@
             14342
         ]
     },
-    {
-        "breedId": 18,
+    "18": {
         "nameId": 720113,
         "mecanicsId": 871411,
         "spells": [
@@ -917,4 +899,4 @@
             14357
         ]
     }
-]
+}
