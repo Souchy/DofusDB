@@ -18,6 +18,8 @@ export class db {
 	public jsonSpellsDetails: any;
 	public jsonBreeds: any;
 	public jsonSummons: any;
+	public i18n_fr: any;
+	public i18n_en: any;
 	// json names
 	public jsonSpellsName = "spells.json";
 	public jsonSpellsDetailsName = "spellsDetails.json";
@@ -57,19 +59,19 @@ export class db {
 	public setVersion(version: string) {
 		if (this.version == version) {
 			// do nothing
-		} else 
-		if(!versions.includes(version)) {
-			alert("Invalid version")
-		} else {
-			this._version = version;
-			localStorage.setItem("version", version);
-			this.loadJson();
-		}
+		} else
+			if (!versions.includes(version)) {
+				alert("Invalid version")
+			} else {
+				this._version = version;
+				localStorage.setItem("version", version);
+				this.loadJson();
+			}
 	}
 
 	public async loadJson() {
 		this.promiseLoadingSpells = this.fetchJson(this.gitFolderPath + this.jsonSpellsName, (json) => this.jsonSpells = json);
-		this.promiseLoadingSpellsDetails = this.fetchJson(this.gitFolderPath + this.lang + "/" + this.jsonSpellsDetailsName, 
+		this.promiseLoadingSpellsDetails = this.fetchJson(this.gitFolderPath + this.lang + "/" + this.jsonSpellsDetailsName,
 			(json) => this.jsonSpellsDetails = json
 		);
 		this.promiseLoadingBreeds = this.fetchJson(this.gitFolderPath + this.jsonBreedsName, (json) => this.jsonBreeds = json);
@@ -81,8 +83,11 @@ export class db {
 
 		let result = await this.promiseLoadingSpells;
 		result = await this.promiseLoadingSpellsDetails;
+
+		await this.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.i18n_fr = json);
+		await this.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.i18n_en = json);
 	}
-	
+
 	public async fetchJson(path: string, setter: (json) => any) {
 		return this.http.fetch(path)
 			.then(response => response.status == 404 ? null : response.text())
@@ -95,17 +100,28 @@ export class db {
 			});
 	}
 
-							 // https://raw.githubusercontent.com/Souchy/DofusDB/master/scraped/2.65/fr/spellsDetails.json
+	// https://raw.githubusercontent.com/Souchy/DofusDB/master/scraped/2.65/fr/spellsDetails.json
 	private dofusDBGithubUrl = "https://raw.githubusercontent.com/Souchy/DofusDB/master/";
 	private githubScrapedUrlPath = this.dofusDBGithubUrl + "scraped/";
-	private commonUrlPath: string = this. githubScrapedUrlPath + "common/";
+	private commonUrlPath: string = this.githubScrapedUrlPath + "common/";
 	public get gitFolderPath() {
 		return this.githubScrapedUrlPath + this.version + "/";
 	}
 
-	public getSpellIconPath(spellId: string): string {
-		// return "src/DofusDB/scraped/" + this.version + "/spellIcons/" + spellId + ".png";
-		return this.githubScrapedUrlPath + this.version + "/spellIcons/" + spellId + ".png";
+	public getSpellIconPath(spellId: number): string {
+		console.log("getSpellIconPath " + spellId + " = " + JSON.stringify(this.jsonSpells[spellId]));
+		let iconid = this.jsonSpells[spellId].iconId;
+		return this.githubScrapedUrlPath + this.version + "/sprites/spells/" + iconid + ".png";
+	}
+	public getMonsterIconPath(monsterId: number): string {
+		return this.githubScrapedUrlPath + this.version + "/sprites/monster/" + monsterId + ".png";
+	}
+
+	public getI18n(id: number): string {
+		if (this.lang == "fr")
+			return this.i18n_fr[id];
+		if (this.lang == "en")
+			return this.i18n_en[id];
 	}
 
 	public getBreedIconStyle(breedIndex: number) {
