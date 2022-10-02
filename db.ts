@@ -40,7 +40,7 @@ export class db {
 	public promiseLoadingSummons: Promise<boolean>;
 
 	public get isLoaded() {
-		return this.jsonSpells && this.jsonSpellsDetails;
+		return this.jsonSpells && this.jsonSpellsDetails && this.i18n_fr && this.i18n_en && this.jsonBreeds && this.jsonSummons;
 	}
 
 	public setLanguage(lang: string) {
@@ -109,8 +109,8 @@ export class db {
 	}
 
 	public getSpellIconPath(spellId: number): string {
-		console.log("getSpellIconPath " + spellId + " = " + JSON.stringify(this.jsonSpells[spellId]));
 		let iconid = this.jsonSpells[spellId].iconId;
+		// console.log("getSpellIconPath " + spellId + " = " + iconid); //JSON.stringify(this.jsonSpells[spellId]));
 		return this.githubScrapedUrlPath + this.version + "/sprites/spells/" + iconid + ".png";
 	}
 	public getMonsterIconPath(monsterId: number): string {
