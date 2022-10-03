@@ -131,7 +131,13 @@ export class db {
 		let aoeName = effect.rawZone; 
 		if(effect.rawZone.startsWith("P")) aoeName = "point";
 		if(effect.rawZone.startsWith("C")) aoeName = "circle";
-		return "vertical-align: middle; width: 22px; height: 22px; background-image: url('" + this.commonUrlPath + "icons/" + aoeName + ".webp');";
+		if(effect.rawZone.startsWith("G")) aoeName = "square";
+		if(effect.rawZone.startsWith("L")) aoeName = "line";
+		if(effect.rawZone.startsWith("l")) aoeName = "line";
+		if(effect.rawZone.startsWith("T")) aoeName = "line2";
+		if(effect.rawZone.startsWith("X")) aoeName = "cross";
+		return "vertical-align: middle; width: 32px; height: 32px; background-image: url('" + this.commonUrlPath + "icons/" + aoeName + ".webp');"
+			+ "background-repeat: no-repeat; background-position: -" + 2 + "px; background-position-y: " + 7 + "px;";
 	}
 	public getBreedIconStyle(breedIndex: number) {
 		// console.log("db getBreedIconStyle")
