@@ -127,6 +127,10 @@ export class db {
 			return this.i18n_en[id];
 	}
 
+	public getIconPath(name: string) {
+		return this.commonUrlPath + name;
+	}
+
 	public getAoeIconStyle(effect: any) {
 		let aoeName = effect.rawZone; 
 		if(effect.rawZone.startsWith("P")) aoeName = "point";
@@ -136,8 +140,12 @@ export class db {
 		if(effect.rawZone.startsWith("l")) aoeName = "line";
 		if(effect.rawZone.startsWith("T")) aoeName = "line2";
 		if(effect.rawZone.startsWith("X")) aoeName = "cross";
-		return "vertical-align: middle; width: 32px; height: 32px; background-image: url('" + this.commonUrlPath + "icons/" + aoeName + ".webp');"
-			+ "background-repeat: no-repeat; background-position: -" + 2 + "px; background-position-y: " + 7 + "px;";
+		if(effect.rawZone.startsWith("+")) aoeName = "x";
+		if(effect.rawZone.startsWith("O")) aoeName = "check"; // FIXME
+		if(effect.rawZone.startsWith("Q")) aoeName = "check"; // FIXME
+		if(effect.rawZone.startsWith("U")) aoeName = "arc";   // FIXME
+		return "vertical-align: middle; width: 37px; height: 32px; background-image: url('" + this.commonUrlPath + "icons/" + aoeName + ".webp');"
+			+ "background-repeat: no-repeat; background-position: 50%;"; //background-position: " + 0 + "px; background-position-y: " + 7 + "px;";
 	}
 	public getBreedIconStyle(breedIndex: number) {
 		// console.log("db getBreedIconStyle")
@@ -156,12 +164,12 @@ export class db {
 	}
 
 	private fighterSprite(imgName: string, x: number, y: number) {
-		return "vertical-align: middle; width: 22px; height: 22px; background-image: url('" + this.commonUrlPath + imgName + "'); background-repeat: no-repeat;"
+		return "vertical-align: middle; width: 32px; height: 32px; background-image: url('" + this.commonUrlPath + imgName + "'); background-repeat: no-repeat;"
 			+ "background-position: " + x + "px; background-position-y: " + y + "px;";
 	}
 
 	public getModIconStyle(mod: string) {
-		if (mod.toLowerCase().includes(" pa ")) return this.modSprite(97, 243);
+		if (mod.toLowerCase().includes(" pa ")) return this.modSprite(97, 245);
 		if (mod.toLowerCase().includes(" pm ")) return this.modSprite(97, 52);
 		if (mod.toLowerCase().includes("portée")) return this.modSprite(97, 128);
 
@@ -204,7 +212,7 @@ export class db {
 	private modSprite(x: number, y: number) {
 		y -= 6;
 		// return "display: inline-block; zoom: 1.0; vertical-align: middle; width: 22px; height: 22px; background-image: url('/src/DofusDB/scraped/icons.png'); background-position: -" + x + "px; background-position-y: -" + y + "px;"
-		return "vertical-align: middle; width: 22px; height: 22px; background-image: url('" + this.commonUrlPath + "icons.png');"
+		return "vertical-align: middle; width: 22px; height: 32px; background-image: url('" + this.commonUrlPath + "icons.png');"
 			+ "background-position: -" + x + "px; background-position-y: -" + y + "px;"
 	}
 
