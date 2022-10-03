@@ -26,6 +26,7 @@ export class db {
 	public jsonSpellsDetailsName = "spellsDetails.json";
 	public jsonBreedsName = "breeds.json";
 	public jsonSummonsName = "summons.json";
+	public breedId: number = 1;
 
 	public constructor() {
 		// load cached version and language
