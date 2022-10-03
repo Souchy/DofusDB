@@ -18,6 +18,7 @@ export class db {
 	public jsonSpellsDetails: any;
 	public jsonBreeds: any;
 	public jsonSummons: any;
+	public jsonStates: any;
 	public i18n_fr: any;
 	public i18n_en: any;
 	// json names
@@ -40,7 +41,8 @@ export class db {
 	public promiseLoadingSummons: Promise<boolean>;
 
 	public get isLoaded() {
-		return this.jsonSpells && this.jsonSpellsDetails && this.i18n_fr && this.i18n_en && this.jsonBreeds && this.jsonSummons;
+		return this.jsonSpells && this.jsonSpellsDetails && this.jsonBreeds 
+			&& this.jsonSummons && this.jsonStates && this.i18n_fr && this.i18n_en;
 	}
 
 	public setLanguage(lang: string) {
@@ -86,6 +88,7 @@ export class db {
 
 		await this.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.i18n_fr = json);
 		await this.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.i18n_en = json);
+		await this.fetchJson(this.gitFolderPath + "states.json", (json) => this.jsonStates = json);
 	}
 
 	public async fetchJson(path: string, setter: (json) => any) {
@@ -114,7 +117,7 @@ export class db {
 		return this.githubScrapedUrlPath + this.version + "/sprites/spells/" + iconid + ".png";
 	}
 	public getMonsterIconPath(monsterId: number): string {
-		return this.githubScrapedUrlPath + this.version + "/sprites/monster/" + monsterId + ".png";
+		return this.githubScrapedUrlPath + this.version + "/sprites/monsters/" + monsterId + ".png";
 	}
 
 	public getI18n(id: number): string {
@@ -124,6 +127,12 @@ export class db {
 			return this.i18n_en[id];
 	}
 
+	public getAoeIconStyle(effect: any) {
+		let aoeName = effect.rawZone; 
+		if(effect.rawZone.startsWith("P")) aoeName = "point";
+		if(effect.rawZone.startsWith("C")) aoeName = "circle";
+		return "vertical-align: middle; width: 22px; height: 22px; background-image: url('" + this.commonUrlPath + "icons/" + aoeName + ".webp');";
+	}
 	public getBreedIconStyle(breedIndex: number) {
 		// console.log("db getBreedIconStyle")
 		return "height: 54px; width: 54px;" +
