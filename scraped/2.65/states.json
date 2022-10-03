@@ -1627,6 +1627,29 @@
         "cantBeTackled": false,
         "displayTurnRemaining": false
     },
+    "615": {
+        "id": 615,
+        "nameId": 740452,
+        "preventsSpellCast": false,
+        "preventsFight": false,
+        "isSilent": true,
+        "cantBeMoved": false,
+        "cantBePushed": false,
+        "cantDealDamage": false,
+        "invulnerable": false,
+        "cantSwitchPosition": false,
+        "incurable": false,
+        "effectsIds": [
+            16
+        ],
+        "icon": "",
+        "iconVisibilityMask": 0,
+        "invulnerableMelee": false,
+        "invulnerableRange": false,
+        "cantTackle": false,
+        "cantBeTackled": false,
+        "displayTurnRemaining": false
+    },
     "636": {
         "id": 636,
         "nameId": 742180,
@@ -1741,6 +1764,29 @@
     "653": {
         "id": 653,
         "nameId": 744920,
+        "preventsSpellCast": false,
+        "preventsFight": false,
+        "isSilent": true,
+        "cantBeMoved": false,
+        "cantBePushed": false,
+        "cantDealDamage": false,
+        "invulnerable": false,
+        "cantSwitchPosition": false,
+        "incurable": false,
+        "effectsIds": [
+            16
+        ],
+        "icon": "",
+        "iconVisibilityMask": 0,
+        "invulnerableMelee": false,
+        "invulnerableRange": false,
+        "cantTackle": false,
+        "cantBeTackled": false,
+        "displayTurnRemaining": false
+    },
+    "654": {
+        "id": 654,
+        "nameId": 744915,
         "preventsSpellCast": false,
         "preventsFight": false,
         "isSilent": true,
@@ -3181,6 +3227,29 @@
     "1491": {
         "id": 1491,
         "nameId": 807409,
+        "preventsSpellCast": false,
+        "preventsFight": false,
+        "isSilent": true,
+        "cantBeMoved": false,
+        "cantBePushed": false,
+        "cantDealDamage": false,
+        "invulnerable": false,
+        "cantSwitchPosition": false,
+        "incurable": false,
+        "effectsIds": [
+            16
+        ],
+        "icon": "",
+        "iconVisibilityMask": 0,
+        "invulnerableMelee": false,
+        "invulnerableRange": false,
+        "cantTackle": false,
+        "cantBeTackled": false,
+        "displayTurnRemaining": false
+    },
+    "1492": {
+        "id": 1492,
+        "nameId": 807417,
         "preventsSpellCast": false,
         "preventsFight": false,
         "isSilent": true,
