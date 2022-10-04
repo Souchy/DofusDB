@@ -151,11 +151,16 @@ export class db {
 		else return "";
 	}
 	public getBreedIconStyle(breedIndex: number) {
-		// console.log("db getBreedIconStyle")
+		let url = this.commonUrlPath + "big.png";
+		let pos = "background-position: -56px " + Math.ceil(-56.8 * breedIndex) + "px;";
+		if(breedIndex == 19 - 1) {
+			url = this.gitFolderPath + "sprites/spells/350.png"; // icône flamiche
+			pos = "background-size: 55px; background-position: 50%";
+		}
 		return "height: 54px; width: 54px;" +
 			"margin-bottom: 5px; margin-left: 2px; margin-right: 3px;" +
 			"box-sizing: border-box;" +
-			"background: transparent url('" + this.commonUrlPath + "big.png') 0 0 no-repeat; background-position: -56px " + Math.ceil(-56.8 * breedIndex) + "px;";
+			"background: transparent url('"+url+"') 0 0 no-repeat; " + pos;
 	}
 
 	public getFighterIconStyle(mod: string) {
