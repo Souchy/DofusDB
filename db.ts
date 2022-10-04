@@ -220,9 +220,11 @@ export class db {
 	}
 
 	public isSummonEffect(e: any) {
-		return (e.effectId == 181 || e.effectId == 1008 || e.effectId == 405 || e.effectId == 1011);
+		return (e.effectId == 181 || e.effectId == 1008 || e.effectId == 405 || e.effectId == 1011 || e.effectId == 2796);
 	}
-
+	public isCellEffect(e: any) {
+		return (e.effectId == 400 || e.effectId == 401 || e.effectId == 1091 || e.effectId == 402 || e.effectId == 1165 || e.effectId == 400);
+	}
 }
 
 const container = DI.createContainer();
