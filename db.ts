@@ -217,6 +217,9 @@ export class db {
 			+ "background-position: -" + x + "px; background-position-y: -" + y + "px;"
 	}
 
+	public isSummonEffect(e: any) {
+		return (e.effectId == 181 || e.effectId == 1008 || e.effectId == 405 || e.effectId == 1011);
+	}
 
 }
 
