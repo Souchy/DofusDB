@@ -172,8 +172,9 @@ export class db {
 	}
 
 	private fighterSprite(imgName: string, x: number, y: number) {
-		return "vertical-align: middle; width: 32px; height: 32px; background-image: url('" + this.commonUrlPath + imgName + "'); background-repeat: no-repeat;"
-			+ "background-position: " + x + "px; background-position-y: " + y + "px;";
+		return "vertical-align: middle; width: 22px; height: 32px; background-image: url('" + this.commonUrlPath + imgName + "'); background-repeat: no-repeat;"
+			+ "background-position: 50%;";
+			// + "background-position: " + x + "px; background-position-y: " + y + "px;";
 	}
 
 	public getModIconStyle(mod: string) {
@@ -219,6 +220,7 @@ export class db {
 
 	private modSprite(x: number, y: number) {
 		y -= 6;
+		// x -= 1;
 		// return "display: inline-block; zoom: 1.0; vertical-align: middle; width: 22px; height: 22px; background-image: url('/src/DofusDB/scraped/icons.png'); background-position: -" + x + "px; background-position-y: -" + y + "px;"
 		return "vertical-align: middle; width: 22px; height: 32px; background-image: url('" + this.commonUrlPath + "icons.png');"
 			+ "background-position: -" + x + "px; background-position-y: -" + y + "px;"
