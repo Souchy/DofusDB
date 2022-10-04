@@ -17,7 +17,8 @@
 		"steamer",
 		"eliotrope",
 		"huppermage",
-		"ouginak"
+		"ouginak",
+		"communs"
 	],
 	"orderByIcon": [
 		"feca",
@@ -37,7 +38,8 @@
 		"cra",
 		"eliotrope",
 		"huppermage",
-		"ouginak"
+		"ouginak",
+		"communs"
 	],
 	"orderById": [
 		"feca",
@@ -57,7 +59,8 @@
 		"steamer",
 		"eliotrope",
 		"huppermage",
-		"ouginak"
+		"ouginak",
+		"communs"
 	],
 	"ids": {
 		"feca": 1,
@@ -77,7 +80,8 @@
 		"steamer": 15,
 		"eliotrope": 16,
 		"huppermage": 17,
-		"ouginak": 18
+		"ouginak": 18,
+		"communs": 19
 	},
 	"french": [
 		"Féca",
@@ -97,6 +101,7 @@
 		"Steamer",
 		"Éliotrope",
 		"Huppermage",
-		"Ouginak"
+		"Ouginak",
+		"Sorts communs"
 	]
 }
