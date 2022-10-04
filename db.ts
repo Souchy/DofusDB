@@ -133,7 +133,7 @@ export class db {
 	}
 
 	public getAoeIconStyle(effect: any) {
-		let aoeName = effect.rawZone; 
+		let aoeName; 
 		if(effect.rawZone.startsWith("P")) aoeName = "point";
 		if(effect.rawZone.startsWith("C")) aoeName = "circle";
 		if(effect.rawZone.startsWith("G")) aoeName = "square";
@@ -145,8 +145,10 @@ export class db {
 		if(effect.rawZone.startsWith("O")) aoeName = "check"; // FIXME
 		if(effect.rawZone.startsWith("Q")) aoeName = "check"; // FIXME
 		if(effect.rawZone.startsWith("U")) aoeName = "arc";   // FIXME
-		return "vertical-align: middle; width: 37px; height: 32px; background-image: url('" + this.commonUrlPath + "icons/" + aoeName + ".webp');"
-			+ "background-repeat: no-repeat; background-position: 50%;"; //background-position: " + 0 + "px; background-position-y: " + 7 + "px;";
+		if(aoeName)
+			return "vertical-align: middle; width: 37px; height: 32px; background-image: url('" + this.commonUrlPath + "icons/" + aoeName + ".webp');"
+				+ "background-repeat: no-repeat; background-position: 50%;"; //background-position: " + 0 + "px; background-position-y: " + 7 + "px;";
+		else return "";
 	}
 	public getBreedIconStyle(breedIndex: number) {
 		// console.log("db getBreedIconStyle")
