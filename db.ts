@@ -1,7 +1,7 @@
 import { loadavg } from "os";
 import versions from './versions.json'
 
-import { DI, Registration } from 'aurelia';
+import { DI, IEventAggregator, Registration } from 'aurelia';
 import { HttpClient } from '@aurelia/fetch-client';
 
 export class db {
@@ -28,7 +28,7 @@ export class db {
 	public jsonSummonsName = "summons.json";
 	public breedId: number = 1;
 
-	public constructor() {
+	public constructor(@IEventAggregator readonly ea: IEventAggregator) {
 		// load cached version and language
 		let ver = localStorage.getItem("version");
 		if (ver) this.setVersion(ver);
@@ -90,6 +90,7 @@ export class db {
 		await this.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.i18n_fr = json);
 		await this.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.i18n_en = json);
 		await this.fetchJson(this.gitFolderPath + "states.json", (json) => this.jsonStates = json);
+		this.ea.publish("db:loaded");
 	}
 
 	public async fetchJson(path: string, setter: (json) => any) {
