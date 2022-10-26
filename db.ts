@@ -1,5 +1,6 @@
 import { loadavg } from "os";
 import versions from './versions.json'
+import maps_kolo_ids from './scraped/common/maps_kolo_ids.json'
 
 import { DI, IEventAggregator, Registration } from 'aurelia';
 import { HttpClient } from '@aurelia/fetch-client';
@@ -21,6 +22,7 @@ export class db {
 	public jsonStates: any;
 	public i18n_fr: any;
 	public i18n_en: any;
+	public jsonMaps: {};
 	// json names
 	public jsonSpellsName = "spells.json";
 	public jsonSpellsDetailsName = "spellsDetails.json";
@@ -90,6 +92,11 @@ export class db {
 		await this.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.i18n_fr = json);
 		await this.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.i18n_en = json);
 		await this.fetchJson(this.gitFolderPath + "states.json", (json) => this.jsonStates = json);
+		
+		for(let i of maps_kolo_ids) {
+			await this.fetchJson(this.getMapPath(i), (json) => this.jsonMaps[i] = json);
+		}
+
 		this.ea.publish("db:loaded");
 	}
 
@@ -112,6 +119,10 @@ export class db {
 	public get gitFolderPath() {
 		return this.githubScrapedUrlPath + this.version + "/";
 	}
+
+    public getMapPath(id: string): string {
+		return this.commonUrlPath + "maps_kolo/" + id;
+    }
 
 	public getSpellIconPath(spellId: number): string {
 		let iconid = this.jsonSpells[spellId].iconId;
