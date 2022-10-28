@@ -23,13 +23,14 @@ export class Cell {
     public nonWalkableDuringRP: boolean
     public los: boolean
     public blue: boolean
-    public readonlyvisible: boolean
+    public red: boolean
+    public visible: boolean
     public farmCell: boolean
-    public havenbagCell: boolean
+    // public havenbagCell: boolean
     public speed: number
     public mapChangeData: number
     public moveZone: number
-    public _linkedZone: number
+    public _linkedZone?: number
 }
 
 export class Board {
@@ -145,7 +146,7 @@ export class Board {
         return id % 14;
     }
     public getY(id) {
-        return id - this.getX(id);
+        return (id - this.getX(id)) / 14;
     }
     public getId(x, y) {
         return y * 14 + x;
