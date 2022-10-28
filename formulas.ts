@@ -40,6 +40,17 @@ export class Board {
     public objects: boolean[] = []
     public target: number = -1
     
+	public checkViewById(id0, id1) {
+		let pos0 = {
+			x: this.getX(id0),
+			y: this.getY(id0)
+		}
+		let pos1 = {
+			x: this.getX(id1),
+			y: this.getY(id1)
+		}
+		return this.checkView(pos0, pos1);
+	}
 	public checkView(pos0: Vector2, pos1: Vector2) {
         let dirY = pos1.y - pos0.y >= 0 ? 1 : -1;
 		let dirX = pos1.x - pos0.x >= 0 ? 1 : -1;
@@ -131,23 +142,18 @@ export class Board {
         if(!c.los) return false;
         if(this.objects[id]) return false;
         return true;
-		// if(caster == null || c == null) return false;
-		// if(caster.pos.same(c.pos)) return true;
-		// var view = caster.targetting.canCastThrough(c);
-		// if(c.hasCreature()) {
-		// 	for(var crea : c.getCreatures())
-		// 		view &= caster.targetting.canCastThrough(crea);
-		// }
-		// return view;
 	}
 	
 
+    // assuming y goes from 0 to 39 instead of 19
     public getX(id) {
         return id % 14;
     }
+    // assuming y goes from 0 to 39 instead of 19
     public getY(id) {
         return (id - this.getX(id)) / 14;
     }
+    // assuming y goes from 0 to 39 instead of 19
     public getId(x, y) {
         return y * 14 + x;
     }
@@ -156,17 +162,19 @@ export class Board {
         let id = this.getId(x, y);
 		return this.cells[id];
 	}
-	public getByXYZ(x, y, z): Cell {
-        let id = y * 14 + x + x * z;
-		return this.cells[id]; //this.cells.get(x, y);
-	}
-	public getByPos(pos): Cell {
-		return this.getByXYZ(pos.x, pos.y, pos.z);
-	}
-	public get(entity): Cell {
-		var pos = entity["position"]; // entity.get(Position.class);
-		if(pos == null) return null;
-		return this.getByPos(pos);
-	}
+
+	// public getByXYZ(x, y, z): Cell {
+    //     let id = y * 14 + x + x * z;
+	// 	return this.cells[id]; //this.cells.get(x, y);
+	// }
+	// public getByPos(pos): Cell {
+	// 	return this.getByXYZ(pos.x, pos.y, pos.z);
+	// }
+	// public get(entity): Cell {
+	// 	var pos = entity["position"]; // entity.get(Position.class);
+	// 	if(pos == null) return null;
+	// 	return this.getByPos(pos);
+	// }
+
 
 }
