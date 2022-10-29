@@ -22,7 +22,7 @@ export class db {
 	public jsonStates: any;
 	public i18n_fr: any;
 	public i18n_en: any;
-	public jsonMaps: {};
+	public jsonMaps: {} = {};
 	// json names
 	public jsonSpellsName = "spells.json";
 	public jsonSpellsDetailsName = "spellsDetails.json";
@@ -100,6 +100,17 @@ export class db {
 		this.ea.publish("db:loaded");
 	}
 
+	public async loadMap(mapid: string) {
+		console.log("load map " + mapid)
+		if(!mapid) return;
+		let promise = await this.fetchJson(this.getMapPath(mapid), (json) => this.jsonMaps[mapid] = json);
+		if(promise) {
+			this.ea.publish("db:loadmap");
+		} else {
+			console.log("db.loadMap failed")
+		}
+	}
+
 	public async fetchJson(path: string, setter: (json) => any) {
 		return this.http.fetch(path)
 			.then(response => response.status == 404 ? null : response.text())
@@ -121,7 +132,7 @@ export class db {
 	}
 
     public getMapPath(id: string): string {
-		return this.commonUrlPath + "maps_kolo/" + id;
+		return this.commonUrlPath + "map_kolo/" + id + ".json";
     }
 
 	public getSpellIconPath(spellId: number): string {
@@ -133,7 +144,7 @@ export class db {
 		return this.githubScrapedUrlPath + this.version + "/sprites/monsters/" + monsterId + ".png";
 	}
 
-	public getI18n(id: number): string {
+	public getI18n(id: string): string {
 		if (this.lang == "fr")
 			return this.i18n_fr[id];
 		if (this.lang == "en")
