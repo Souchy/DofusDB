@@ -257,19 +257,23 @@ export class db {
 	}
 
 	public isEffectState(e) {
+		// état
 		return e.effectId == 950 || e.effectId == 951;
 	}
 	public isEffectChargeCooldown(e) {
+		// augmente ou réduit le cooldown du sort 
 		return e.effectId == 1035 || e.effectId == 1036;
 	}
 	public isEffectCharge(e) {
+		// effet de charge
 		return e.effectId == 293 || e.effectId == 281 || e.effectId == 290 || e.effectId == 291 || e.effectId == 280;
 	}
-	public isEffectThing(e) {
-		return e.effectId == 1160 || e.effectId == 2160 || e.effectId == 2794 || e.effectId == 792;
+	public isSubSpell(e) {
+		// state condition, fouet osa dragocharge, +1 combo, morsure albinos
+		return e.effectId == 1160 || e.effectId == 2160 || e.effectId == 2794 || e.effectId == 792 || e.effectId == 1018;
 	}
 	public hasDispellIcon(e) {
-		if(this.isEffectState(e) || this.isEffectCharge(e) || this.isEffectChargeCooldown(e) || this.isEffectThing(e) || this.isCellEffect(e) || this.isSummonEffect(e)) {
+		if(this.isEffectState(e) || this.isEffectCharge(e) || this.isEffectChargeCooldown(e) || this.isSubSpell(e) || this.isCellEffect(e) || this.isSummonEffect(e)) {
 			return false;
 		}
 		if(e.duration != 0) 
