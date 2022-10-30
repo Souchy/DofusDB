@@ -202,28 +202,11 @@ export class db {
 	}
 
 	public getModIconStyle(mod: string) {
-		if (mod.toLowerCase().includes(" pa ")) return this.modSprite(97, 245);
-		if (mod.toLowerCase().includes(" pm ")) return this.modSprite(97, 52);
-		if (mod.toLowerCase().includes("portée")) return this.modSprite(97, 128);
+		mod = mod.replace("(", "").replace(")", "").replace(".", "");
+		let words = mod.toLowerCase().split(" ");
 
-		if (mod.toLowerCase().includes("initiative")) return this.modSprite(97, 205);
-		if (mod.toLowerCase().includes("invocation")) return this.modSprite(97, 507);
-		if (mod.toLowerCase().includes("% critique")) return this.modSprite(97, 589);
-		if (mod.toLowerCase().includes("prospection")) return this.modSprite(97, 279);
-
-		if (mod.toLowerCase().includes("vie")) return this.modSprite(97, 919);
-		if (mod.toLowerCase().includes("vitalité")) return this.modSprite(97, 319);
-		if (mod.toLowerCase().includes("sagesse")) return this.modSprite(97, 358);
-
-		if (mod.toLowerCase().includes("neutre")) return this.modSprite(95, 15);
-		if (mod.toLowerCase().includes("force") || mod.toLowerCase().includes(" terre")) return this.modSprite(97, 432);
-		if (mod.toLowerCase().includes("intelligence") || mod.toLowerCase().includes(" feu")) return this.modSprite(97, 394);
-		if (mod.toLowerCase().includes("chance") || mod.toLowerCase().includes(" eau")) return this.modSprite(97, 89);
-		if (mod.toLowerCase().includes("agilité") || mod.toLowerCase().includes(" air")) return this.modSprite(97, 167);
-		if (mod == "Puissance") return this.modSprite(97, 1108);
-
-		if (mod.toLowerCase().includes("tacle")) return this.modSprite(97, 545);
-		if (mod.toLowerCase().includes("fuite")) return this.modSprite(97, 469);
+		// console.log("mod: " + mod)
+		// console.log("words: " + words)
 
 		if (mod.toLowerCase().includes("résistance poussée")) return this.modSprite(97, 832);
 		if (mod.toLowerCase().includes("résistance critique")) return this.modSprite(97, 1200);
@@ -231,8 +214,31 @@ export class db {
 		if (mod.toLowerCase().includes("esquive pa")) return this.modSprite(97, 1064);
 		if (mod.toLowerCase().includes("retrait pa")) return this.modSprite(97, 1340);
 		if (mod.toLowerCase().includes("retrait pm")) return this.modSprite(97, 1340);
+		
+		if (words.includes("pa")) return this.modSprite(97, 245);
+		if (words.includes("pm")) return this.modSprite(97, 52);
+		if (words.includes("portée")) return this.modSprite(97, 128);
 
-		if (mod.toLowerCase().includes("soin")) return this.modSprite(97, 966);
+		if (words.includes("initiative")) return this.modSprite(97, 205);
+		if (words.includes("invocation")) return this.modSprite(97, 507);
+		if (words.includes("% critique")) return this.modSprite(97, 589);
+		if (words.includes("prospection")) return this.modSprite(97, 279);
+
+		if (words.includes("vie")) return this.modSprite(97, 919);
+		if (words.includes("vitalité")) return this.modSprite(97, 319);
+		if (words.includes("sagesse")) return this.modSprite(97, 358);
+
+		if (words.includes("neutre")) return this.modSprite(95, 15);
+		if (words.includes("force") || words.includes("terre")) return this.modSprite(97, 432);
+		if (words.includes("intelligence") || words.includes("feu")) return this.modSprite(97, 394);
+		if (words.includes("chance") || words.includes("eau")) return this.modSprite(97, 89);
+		if (words.includes("agilité") || words.includes("air")) return this.modSprite(97, 167);
+		if (words.includes("puissance")) return this.modSprite(97, 1108);
+
+		if (words.includes("tacle")) return this.modSprite(97, 545);
+		if (words.includes("fuite")) return this.modSprite(97, 469);
+
+		if (words.includes("soin") || words.includes("pv rendu")) return this.modSprite(97, 966);
 		if (mod == "Dommages") return this.modSprite(97, 1156);
 		if (mod == "Dommages Poussée") return this.modSprite(97, 872);
 		if (mod == "Dommages Critiques") return this.modSprite(97, 1248);
@@ -250,7 +256,30 @@ export class db {
 			+ "background-position: -" + x + "px; background-position-y: -" + y + "px;"
 	}
 
+	public isEffectState(e) {
+		return e.effectId == 950 || e.effectId == 951;
+	}
+	public isEffectChargeCooldown(e) {
+		return e.effectId == 1035 || e.effectId == 1036;
+	}
+	public isEffectCharge(e) {
+		return e.effectId == 293 || e.effectId == 281 || e.effectId == 290 || e.effectId == 291 || e.effectId == 280;
+	}
+	public isEffectThing(e) {
+		return e.effectId == 1160 || e.effectId == 2160 || e.effectId == 2794 || e.effectId == 792;
+	}
+	public hasDispellIcon(e) {
+		if(this.isEffectState(e) || this.isEffectCharge(e) || this.isEffectChargeCooldown(e) || this.isEffectThing(e) || this.isCellEffect(e) || this.isSummonEffect(e)) {
+			return false;
+		}
+		if(e.duration != 0) 
+			return true;
+		return false;
+	}
 	public getDispellIcon(e) {
+		if(!this.hasDispellIcon(e)) {
+			return "";
+		}
 		let name = "";
 		if (e.dispellable == 1) {
 			name = "icons/dispell.webp";
