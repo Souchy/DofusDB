@@ -238,7 +238,7 @@ export class db {
 		if (words.includes("tacle")) return this.modSprite(97, 545);
 		if (words.includes("fuite")) return this.modSprite(97, 469);
 
-		if (words.includes("soin") || mod.toLowerCase().includes("pv rendu")) return this.modSprite(97, 966);
+		if (words.includes("soin") || mod.toLowerCase().includes("pv rendus")) return this.modSprite(97, 966);
 		if (mod == "Dommages") return this.modSprite(97, 1156);
 		if (mod == "Dommages Poussée") return this.modSprite(97, 872);
 		if (mod == "Dommages Critiques") return this.modSprite(97, 1248);
