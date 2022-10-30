@@ -1,6 +1,6 @@
 import { loadavg } from "os";
 import versions from './versions.json'
-import maps_kolo_ids from './scraped/common/maps_kolo_ids.json'
+import maps_kolo_ids from './scraped/common/mapIdsFlat.json'
 
 import { DI, IEventAggregator, Registration } from 'aurelia';
 import { HttpClient } from '@aurelia/fetch-client';
@@ -101,7 +101,7 @@ export class db {
 	}
 
 	public async loadMap(mapid: string) {
-		console.log("load map " + mapid)
+		// console.log("load map " + mapid)
 		if(!mapid) return;
 		let promise = await this.fetchJson(this.getMapPath(mapid), (json) => this.jsonMaps[mapid] = json);
 		if(promise) {
