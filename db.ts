@@ -44,7 +44,7 @@ export class db {
 	public promiseLoadingSummons: Promise<boolean>;
 
 	public get isLoaded() {
-		return this.jsonSpells && this.jsonSpellsDetails && this.jsonBreeds 
+		return this.jsonSpells && this.jsonSpellsDetails && this.jsonBreeds
 			&& this.jsonSummons && this.jsonStates && this.i18n_fr && this.i18n_en;
 	}
 
@@ -92,19 +92,20 @@ export class db {
 		await this.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.i18n_fr = json);
 		await this.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.i18n_en = json);
 		await this.fetchJson(this.gitFolderPath + "states.json", (json) => this.jsonStates = json);
-		
-		for(let i of maps_kolo_ids) {
-			await this.fetchJson(this.getMapPath(i), (json) => this.jsonMaps[i] = json);
-		}
+
+		// for (let i of maps_kolo_ids) {
+			// await this.fetchJson(this.getMapPath(i), (json) => this.jsonMaps[i] = json);
+		// }
 
 		this.ea.publish("db:loaded");
 	}
 
 	public async loadMap(mapid: string) {
 		// console.log("load map " + mapid)
-		if(!mapid) return;
+		if (!mapid) return;
 		let promise = await this.fetchJson(this.getMapPath(mapid), (json) => this.jsonMaps[mapid] = json);
-		if(promise) {
+		if (promise) {
+			// console.log("db.loaded map: " + mapid + " = " + this.jsonMaps[mapid])
 			this.ea.publish("db:loadmap");
 		} else {
 			console.log("db.loadMap failed")
@@ -131,9 +132,9 @@ export class db {
 		return this.githubScrapedUrlPath + this.version + "/";
 	}
 
-    public getMapPath(id: string): string {
+	public getMapPath(id: string): string {
 		return this.commonUrlPath + "map_kolo/" + id + ".json";
-    }
+	}
 
 	public getSpellIconPath(spellId: number): string {
 		let iconid = this.jsonSpells[spellId].iconId;
@@ -156,19 +157,19 @@ export class db {
 	}
 
 	public getAoeIconStyle(effect: any) {
-		let aoeName; 
-		if(effect.rawZone.startsWith("P")) aoeName = "point";
-		if(effect.rawZone.startsWith("C")) aoeName = "circle";
-		if(effect.rawZone.startsWith("G")) aoeName = "square";
-		if(effect.rawZone.startsWith("L")) aoeName = "line";
-		if(effect.rawZone.startsWith("l")) aoeName = "line";
-		if(effect.rawZone.startsWith("T")) aoeName = "line2";
-		if(effect.rawZone.startsWith("X")) aoeName = "cross";
-		if(effect.rawZone.startsWith("+")) aoeName = "x";
-		if(effect.rawZone.startsWith("O")) aoeName = "check"; // FIXME
-		if(effect.rawZone.startsWith("Q")) aoeName = "check"; // FIXME
-		if(effect.rawZone.startsWith("U")) aoeName = "arc";   // FIXME
-		if(aoeName)
+		let aoeName;
+		if (effect.rawZone.startsWith("P")) aoeName = "point";
+		if (effect.rawZone.startsWith("C")) aoeName = "circle";
+		if (effect.rawZone.startsWith("G")) aoeName = "square";
+		if (effect.rawZone.startsWith("L")) aoeName = "line";
+		if (effect.rawZone.startsWith("l")) aoeName = "line";
+		if (effect.rawZone.startsWith("T")) aoeName = "line2";
+		if (effect.rawZone.startsWith("X")) aoeName = "cross";
+		if (effect.rawZone.startsWith("+")) aoeName = "x";
+		if (effect.rawZone.startsWith("O")) aoeName = "check"; // FIXME
+		if (effect.rawZone.startsWith("Q")) aoeName = "check"; // FIXME
+		if (effect.rawZone.startsWith("U")) aoeName = "arc";   // FIXME
+		if (aoeName)
 			return "vertical-align: middle; width: 37px; height: 32px; background-image: url('" + this.commonUrlPath + "icons/" + aoeName + ".webp');"
 				+ "background-repeat: no-repeat; background-position: 50%;"; //background-position: " + 0 + "px; background-position-y: " + 7 + "px;";
 		else return "";
@@ -176,14 +177,14 @@ export class db {
 	public getBreedIconStyle(breedIndex: number) {
 		let url = this.commonUrlPath + "big.png";
 		let pos = "background-position: -56px " + Math.ceil(-56.8 * breedIndex) + "px;";
-		if(breedIndex == 19 - 1) {
+		if (breedIndex == 19 - 1) {
 			url = this.gitFolderPath + "sprites/spells/350.png"; // icône flamiche
 			pos = "background-size: 55px; background-position: 50%";
 		}
 		return "height: 54px; width: 54px;" +
 			"margin-bottom: 5px; margin-left: 2px; margin-right: 3px;" +
 			"box-sizing: border-box;" +
-			"background: transparent url('"+url+"') 0 0 no-repeat; " + pos;
+			"background: transparent url('" + url + "') 0 0 no-repeat; " + pos;
 	}
 
 	public getFighterIconStyle(mod: string) {
@@ -197,7 +198,7 @@ export class db {
 	private fighterSprite(imgName: string, x: number, y: number) {
 		return "vertical-align: middle; width: 22px; height: 32px; background-image: url('" + this.commonUrlPath + imgName + "'); background-repeat: no-repeat;"
 			+ "background-position: 50%;";
-			// + "background-position: " + x + "px; background-position-y: " + y + "px;";
+		// + "background-position: " + x + "px; background-position-y: " + y + "px;";
 	}
 
 	public getModIconStyle(mod: string) {
@@ -247,6 +248,17 @@ export class db {
 		// return "display: inline-block; zoom: 1.0; vertical-align: middle; width: 22px; height: 22px; background-image: url('/src/DofusDB/scraped/icons.png'); background-position: -" + x + "px; background-position-y: -" + y + "px;"
 		return "vertical-align: middle; width: 22px; height: 32px; background-image: url('" + this.commonUrlPath + "icons.png');"
 			+ "background-position: -" + x + "px; background-position-y: -" + y + "px;"
+	}
+
+	public getDispellIcon(e) {
+		let name = "";
+		if (e.dispellable == 1) {
+			name = "icons/dispell.webp";
+		} else {
+			name = "icons/dispell_no.webp";
+		}
+		return "vertical-align: middle; width: 25px; height: 32px; background-image: url('" + this.commonUrlPath + name + "'); background-repeat: no-repeat;"
+			+ "background-position: 50%;";
 	}
 
 	public isSummonEffect(e: any) {
