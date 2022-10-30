@@ -1,6 +1,6 @@
 import { loadavg } from "os";
 import versions from './versions.json'
-import maps_kolo_ids from './scraped/common/maps_kolo_ids.json'
+import maps_kolo_ids from './scraped/common/mapIdsFlat.json'
 
 import { DI, IEventAggregator, Registration } from 'aurelia';
 import { HttpClient } from '@aurelia/fetch-client';
@@ -44,7 +44,7 @@ export class db {
 	public promiseLoadingSummons: Promise<boolean>;
 
 	public get isLoaded() {
-		return this.jsonSpells && this.jsonSpellsDetails && this.jsonBreeds 
+		return this.jsonSpells && this.jsonSpellsDetails && this.jsonBreeds
 			&& this.jsonSummons && this.jsonStates && this.i18n_fr && this.i18n_en;
 	}
 
@@ -92,19 +92,20 @@ export class db {
 		await this.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.i18n_fr = json);
 		await this.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.i18n_en = json);
 		await this.fetchJson(this.gitFolderPath + "states.json", (json) => this.jsonStates = json);
-		
-		for(let i of maps_kolo_ids) {
-			await this.fetchJson(this.getMapPath(i), (json) => this.jsonMaps[i] = json);
-		}
+
+		// for (let i of maps_kolo_ids) {
+			// await this.fetchJson(this.getMapPath(i), (json) => this.jsonMaps[i] = json);
+		// }
 
 		this.ea.publish("db:loaded");
 	}
 
 	public async loadMap(mapid: string) {
-		console.log("load map " + mapid)
-		if(!mapid) return;
+		// console.log("load map " + mapid)
+		if (!mapid) return;
 		let promise = await this.fetchJson(this.getMapPath(mapid), (json) => this.jsonMaps[mapid] = json);
-		if(promise) {
+		if (promise) {
+			// console.log("db.loaded map: " + mapid + " = " + this.jsonMaps[mapid])
 			this.ea.publish("db:loadmap");
 		} else {
 			console.log("db.loadMap failed")
@@ -131,9 +132,9 @@ export class db {
 		return this.githubScrapedUrlPath + this.version + "/";
 	}
 
-    public getMapPath(id: string): string {
+	public getMapPath(id: string): string {
 		return this.commonUrlPath + "map_kolo/" + id + ".json";
-    }
+	}
 
 	public getSpellIconPath(spellId: number): string {
 		let iconid = this.jsonSpells[spellId].iconId;
@@ -156,19 +157,19 @@ export class db {
 	}
 
 	public getAoeIconStyle(effect: any) {
-		let aoeName; 
-		if(effect.rawZone.startsWith("P")) aoeName = "point";
-		if(effect.rawZone.startsWith("C")) aoeName = "circle";
-		if(effect.rawZone.startsWith("G")) aoeName = "square";
-		if(effect.rawZone.startsWith("L")) aoeName = "line";
-		if(effect.rawZone.startsWith("l")) aoeName = "line";
-		if(effect.rawZone.startsWith("T")) aoeName = "line2";
-		if(effect.rawZone.startsWith("X")) aoeName = "cross";
-		if(effect.rawZone.startsWith("+")) aoeName = "x";
-		if(effect.rawZone.startsWith("O")) aoeName = "check"; // FIXME
-		if(effect.rawZone.startsWith("Q")) aoeName = "check"; // FIXME
-		if(effect.rawZone.startsWith("U")) aoeName = "arc";   // FIXME
-		if(aoeName)
+		let aoeName;
+		if (effect.rawZone.startsWith("P")) aoeName = "point";
+		if (effect.rawZone.startsWith("C")) aoeName = "circle";
+		if (effect.rawZone.startsWith("G")) aoeName = "square";
+		if (effect.rawZone.startsWith("L")) aoeName = "line";
+		if (effect.rawZone.startsWith("l")) aoeName = "line";
+		if (effect.rawZone.startsWith("T")) aoeName = "line2";
+		if (effect.rawZone.startsWith("X")) aoeName = "cross";
+		if (effect.rawZone.startsWith("+")) aoeName = "x";
+		if (effect.rawZone.startsWith("O")) aoeName = "check"; // FIXME
+		if (effect.rawZone.startsWith("Q")) aoeName = "check"; // FIXME
+		if (effect.rawZone.startsWith("U")) aoeName = "arc";   // FIXME
+		if (aoeName)
 			return "vertical-align: middle; width: 37px; height: 32px; background-image: url('" + this.commonUrlPath + "icons/" + aoeName + ".webp');"
 				+ "background-repeat: no-repeat; background-position: 50%;"; //background-position: " + 0 + "px; background-position-y: " + 7 + "px;";
 		else return "";
@@ -176,14 +177,14 @@ export class db {
 	public getBreedIconStyle(breedIndex: number) {
 		let url = this.commonUrlPath + "big.png";
 		let pos = "background-position: -56px " + Math.ceil(-56.8 * breedIndex) + "px;";
-		if(breedIndex == 19 - 1) {
+		if (breedIndex == 19 - 1) {
 			url = this.gitFolderPath + "sprites/spells/350.png"; // icône flamiche
 			pos = "background-size: 55px; background-position: 50%";
 		}
 		return "height: 54px; width: 54px;" +
 			"margin-bottom: 5px; margin-left: 2px; margin-right: 3px;" +
 			"box-sizing: border-box;" +
-			"background: transparent url('"+url+"') 0 0 no-repeat; " + pos;
+			"background: transparent url('" + url + "') 0 0 no-repeat; " + pos;
 	}
 
 	public getFighterIconStyle(mod: string) {
@@ -197,32 +198,15 @@ export class db {
 	private fighterSprite(imgName: string, x: number, y: number) {
 		return "vertical-align: middle; width: 22px; height: 32px; background-image: url('" + this.commonUrlPath + imgName + "'); background-repeat: no-repeat;"
 			+ "background-position: 50%;";
-			// + "background-position: " + x + "px; background-position-y: " + y + "px;";
+		// + "background-position: " + x + "px; background-position-y: " + y + "px;";
 	}
 
 	public getModIconStyle(mod: string) {
-		if (mod.toLowerCase().includes(" pa ")) return this.modSprite(97, 245);
-		if (mod.toLowerCase().includes(" pm ")) return this.modSprite(97, 52);
-		if (mod.toLowerCase().includes("portée")) return this.modSprite(97, 128);
+		mod = mod.replace("(", "").replace(")", "").replace(".", "");
+		let words = mod.toLowerCase().split(" ");
 
-		if (mod.toLowerCase().includes("initiative")) return this.modSprite(97, 205);
-		if (mod.toLowerCase().includes("invocation")) return this.modSprite(97, 507);
-		if (mod.toLowerCase().includes("% critique")) return this.modSprite(97, 589);
-		if (mod.toLowerCase().includes("prospection")) return this.modSprite(97, 279);
-
-		if (mod.toLowerCase().includes("vie")) return this.modSprite(97, 919);
-		if (mod.toLowerCase().includes("vitalité")) return this.modSprite(97, 319);
-		if (mod.toLowerCase().includes("sagesse")) return this.modSprite(97, 358);
-
-		if (mod.toLowerCase().includes("neutre")) return this.modSprite(95, 15);
-		if (mod.toLowerCase().includes("force") || mod.toLowerCase().includes(" terre")) return this.modSprite(97, 432);
-		if (mod.toLowerCase().includes("intelligence") || mod.toLowerCase().includes(" feu")) return this.modSprite(97, 394);
-		if (mod.toLowerCase().includes("chance") || mod.toLowerCase().includes(" eau")) return this.modSprite(97, 89);
-		if (mod.toLowerCase().includes("agilité") || mod.toLowerCase().includes(" air")) return this.modSprite(97, 167);
-		if (mod == "Puissance") return this.modSprite(97, 1108);
-
-		if (mod.toLowerCase().includes("tacle")) return this.modSprite(97, 545);
-		if (mod.toLowerCase().includes("fuite")) return this.modSprite(97, 469);
+		// console.log("mod: " + mod)
+		// console.log("words: " + words)
 
 		if (mod.toLowerCase().includes("résistance poussée")) return this.modSprite(97, 832);
 		if (mod.toLowerCase().includes("résistance critique")) return this.modSprite(97, 1200);
@@ -230,8 +214,31 @@ export class db {
 		if (mod.toLowerCase().includes("esquive pa")) return this.modSprite(97, 1064);
 		if (mod.toLowerCase().includes("retrait pa")) return this.modSprite(97, 1340);
 		if (mod.toLowerCase().includes("retrait pm")) return this.modSprite(97, 1340);
+		
+		if (words.includes("pa")) return this.modSprite(97, 245);
+		if (words.includes("pm")) return this.modSprite(97, 52);
+		if (words.includes("portée")) return this.modSprite(97, 128);
 
-		if (mod.toLowerCase().includes("soin")) return this.modSprite(97, 966);
+		if (words.includes("initiative")) return this.modSprite(97, 205);
+		if (words.includes("invocation")) return this.modSprite(97, 507);
+		if (words.includes("% critique")) return this.modSprite(97, 589);
+		if (words.includes("prospection")) return this.modSprite(97, 279);
+
+		if (words.includes("vie")) return this.modSprite(97, 919);
+		if (words.includes("vitalité")) return this.modSprite(97, 319);
+		if (words.includes("sagesse")) return this.modSprite(97, 358);
+
+		if (words.includes("neutre")) return this.modSprite(95, 15);
+		if (words.includes("force") || words.includes("terre")) return this.modSprite(97, 432);
+		if (words.includes("intelligence") || words.includes("feu")) return this.modSprite(97, 394);
+		if (words.includes("chance") || words.includes("eau")) return this.modSprite(97, 89);
+		if (words.includes("agilité") || words.includes("air")) return this.modSprite(97, 167);
+		if (words.includes("puissance")) return this.modSprite(97, 1108);
+
+		if (words.includes("tacle")) return this.modSprite(97, 545);
+		if (words.includes("fuite")) return this.modSprite(97, 469);
+
+		if (words.includes("soin") || mod.toLowerCase().includes("pv rendu")) return this.modSprite(97, 966);
 		if (mod == "Dommages") return this.modSprite(97, 1156);
 		if (mod == "Dommages Poussée") return this.modSprite(97, 872);
 		if (mod == "Dommages Critiques") return this.modSprite(97, 1248);
@@ -247,6 +254,44 @@ export class db {
 		// return "display: inline-block; zoom: 1.0; vertical-align: middle; width: 22px; height: 22px; background-image: url('/src/DofusDB/scraped/icons.png'); background-position: -" + x + "px; background-position-y: -" + y + "px;"
 		return "vertical-align: middle; width: 22px; height: 32px; background-image: url('" + this.commonUrlPath + "icons.png');"
 			+ "background-position: -" + x + "px; background-position-y: -" + y + "px;"
+	}
+
+	public isEffectState(e) {
+		// état
+		return e.effectId == 950 || e.effectId == 951;
+	}
+	public isEffectChargeCooldown(e) {
+		// augmente ou réduit le cooldown du sort 
+		return e.effectId == 1035 || e.effectId == 1036;
+	}
+	public isEffectCharge(e) {
+		// effet de charge
+		return e.effectId == 293 || e.effectId == 281 || e.effectId == 290 || e.effectId == 291 || e.effectId == 280;
+	}
+	public isSubSpell(e) {
+		// state condition, fouet osa dragocharge, +1 combo, morsure albinos
+		return e.effectId == 1160 || e.effectId == 2160 || e.effectId == 2794 || e.effectId == 792 || e.effectId == 1018;
+	}
+	public hasDispellIcon(e) {
+		if(this.isEffectState(e) || this.isEffectCharge(e) || this.isEffectChargeCooldown(e) || this.isSubSpell(e) || this.isCellEffect(e) || this.isSummonEffect(e)) {
+			return false;
+		}
+		if(e.duration != 0) 
+			return true;
+		return false;
+	}
+	public getDispellIcon(e) {
+		if(!this.hasDispellIcon(e)) {
+			return "";
+		}
+		let name = "";
+		if (e.dispellable == 1) {
+			name = "icons/dispell.webp";
+		} else {
+			name = "icons/dispell_no.webp";
+		}
+		return "vertical-align: middle; width: 25px; height: 32px; background-image: url('" + this.commonUrlPath + name + "'); background-repeat: no-repeat;"
+			+ "background-position: 50%;";
 	}
 
 	public isSummonEffect(e: any) {
