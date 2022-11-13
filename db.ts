@@ -332,7 +332,7 @@ export class db {
 			return false;
 		}
 		// "triggers": "DA"
-		if (e.triggers == "DA") {
+		if (e.triggers.startsWith("D")) {
 			return false;
 		}
 		if (e.duration > 0)
