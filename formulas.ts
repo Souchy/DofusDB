@@ -752,6 +752,10 @@ export class Targets {
              return "!summonCaster"
         // if (mask == "U")
         //     return "visible"
+        if (mask == "O")
+            return "attackerCaster"
+        if (mask == "o")
+            return "attacker"
         return "";
     }
 

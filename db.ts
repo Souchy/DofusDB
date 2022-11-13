@@ -6,6 +6,7 @@ import maps_kolo_ids from './scraped/common/mapIdsFlat.json'
 
 import { DI, IEventAggregator, Registration } from 'aurelia';
 import { HttpClient } from '@aurelia/fetch-client';
+import jsonGreenListEffects from './static/greenlistEffects.json'
 
 export class db {
 
@@ -25,13 +26,6 @@ export class db {
 	public i18n_fr: any;
 	public i18n_en: any;
 	public jsonMaps: {} = {};
-	public jsonGreenListEffects: {
-		red: number[],
-		green: number[],
-		dispell1: number[],
-		dispell2: number[],
-		dispell3: number[],
-	}
 	// json names
 	public jsonSpellsName = "spells.json";
 	public jsonSpellsDetailsName = "spellsDetails.json";
@@ -55,7 +49,6 @@ export class db {
 	public get isLoaded() {
 		return this.jsonSpells && this.jsonSpellsDetails && this.jsonBreeds
 			&& this.jsonSummons && this.jsonStates && this.i18n_fr && this.i18n_en
-			&& this.jsonGreenListEffects
 	}
 
 	public setLanguage(lang: string) {
@@ -102,7 +95,6 @@ export class db {
 		await this.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.i18n_fr = json);
 		await this.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.i18n_en = json);
 		await this.fetchJson(this.gitFolderPath + "states.json", (json) => this.jsonStates = json);
-		await this.fetchJson(this.gitFolderPath + "greenlistEffects.json", (json => this.jsonGreenListEffects = json));
 		// for (let i of maps_kolo_ids) {
 		// await this.fetchJson(this.getMapPath(i), (json) => this.jsonMaps[i] = json);
 		// }
@@ -302,7 +294,7 @@ export class db {
 			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_CELL // 2794
 			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_CELL_GLOBAL_LIMITATION // 2795
 			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL // 792
-			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_WITH_ANIMATION // 792
+			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_WITH_ANIMATION // 793
 			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_SOURCE // 1017
 			|| e.effectId == ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_TARGET // 1018
 			|| e.effectId == ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_SOURCE // 1019
@@ -347,11 +339,11 @@ export class db {
 		if (!this.hasDispellIcon(e)) {
 			return "";
 		}
-		if (this.jsonGreenListEffects.dispell1.includes(e.effectUid))
+		if (jsonGreenListEffects.dispell1.includes(e.effectUid))
 			e.dispellable = db.IS_DISPELLABLE;
-		if (this.jsonGreenListEffects.dispell2.includes(e.effectUid))
+		if (jsonGreenListEffects.dispell2.includes(e.effectUid))
 			e.dispellable = db.IS_DISPELLABLE_ONLY_BY_DEATH;
-		if (this.jsonGreenListEffects.dispell3.includes(e.effectUid))
+		if (jsonGreenListEffects.dispell3.includes(e.effectUid))
 			e.dispellable = db.IS_NOT_DISPELLABLE;
 
 		let name = "";
