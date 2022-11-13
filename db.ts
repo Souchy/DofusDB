@@ -335,7 +335,7 @@ export class db {
 		if (e.triggers == "DA") {
 			return false;
 		}
-		if (e.duration != 0)
+		if (e.duration > 0)
 			return true;
 		return false;
 	}
