@@ -135,7 +135,8 @@ export class db {
 	}
 
 	// https://raw.githubusercontent.com/Souchy/DofusDB/master/scraped/2.65/fr/spellsDetails.json
-	private dofusDBGithubUrl = "http://192.168.2.11:9000/src/DofusDB/" //"https://raw.githubusercontent.com/Souchy/DofusDB/master/";
+	// "http://192.168.2.11:9000/src/DofusDB/" //
+	private dofusDBGithubUrl = "https://raw.githubusercontent.com/Souchy/DofusDB/master/";
 	private githubScrapedUrlPath = this.dofusDBGithubUrl + "scraped/";
 	private commonUrlPath: string = this.githubScrapedUrlPath + "common/";
 	public get gitFolderPath() {
