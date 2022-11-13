@@ -1,56 +1,17 @@
 {
-
-	"12981": {
+	"13579": {
 		"text": [
-			"N'affecte pas le panda si lancé en étant porté."
+			"Le partage de dégâts peut se désenvouter"
 		]
 	},
-	"13009": {
+	"13294": {
 		"text": [
-			"Affecte le panda si lancé en étant porté."
+			"Frappe les ennemis seulement"
 		]
 	},
-	"12987": {
-		"effects": [
-			"31 à 34 (dommages Terre) {enemy}",
-			"-5 PA {fighter}"
-		]
-	},
-	"12988": {
-		"effects": [
-			"21 à 22 (dommages Feu) {fighter}",
-			"21 à 22 (dommages Eau) {fighter}",
-			"21 à 22 (dommages Terre) {fighter}",
-			"21 à 22 (dommages Air) {fighter}"
-		]
-	},
-	"13019": {
-		"effects": [
-			"21 à 22 (dommages Feu) {enemy}",
-			"21 à 22 (dommages Eau) {enemy}",
-			"21 à 22 (dommages Terre) {enemy}",
-			"21 à 22 (dommages Air) {enemy}",
-			"État Pesanteur {enemy}"
-		]
-	},
-	"12992": {
-		"effects": [
-			"Attire de 1 case(s) {enemy}",
-			"32 à 34 (dommages Air) {enemy}",
-			"Réduit les dommages finaux occasionnés de 20% {fighter}"
-		]
-	},
-
-
-	"12787": {
+	"13286": {
 		"text": [
-			"6 po au lancé"
-		]
-	},
-	"12810": {
-		"text": [
-			"4 po au lancé"
+			"Cercle de 2"
 		]
 	}
-
 }
