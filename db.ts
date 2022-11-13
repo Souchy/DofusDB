@@ -299,6 +299,7 @@ export class db {
 			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_SOURCE // 1017
 			|| e.effectId == ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_TARGET // 1018
 			|| e.effectId == ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_SOURCE // 1019
+			|| e.effectId == ActionIds.ACTION_CHARACTER_PROTECTION_FROM_SPELL
 
 	}
 	public isSummonEffect(e: any) {
