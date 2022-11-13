@@ -6,7 +6,7 @@ import maps_kolo_ids from './scraped/common/mapIdsFlat.json'
 
 import { DI, IEventAggregator, Registration } from 'aurelia';
 import { HttpClient } from '@aurelia/fetch-client';
-import jsonGreenListEffects from './static/greenlistEffects.json'
+import importgreenlist from './static/greenlistEffects.json'
 
 export class db {
 
@@ -26,6 +26,7 @@ export class db {
 	public i18n_fr: any;
 	public i18n_en: any;
 	public jsonMaps: {} = {};
+	public jsonGreenListEffects = importgreenlist;
 	// json names
 	public jsonSpellsName = "spells.json";
 	public jsonSpellsDetailsName = "spellsDetails.json";
@@ -339,11 +340,11 @@ export class db {
 		if (!this.hasDispellIcon(e)) {
 			return "";
 		}
-		if (jsonGreenListEffects.dispell1.includes(e.effectUid))
+		if (this.jsonGreenListEffects.dispell1.includes(e.effectUid))
 			e.dispellable = db.IS_DISPELLABLE;
-		if (jsonGreenListEffects.dispell2.includes(e.effectUid))
+		if (this.jsonGreenListEffects.dispell2.includes(e.effectUid))
 			e.dispellable = db.IS_DISPELLABLE_ONLY_BY_DEATH;
-		if (jsonGreenListEffects.dispell3.includes(e.effectUid))
+		if (this.jsonGreenListEffects.dispell3.includes(e.effectUid))
 			e.dispellable = db.IS_NOT_DISPELLABLE;
 
 		let name = "";
