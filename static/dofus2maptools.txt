@@ -1,0 +1,479 @@
+import { Board, Vector2 } from "./formulas";
+
+
+const MAP_WIDTH = 14;
+const MAP_HEIGHT = 20;
+export class LosDetector {
+    public board: Board
+    public constructor(board: Board) {
+        this.board = board;
+    }
+
+    // mapData:IDataMapProvider, range:Vector.<number>, refPosition:MapPoint
+    public getCell(mapData, range: number[], refPosition) { // : Vector.<number> {
+        var i: number = 0;
+        var line: [] = null;
+        var los: Boolean = false;
+        var currentPoint: String = null;
+        var p: MapPoint = null;
+        var j: number = 0;
+        var orderedCell: any[] = [];
+        var mp: MapPoint = null;
+        for (i = 0; i < range.length; i++) {
+            let id = range[i];
+            mp = MapPoint.fromCellId(id);
+            orderedCell.push({
+                "p": mp,
+                "dist": refPosition.distanceToCell(mp)
+            });
+        }
+        // orderedCell.sortOn("dist", [].DESCENDING | [].NUMERIC);
+        var tested: Object = new Object();
+        var result: number[] = [];
+        for (i = 0; i < orderedCell.length; i++) {
+            let thing = orderedCell[i].p;
+            p = MapPoint(thing);
+
+            if (!(tested[p.x + "_" + p.y] != null && refPosition.x + refPosition.y != p.x + p.y && refPosition.x - refPosition.y != p.x - p.y)) {
+                line = Dofus2Line.getLine(refPosition.cellId, p.cellId);
+                if (line.length == 0) {
+                    result.push(p.cellId);
+                }
+                else {
+                    los = true;
+                    for (j = 0; j < line.length; j++) {
+                        currentPoint = Math.floor(line[j].x) + "_" + Math.floor(line[j].y);
+                        if (MapPoint.isInMap(line[j].x, line[j].y)) {
+                            if (j > 0 && mapData.hasEntity(Math.floor(line[j - 1].x), Math.floor(line[j - 1].y), true)) {
+                                los = false;
+                            }
+                            else if (line[j].x + line[j].y == refPosition.x + refPosition.y || line[j].x - line[j].y == refPosition.x - refPosition.y) {
+                                los = los && mapData.pointLos(Math.floor(line[j].x), Math.floor(line[j].y), true);
+                            }
+                            else if (tested[currentPoint] == null) {
+                                los = los && mapData.pointLos(Math.floor(line[j].x), Math.floor(line[j].y), true);
+                            }
+                            else {
+                                los = los && tested[currentPoint];
+                            }
+                        }
+                    }
+                    tested[currentPoint] = los;
+                }
+            }
+        }
+        for (i = 0; i < range.length; i++) {
+            // let id = range[i];
+            // mp = this.board.cells[id] //
+            mp = MapPoint.fromCellId(range[i]);
+            if (tested[mp.x + "_" + mp.y]) {
+                result.push(mp.cellId);
+            }
+        }
+        return result;
+    }
+
+    public getId(_nX, _nY) {
+        return (_nX - _nY) * MAP_WIDTH + _nY + (_nX - _nY) / 2;
+    }
+    // public getCell(id) {
+    // return this.board.cells[id]
+    // }
+
+}
+
+
+export class MapPoint {
+
+    private static readonly VECTOR_RIGHT: Vector2 = new Vector2(1, 1);
+    private static readonly VECTOR_DOWN_RIGHT: Vector2 = new Vector2(1, 0);
+    private static readonly VECTOR_DOWN: Vector2 = new Vector2(1, -1);
+    private static readonly VECTOR_DOWN_LEFT: Vector2 = new Vector2(0, -1);
+    private static readonly VECTOR_LEFT: Vector2 = new Vector2(-1, -1);
+    private static readonly VECTOR_UP_LEFT: Vector2 = new Vector2(-1, 0);
+    private static readonly VECTOR_UP: Vector2 = new Vector2(-1, 1);
+    private static readonly VECTOR_UP_RIGHT: Vector2 = new Vector2(0, 1);
+    public static readonly MAP_WIDTH: number = 14;
+    public static readonly MAP_HEIGHT: number = 20;
+    private static _bInit: boolean = false;
+    public static CELLPOS: Vector2[] = []
+
+
+    private _nCellId: number;
+    private _nX: number;
+    private _nY: number;
+
+    private static init(): void {
+        var b: number = 0;
+        MapPoint._bInit = true;
+        var startX: number = 0;
+        var startY: number = 0;
+        var cell: number = 0;
+        for (var a: number = 0; a < MAP_HEIGHT; a++) {
+            for (b = 0; b < MAP_WIDTH; b++) {
+                MapPoint.CELLPOS[cell] = new Vector2(startX + b, startY + b);
+                cell++;
+            }
+            startX++;
+            for (b = 0; b < MAP_WIDTH; b++) {
+                MapPoint.CELLPOS[cell] = new Vector2(startX + b, startY + b);
+                cell++;
+            }
+            startY--;
+        }
+    }
+
+    public static fromCellId(cellId: number): MapPoint {
+        var mp: MapPoint = new MapPoint();
+        mp._nCellId = cellId;
+        mp.setFromCellId();
+        return mp;
+    }
+    public static fromCoords(x: number, y: number): MapPoint {
+        var mp: MapPoint = new MapPoint();
+        mp._nX = x;
+        mp._nY = y;
+        mp.setFromCoords();
+        return mp;
+    }
+
+
+    public get cellId(): number {
+        return this._nCellId;
+    }
+    public set cellId(nValue: number) {
+        this._nCellId = nValue;
+        this.setFromCellId();
+    }
+
+    public get x(): number {
+        return this._nX;
+    }
+    public set x(nValue: number) {
+        this._nX = nValue;
+        this.setFromCoords();
+    }
+
+    public get y(): number {
+        return this._nY;
+    }
+    public set y(nValue: number) {
+        this._nY = nValue;
+        this.setFromCoords();
+    }
+
+
+    private setFromCoords(): void {
+        if (!MapPoint._bInit) {
+            MapPoint.init();
+        }
+        this._nCellId = (this._nX - this._nY) * MAP_WIDTH + this._nY + (this._nX - this._nY) / 2;
+    }
+
+    private setFromCellId(): void {
+        if (!MapPoint._bInit) {
+            MapPoint.init();
+        }
+        if (!MapPoint.CELLPOS[this._nCellId]) {
+            throw new Error("Cell identifier out of bounds (" + this._nCellId + ").");
+            // throw new JerakineError("Cell identifier out of bounds (" + this._nCellId + ").");
+        }
+        var p: Vector2 = MapPoint.CELLPOS[this._nCellId];
+        this._nX = p.x;
+        this._nY = p.y;
+    }
+
+
+    public get coordinates(): Vector2 {
+        return new Vector2(this._nX, this._nY);
+    }
+
+    public distanceTo(mp: MapPoint): number {
+        return Math.sqrt(Math.pow(mp.x - this.x, 2) + Math.pow(mp.y - this.y, 2));
+    }
+
+    public distanceToCell(cell: MapPoint): number {
+        return Math.abs(this.x - cell.x) + Math.abs(this.y - cell.y);
+    }
+
+    public orientationTo(mp: MapPoint): number {
+        var result: number = 0;
+        if (this.x == mp.x && this.y == mp.y) {
+            return 1;
+        }
+        var ptX: number = mp.x > this.x ? 1 : (mp.x < this.x ? -1 : 0);
+        var ptY: number = mp.y > this.y ? 1 : (mp.y < this.y ? -1 : 0);
+        if (ptX == MapPoint.VECTOR_RIGHT.x && ptY == MapPoint.VECTOR_RIGHT.y) {
+            result = DirectionsEnum.RIGHT;
+        }
+        else if (ptX == MapPoint.VECTOR_DOWN_RIGHT.x && ptY == MapPoint.VECTOR_DOWN_RIGHT.y) {
+            result = DirectionsEnum.DOWN_RIGHT;
+        }
+        else if (ptX == MapPoint.VECTOR_DOWN.x && ptY == MapPoint.VECTOR_DOWN.y) {
+            result = DirectionsEnum.DOWN;
+        }
+        else if (ptX == MapPoint.VECTOR_DOWN_LEFT.x && ptY == MapPoint.VECTOR_DOWN_LEFT.y) {
+            result = DirectionsEnum.DOWN_LEFT;
+        }
+        else if (ptX == MapPoint.VECTOR_LEFT.x && ptY == MapPoint.VECTOR_LEFT.y) {
+            result = DirectionsEnum.LEFT;
+        }
+        else if (ptX == MapPoint.VECTOR_UP_LEFT.x && ptY == MapPoint.VECTOR_UP_LEFT.y) {
+            result = DirectionsEnum.UP_LEFT;
+        }
+        else if (ptX == MapPoint.VECTOR_UP.x && ptY == MapPoint.VECTOR_UP.y) {
+            result = DirectionsEnum.UP;
+        }
+        else if (ptX == MapPoint.VECTOR_UP_RIGHT.x && ptY == MapPoint.VECTOR_UP_RIGHT.y) {
+            result = DirectionsEnum.UP_RIGHT;
+        }
+        return result;
+    }
+
+    public advancedOrientationTo(target: MapPoint, fourDir: Boolean = true): number {
+        if (!target) {
+            return 0;
+        }
+        var xDifference: number = target.x - this.x;
+        var yDifference: number = this.y - target.y;
+        var angle: number = Math.acos(xDifference / Math.sqrt(Math.pow(xDifference, 2) + Math.pow(yDifference, 2))) * 180 / Math.PI * (target.y > this.y ? -1 : 1);
+        if (fourDir) {
+            angle = Math.round(angle / 90) * 2 + 1;
+        }
+        else {
+            angle = Math.round(angle / 45) + 1;
+        }
+        if (angle < 0) {
+            angle += 8;
+        }
+        return angle;
+    }
+
+    public getNearestFreeCell(mapProvider: IDataMapProvider, allowThoughEntity: Boolean = true): MapPoint {
+        var mp: MapPoint = null;
+        for (var i: number = 0; i < 8; i++) {
+            mp = this.getNearestFreeCellInDirection(i, mapProvider, false, allowThoughEntity);
+            if (mp) {
+                break;
+            }
+        }
+        return mp;
+    }
+
+    public getNearestCellInDirection(orientation: number): MapPoint {
+        var mp: MapPoint = null;
+        switch (orientation) {
+            case 0:
+                mp = MapPoint.fromCoords(this._nX + 1, this._nY + 1);
+                break;
+            case 1:
+                mp = MapPoint.fromCoords(this._nX + 1, this._nY);
+                break;
+            case 2:
+                mp = MapPoint.fromCoords(this._nX + 1, this._nY - 1);
+                break;
+            case 3:
+                mp = MapPoint.fromCoords(this._nX, this._nY - 1);
+                break;
+            case 4:
+                mp = MapPoint.fromCoords(this._nX - 1, this._nY - 1);
+                break;
+            case 5:
+                mp = MapPoint.fromCoords(this._nX - 1, this._nY);
+                break;
+            case 6:
+                mp = MapPoint.fromCoords(this._nX - 1, this._nY + 1);
+                break;
+            case 7:
+                mp = MapPoint.fromCoords(this._nX, this._nY + 1);
+        }
+        if (MapPoint.isInMap(mp._nX, mp._nY)) {
+            return mp;
+        }
+        return null;
+    }
+
+    public static isInMap(x: number, y: number): Boolean {
+        return x + y >= 0 && x - y >= 0 && x - y < MAP_HEIGHT * 2 && x + y < MAP_WIDTH * 2;
+    }
+
+    /*
+    public getNearestFreeCellInDirection(orientation: number, mapProvider: IDataMapProvider, allowItself: Boolean = true, allowThoughEntity: Boolean = true, ignoreSpeed: Boolean = false, forbidenCellsId: number[] = null): MapPoint {
+        var i: number = 0;
+        var speed: number = 0;
+        var mp: MapPoint = null;
+        if (forbidenCellsId == null) {
+            forbidenCellsId = []; //new Array();
+        }
+        var cells: MapPoint[] = []; //new Vector.<MapPoint>(8, true);
+        var weights: number[] = []; //Vector.<number> = new Vector.<number>(8, true);
+        for (i = 0; i < 8; i++) {
+            mp = this.getNearestCellInDirection(i);
+            cells[i] = mp;
+            if (mp != null) {
+                speed = mapProvider.getCellSpeed(mp.cellId);
+                if (forbidenCellsId.indexOf(mp.cellId) == -1) {
+                    if (mapProvider.pointMov(mp._nX, mp._nY, allowThoughEntity, this.cellId)) {
+                        weights[i] = MapPoint.getOrientationsDistance(i, orientation) + (!ignoreSpeed ? (speed >= 0 ? 5 - speed : 11 + Math.abs(speed)) : 0);
+                    }
+                    else {
+                        forbidenCellsId.push(mp.cellId);
+                        weights[i] = -1;
+                    }
+                }
+                else {
+                    weights[i] = !!mapProvider.pointMov(mp._nX, mp._nY, allowThoughEntity, this.cellId) ? number(100 + getOrientationsDistance(i, orientation) + (!ignoreSpeed ? (speed >= 0 ? 5 - speed : 11 + Math.abs(speed)) : 0)) : -1;
+                }
+            }
+            else {
+                weights[i] = -1;
+            }
+        }
+        var minWeightOrientation: number = -1;
+        var minWeight: number = 10000;
+        for (i = 0; i < 8; i++) {
+            if (weights[i] != -1 && weights[i] < minWeight && cells[i] != null) {
+                minWeight = weights[i];
+                minWeightOrientation = i;
+            }
+        }
+        if (minWeightOrientation != -1) {
+            mp = cells[minWeightOrientation];
+        }
+        else {
+            mp = null;
+        }
+        if (mp == null && allowItself && mapProvider.pointMov(this._nX, this._nY, allowThoughEntity, this.cellId)) {
+            return this;
+        }
+        return mp;
+    }
+
+    public static getOrientationsDistance(currentOrientation: number, defaultOrientation: number): number {
+        return Math.min(Math.abs(defaultOrientation - currentOrientation), Math.abs(8 - defaultOrientation + currentOrientation)); // number(..)
+    }
+    */
+
+    public pointSymetry(pCentralPoint: MapPoint): MapPoint {
+        var destX: number = 2 * pCentralPoint.x - this.x;
+        var destY: number = 2 * pCentralPoint.y - this.y;
+        if (MapPoint.isInMap(destX, destY)) {
+            return MapPoint.fromCoords(destX, destY);
+        }
+        return null;
+    }
+
+    public toString(): string {
+        return "[MapPoint(x:" + this._nX + ", y:" + this._nY + ", id:" + this._nCellId + ")]";
+    }
+
+}
+
+export enum DirectionsEnum {
+    RIGHT,
+    DOWN_RIGHT,
+    DOWN,
+    DOWN_LEFT,
+    LEFT,
+    UP_LEFT,
+    UP,
+    UP_RIGHT
+}
+
+
+export class Dofus2Line {
+
+    public static hasInitMapTools: boolean = false;
+
+    public static getLine(startCellId: number, endCellId: number): [] {
+        if (!Dofus2Line.hasInitMapTools) {
+            MapTools.init(MapToolsConfig.DOFUS2_CONFIG);
+            Dofus2Line.hasInitMapTools = true;
+        }
+        return MapTools.getCellsCoordBetween(startCellId, endCellId);
+    }
+}
+
+export class MapTools {
+
+    public static getCellIdByCoord(x: number, y: number): number {
+        if (!MapTools.isValidCoord(x, y)) {
+            return -1;
+        }
+        // int(...)
+        return Math.floor(Number((x - y) * MapTools.MAP_GRID_WIDTH + y + (x - y) / 2));
+    }
+
+    public static getCellIdXCoord(id: number): number {
+        var y: number = Math.floor(id / MapTools.MAP_GRID_WIDTH);
+        var halfY: number = Math.floor((y + 1) / 2);
+        var x = id - y * MapTools.MAP_GRID_WIDTH; // : * = 
+        return halfY + x;
+    }
+
+    public static getCellIdYCoord(id: number): number {
+        var y: number = Math.floor(id / MapTools.MAP_GRID_WIDTH);
+        var halfY: number = Math.floor((y + 1) / 2);
+        var halfY2 = y - halfY; // : * = 
+        var x = id - y * MapTools.MAP_GRID_WIDTH; // : * = 
+        return x - halfY2;
+    }
+
+    public static getCellCoordById(id: number): Vector2 {
+        // if (!MapTools.isValidCellId(id)) {
+        //     return null;
+        // }
+        var y: number = Math.floor(id / MapTools.MAP_GRID_WIDTH);
+        var halfY: number = Math.floor((y + 1) / 2);
+        var halfY2 = y - halfY; // : * = 
+        var x = id - y * MapTools.MAP_GRID_WIDTH; // : * = 
+        return new Vector2(halfY + x, x - halfY2);
+    }
+
+    public static isValidCoord(x: number, y: number): Boolean {
+        // if (!MapTools.isInit) {
+        //     throw "MapTools must be initiliazed with method .initForDofus2 or .initForDofus3";
+        // }
+        if (y >= -x && y <= x && y <= MapTools.MAP_GRID_WIDTH + MapTools.MAX_Y_COORD - x) {
+            return y >= x - (MapTools.MAP_GRID_HEIGHT - MapTools.MIN_Y_COORD);
+        }
+        return false;
+    }
+    public static readonly MAP_GRID_WIDTH = 14
+    public static readonly MAP_GRID_HEIGHT = 20
+    public static readonly MIN_X_COORD = 0
+    public static readonly MAX_X_COORD = 33
+    public static readonly MIN_Y_COORD = -19
+    public static readonly MAX_Y_COORD = 13
+
+}
+
+/*
+export class MapPoint {
+    
+    private setFromCoords() : void
+    {
+       if(!_bInit)
+       {
+          init();
+       }
+       this._nCellId = (this._nX - this._nY) * MAP_WIDTH + this._nY + (this._nX - this._nY) / 2;
+    }
+    
+    private setFromCellId() : void
+    {
+    //    if(!_bInit)
+    //    {
+    //       init();
+    //    }
+       if(!CELLPOS[this._nCellId])
+       {
+          throw new JerakineError("Cell identifier out of bounds (" + this._nCellId + ").");
+       }
+       var p:Point = CELLPOS[this._nCellId];
+       this._nX = p.x;
+       this._nY = p.y;
+    }
+
+}
+*/
