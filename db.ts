@@ -1,3 +1,5 @@
+import { ActionIds } from './code/ActionIds';
+import { SpellZone } from './formulas';
 import { loadavg } from "os";
 import versions from './versions.json'
 import maps_kolo_ids from './scraped/common/mapIdsFlat.json'
@@ -23,6 +25,13 @@ export class db {
 	public i18n_fr: any;
 	public i18n_en: any;
 	public jsonMaps: {} = {};
+	public jsonGreenListEffects: {
+		red: number[],
+		green: number[],
+		dispell1: number[],
+		dispell2: number[],
+		dispell3: number[],
+	}
 	// json names
 	public jsonSpellsName = "spells.json";
 	public jsonSpellsDetailsName = "spellsDetails.json";
@@ -45,7 +54,8 @@ export class db {
 
 	public get isLoaded() {
 		return this.jsonSpells && this.jsonSpellsDetails && this.jsonBreeds
-			&& this.jsonSummons && this.jsonStates && this.i18n_fr && this.i18n_en;
+			&& this.jsonSummons && this.jsonStates && this.i18n_fr && this.i18n_en
+			&& this.jsonGreenListEffects
 	}
 
 	public setLanguage(lang: string) {
@@ -92,9 +102,9 @@ export class db {
 		await this.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.i18n_fr = json);
 		await this.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.i18n_en = json);
 		await this.fetchJson(this.gitFolderPath + "states.json", (json) => this.jsonStates = json);
-
+		await this.fetchJson(this.gitFolderPath + "greenlistEffects.json", (json => this.jsonGreenListEffects = json));
 		// for (let i of maps_kolo_ids) {
-			// await this.fetchJson(this.getMapPath(i), (json) => this.jsonMaps[i] = json);
+		// await this.fetchJson(this.getMapPath(i), (json) => this.jsonMaps[i] = json);
 		// }
 
 		this.ea.publish("db:loaded");
@@ -125,6 +135,7 @@ export class db {
 	}
 
 	// https://raw.githubusercontent.com/Souchy/DofusDB/master/scraped/2.65/fr/spellsDetails.json
+	// "http://192.168.2.11:9000/src/DofusDB/" //
 	private dofusDBGithubUrl = "https://raw.githubusercontent.com/Souchy/DofusDB/master/";
 	private githubScrapedUrlPath = this.dofusDBGithubUrl + "scraped/";
 	private commonUrlPath: string = this.githubScrapedUrlPath + "common/";
@@ -156,24 +167,21 @@ export class db {
 		return this.commonUrlPath + name;
 	}
 
-	public getAoeIconStyle(effect: any) {
-		let aoeName;
-		if (effect.rawZone.startsWith("P")) aoeName = "point";
-		if (effect.rawZone.startsWith("C")) aoeName = "circle";
-		if (effect.rawZone.startsWith("G")) aoeName = "square";
-		if (effect.rawZone.startsWith("L")) aoeName = "line";
-		if (effect.rawZone.startsWith("l")) aoeName = "line";
-		if (effect.rawZone.startsWith("T")) aoeName = "line2";
-		if (effect.rawZone.startsWith("X")) aoeName = "cross";
-		if (effect.rawZone.startsWith("+")) aoeName = "x";
-		if (effect.rawZone.startsWith("O")) aoeName = "check"; // FIXME
-		if (effect.rawZone.startsWith("Q")) aoeName = "check"; // FIXME
-		if (effect.rawZone.startsWith("U")) aoeName = "arc";   // FIXME
+	public getAoeIconUrl(effect: any) {
+		// SEE:  EffectInstance, SpellheaderBlock.getSpellZoneChunkParams, SpellTooltipUi.getSpellZoneIconUri
+		let zoneEffect = SpellZone.parseZone(effect.rawZone);
+		// if(effect.effectUid == 285104) {
+		// 	console.log("zone: " + JSON.stringify(zoneEffect))
+		// }
+		let aoeName = zoneEffect.zoneName;
+		if (aoeName == "line3") aoeName = "line";
 		if (aoeName)
-			return "vertical-align: middle; width: 37px; height: 32px; background-image: url('" + this.commonUrlPath + "icons/" + aoeName + ".webp');"
-				+ "background-repeat: no-repeat; background-position: 50%;"; //background-position: " + 0 + "px; background-position-y: " + 7 + "px;";
+			return this.commonUrlPath + "areas/" + aoeName + ".png";
+		// return "vertical-align: middle; width: 37px; height: 32px; background-image: url('" + this.commonUrlPath + "areas/" + aoeName + ".png');"
+		// 	+ "background-repeat: no-repeat; background-position: 50%;"; //background-position: " + 0 + "px; background-position-y: " + 7 + "px;";
 		else return "";
 	}
+
 	public getBreedIconStyle(breedIndex: number) {
 		let url = this.commonUrlPath + "big.png";
 		let pos = "background-position: -56px " + Math.ceil(-56.8 * breedIndex) + "px;";
@@ -187,19 +195,21 @@ export class db {
 			"background: transparent url('" + url + "') 0 0 no-repeat; " + pos;
 	}
 
+	// fighter, enemy, ally, caster
 	public getFighterIconStyle(mod: string) {
-		if (mod.includes("{enemy}")) return this.fighterSprite('enemy.png', 0, 9);
-		if (mod.includes("{ally}")) return this.fighterSprite('ally.png', 0, 9);
-		if (mod.includes("{fighter}")) return this.fighterSprite('fighter.png', 0, 9);
-		if (mod.includes("{caster}")) return this.fighterSprite('caster.png', 0, 9);
-		return "";
+		// if (mod.includes("{enemy}")) return this.fighterSprite('enemy.png', 0, 9);
+		// if (mod.includes("{ally}")) return this.fighterSprite('ally.png', 0, 9);
+		// if (mod.includes("{fighter}")) return this.fighterSprite('fighter.png', 0, 9);
+		// if (mod.includes("{caster}")) return this.fighterSprite('caster.png', 0, 9);
+
+		return this.commonUrlPath + mod + ".png";
 	}
 
-	private fighterSprite(imgName: string, x: number, y: number) {
-		return "vertical-align: middle; width: 22px; height: 32px; background-image: url('" + this.commonUrlPath + imgName + "'); background-repeat: no-repeat;"
-			+ "background-position: 50%;";
-		// + "background-position: " + x + "px; background-position-y: " + y + "px;";
-	}
+	// private fighterSprite(imgName: string, x: number, y: number) {
+	// 	return "vertical-align: middle; width: 22px; height: 32px; background-image: url('" + this.commonUrlPath + imgName + "'); background-repeat: no-repeat;"
+	// 		+ "background-position: 50%;";
+	// 	// + "background-position: " + x + "px; background-position-y: " + y + "px;";
+	// }
 
 	public getModIconStyle(mod: string) {
 		mod = mod.replace("(", "").replace(")", "").replace(".", "");
@@ -214,7 +224,7 @@ export class db {
 		if (mod.toLowerCase().includes("esquive pa")) return this.modSprite(97, 1064);
 		if (mod.toLowerCase().includes("retrait pa")) return this.modSprite(97, 1340);
 		if (mod.toLowerCase().includes("retrait pm")) return this.modSprite(97, 1340);
-		
+
 		if (words.includes("pa")) return this.modSprite(97, 245);
 		if (words.includes("pm")) return this.modSprite(97, 52);
 		if (words.includes("portée")) return this.modSprite(97, 128);
@@ -258,48 +268,107 @@ export class db {
 
 	public isEffectState(e) {
 		// état
-		return e.effectId == 950 || e.effectId == 951;
+		// return e.effectId == 950 || e.effectId == 951;
+		return e.effectId == ActionIds.ACTION_FIGHT_SET_STATE
+			|| e.effectId == ActionIds.ACTION_FIGHT_UNSET_STATE;
 	}
 	public isEffectChargeCooldown(e) {
 		// augmente ou réduit le cooldown du sort 
-		return e.effectId == 1035 || e.effectId == 1036;
+		// return e.effectId == 1035 || e.effectId == 1036;
+		return e.effectId == ActionIds.ACTION_CHARACTER_ADD_SPELL_COOLDOWN // 1035
+			|| e.effectId == ActionIds.ACTION_CHARACTER_REMOVE_SPELL_COOLDOWN // 1036
+			|| e.effectId == ActionIds.ACTION_CHARACTER_SET_SPELL_COOLDOWN // 1045
 	}
 	public isEffectCharge(e) {
 		// effet de charge
-		return e.effectId == 293 || e.effectId == 281 || e.effectId == 290 || e.effectId == 291 || e.effectId == 280;
+		// return e.effectId == 293 || e.effectId == 281 || e.effectId == 290 || e.effectId == 291 || e.effectId == 280;
+		return e.effectId == ActionIds.ACTION_BOOST_SPELL_BASE_DMG
+			|| e.effectId == ActionIds.ACTION_BOOST_SPELL_RANGE_MIN
+			|| e.effectId == ActionIds.ACTION_BOOST_SPELL_RANGE_MAX
+			|| e.effectId == ActionIds.ACTION_BOOST_SPELL_MAXPERTURN
+			|| e.effectId == ActionIds.ACTION_BOOST_SPELL_MAXPERTARGET
+			|| e.effectId == ActionIds.ACTION_BOOST_SPELL_AP_COST // 285
+			|| e.effectId == ActionIds.ACTION_BOOST_SPELL_NOLINEOFSIGHT // 289 
+
 	}
 	public isSubSpell(e) {
 		// state condition, fouet osa dragocharge, +1 combo, morsure albinos
-		return e.effectId == 1160 || e.effectId == 2160 || e.effectId == 2794 || e.effectId == 792 || e.effectId == 1018;
+		// return e.effectId == 1160 || e.effectId == 2160 || e.effectId == 2794 || e.effectId == 792 || e.effectId == 1018;
+		// in different order
+		return e.effectId == ActionIds.ACTION_CASTER_EXECUTE_SPELL // 1160
+			|| e.effectId == ActionIds.ACTION_CASTER_EXECUTE_SPELL_GLOBAL_LIMITATION // 2160
+			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_GLOBAL_LIMITATION // 2792
+			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_WITH_ANIMATION_GLOBAL_LIMITATION // 2793
+			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_CELL // 2794
+			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_CELL_GLOBAL_LIMITATION // 2795
+			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL // 792
+			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_WITH_ANIMATION // 792
+			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_SOURCE // 1017
+			|| e.effectId == ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_TARGET // 1018
+			|| e.effectId == ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_SOURCE // 1019
+
 	}
+	public isSummonEffect(e: any) {
+		// return e.effectId == 181 || e.effectId == 405 || e.effectId == 1008 || e.effectId == 1011 || e.effectId == 2796;
+		return e.effectId == ActionIds.ACTION_SUMMON_CREATURE
+			|| e.effectId == ActionIds.ACTION_FIGHT_KILL_AND_SUMMON
+			|| e.effectId == ActionIds.ACTION_SUMMON_BOMB
+			|| e.effectId == ActionIds.ACTION_SUMMON_SLAVE
+			|| e.effectId == ActionIds.ACTION_FIGHT_KILL_AND_SUMMON_SLAVE;
+
+	}
+	public isCellEffect(e: any) {
+		// return (e.effectId == 400 || e.effectId == 401 || e.effectId == 402 || e.effectId == 1091 || e.effectId == 1165);
+		return e.effectId == ActionIds.ACTION_FIGHT_ADD_TRAP_CASTING_SPELL // 400
+			|| e.effectId == ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL // 401
+			|| e.effectId == ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL_ENDTURN // 402
+			|| e.effectId == ActionIds.ACTION_FIGHT_ADD_GLYPH_AURA // 1091
+			|| e.effectId == ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL_IMMEDIATE // 1165
+	}
+
 	public hasDispellIcon(e) {
-		if(this.isEffectState(e) || this.isEffectCharge(e) || this.isEffectChargeCooldown(e) || this.isSubSpell(e) || this.isCellEffect(e) || this.isSummonEffect(e)) {
+		// this.isEffectState(e) || 
+		if (this.isEffectCharge(e) || this.isEffectChargeCooldown(e) || this.isSubSpell(e) || this.isCellEffect(e) || this.isSummonEffect(e)) {
 			return false;
 		}
-		if(e.duration != 0) 
+		// "triggers": "DA"
+		if (e.triggers.startsWith("D")) {
+			return false;
+		}
+		if (e.duration > 0)
 			return true;
 		return false;
 	}
+
+	public static readonly IS_DISPELLABLE = 1;
+	public static readonly IS_DISPELLABLE_ONLY_BY_DEATH = 2;
+	public static readonly IS_NOT_DISPELLABLE = 3;
 	public getDispellIcon(e) {
-		if(!this.hasDispellIcon(e)) {
+		if (!this.hasDispellIcon(e)) {
 			return "";
 		}
+		if (this.jsonGreenListEffects.dispell1.includes(e.effectUid))
+			e.dispellable = db.IS_DISPELLABLE;
+		if (this.jsonGreenListEffects.dispell2.includes(e.effectUid))
+			e.dispellable = db.IS_DISPELLABLE_ONLY_BY_DEATH;
+		if (this.jsonGreenListEffects.dispell3.includes(e.effectUid))
+			e.dispellable = db.IS_NOT_DISPELLABLE;
+
 		let name = "";
-		if (e.dispellable == 1) {
+		if (e.dispellable == db.IS_DISPELLABLE) {
 			name = "icons/dispell.webp";
-		} else {
+		}
+		if (e.dispellable == db.IS_DISPELLABLE_ONLY_BY_DEATH) {
 			name = "icons/dispell_no.webp";
 		}
-		return "vertical-align: middle; width: 25px; height: 32px; background-image: url('" + this.commonUrlPath + name + "'); background-repeat: no-repeat;"
-			+ "background-position: 50%;";
+		if (e.dispellable == db.IS_NOT_DISPELLABLE) {
+			name = "icons/dispell_no.webp";
+		}
+		return this.commonUrlPath + name;
+		// return "vertical-align: middle; width: 25px; height: 32px; background-image: url('" + this.commonUrlPath + name + "'); background-repeat: no-repeat;"
+		// 	+ "background-position: 50%;";
 	}
 
-	public isSummonEffect(e: any) {
-		return (e.effectId == 181 || e.effectId == 405 || e.effectId == 1008 || e.effectId == 1011 || e.effectId == 2796);
-	}
-	public isCellEffect(e: any) {
-		return (e.effectId == 400 || e.effectId == 401 || e.effectId == 402 || e.effectId == 1091 || e.effectId == 1165);
-	}
 }
 
 const container = DI.createContainer();
