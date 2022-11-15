@@ -33,6 +33,8 @@ export class db {
 	public jsonBreedsName = "breeds.json";
 	public jsonSummonsName = "summons.json";
 	public breedId: number = 1;
+	private _selectedSpellSlot: number = 0;
+	private _selectedOsaSummonSlot: number = -1;
 
 	public constructor(@IEventAggregator readonly ea: IEventAggregator) {
 		// load cached version and language
@@ -40,6 +42,13 @@ export class db {
 		if (ver) this.setVersion(ver);
 		let lan = localStorage.getItem("language");
 		if (lan) this.setLanguage(lan);
+		let spellSlot = +localStorage.getItem("selectedSpellSlot");
+		if (spellSlot) this.selectedSpellSlot = spellSlot;
+		let osaSlot = +localStorage.getItem("selectedOsaSummonSlot");
+		if (osaSlot) this.selectedOsaSlot = osaSlot;
+		if(spellSlot < 0 && osaSlot < 0)
+			this.selectedSpellSlot = 0;
+		console.log("db slot: " + this.selectedSpellSlot + ", " + this.selectedOsaSlot)
 	}
 
 	public promiseLoadingSpells: Promise<boolean>;
@@ -76,6 +85,28 @@ export class db {
 				localStorage.setItem("version", version);
 				this.loadJson();
 			}
+	}
+
+	public get selectedSpellSlot() {
+		return this._selectedSpellSlot;
+	}
+	public set selectedSpellSlot(slot: number) {
+		if(this._selectedSpellSlot != slot) {
+			this._selectedSpellSlot = slot;
+			localStorage.setItem("selectedSpellSlot", slot + "");
+			// console.log("db set slot: " + this._selectedSpellSlot + ", " + this._selectedOsaSummonSlot)
+		}
+	}
+
+	public get selectedOsaSlot() {
+		return this._selectedOsaSummonSlot;
+	}
+	public set selectedOsaSlot(slot: number) {
+		if(this._selectedOsaSummonSlot != slot) {
+			this._selectedOsaSummonSlot = slot;
+			localStorage.setItem("selectedOsaSummonSlot", slot + "");
+			// console.log("db set slot: " + this._selectedSpellSlot + ", " + this._selectedOsaSummonSlot)
+		}
 	}
 
 	public async loadJson() {
