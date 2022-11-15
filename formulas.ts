@@ -742,6 +742,8 @@ export class Targets {
     public static otherMasks(mask: string) {
         if (mask == "R")
             return "portal" // result = Boolean(usingPortal);
+        if (mask == "r")
+            return "!portal" 
         if (mask == "T")
             return "telefrag" //result = Boolean(param2.wasTelefraggedThisTurn());
         if (mask == "P")
