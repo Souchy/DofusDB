@@ -18,7 +18,8 @@
 		"eliotrope",
 		"huppermage",
 		"ouginak",
-		"communs"
+		"communs",
+		"forgelance"
 	],
 	"orderByIcon": [
 		"feca",
@@ -39,7 +40,8 @@
 		"eliotrope",
 		"huppermage",
 		"ouginak",
-		"communs"
+		"communs",
+		"forgelance"
 	],
 	"orderById": [
 		"feca",
@@ -60,7 +62,8 @@
 		"eliotrope",
 		"huppermage",
 		"ouginak",
-		"communs"
+		"communs",
+		"forgelance"
 	],
 	"ids": {
 		"feca": 1,
@@ -81,7 +84,8 @@
 		"eliotrope": 16,
 		"huppermage": 17,
 		"ouginak": 18,
-		"communs": 19
+		"communs": 19,
+		"forgelance": 20
 	},
 	"french": [
 		"Féca",
@@ -102,6 +106,7 @@
 		"Éliotrope",
 		"Huppermage",
 		"Ouginak",
-		"Sorts communs"
+		"Sorts communs",
+		"Forgelance"
 	]
 }
