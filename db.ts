@@ -182,6 +182,10 @@ export class db {
 			url = this.gitFolderPath + "sprites/spells/350.png"; // icône flamiche
 			pos = "background-size: 55px; background-position: 50%";
 		}
+		if(breedIndex == 20 - 1) {
+			url = this.gitFolderPath + "sprites/spells/4313.png"; // icône forgelance
+			pos = "background-size: 55px; background-position: 50%";
+		}
 		return "height: 54px; width: 54px;" +
 			"margin-bottom: 5px; margin-left: 2px; margin-right: 3px;" +
 			"box-sizing: border-box;" +
