@@ -167,6 +167,7 @@ export class db {
 			// console.log("zone: " + JSON.stringify(zoneEffect))
 		// }
 		let aoeName = zoneEffect.zoneName;
+		if(aoeName == "squareChecker") aoeName = "square";
 		if (aoeName == "line3") aoeName = "line";
 		if (aoeName)
 			return this.commonUrlPath + "areas/" + aoeName + ".png";

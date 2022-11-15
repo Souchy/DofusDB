@@ -314,9 +314,9 @@ export class SpellZone {
     public static readonly Z: number = 90;
     public static readonly a: number = 97;
     public static readonly l: number = 108;
-    public static readonly R:number = 82;
-    public static readonly F:number = 70;
-    public static readonly UNKNOWN:number = 0;
+    public static readonly R: number = 82;
+    public static readonly F: number = 70;
+    public static readonly UNKNOWN: number = 0;
 
     public zoneShape: number
     public zoneName: string
@@ -456,6 +456,9 @@ export class SpellZone {
                 break;
             case SpellZone.X:
                 aoeName = "cross";
+                break;
+            case SpellZone.W:
+                aoeName = "squareChecker";
                 break;
             case SpellZone.G:
                 aoeName = "square";
