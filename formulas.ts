@@ -314,6 +314,9 @@ export class SpellZone {
     public static readonly Z: number = 90;
     public static readonly a: number = 97;
     public static readonly l: number = 108;
+    public static readonly R:number = 82;
+    public static readonly F:number = 70;
+    public static readonly UNKNOWN:number = 0;
 
     public zoneShape: number
     public zoneName: string
@@ -465,6 +468,12 @@ export class SpellZone {
                 break;
             case SpellZone.P:
                 aoeName = "point"
+                break;
+            case SpellZone.R:
+                aoeName = "rectangle"
+                break;
+            case SpellZone.F:
+                aoeName = "fork"
                 break;
         }
         return aoeName;
@@ -630,18 +639,18 @@ export class Targets {
         let ally = ["a", "g", "d", "h", "i", "j", "l", "m", "s"]
 
         let hasTeam = false;
-        if(masks.includes("A")) {
+        if (masks.includes("A")) {
             arr.add("enemy")
             hasTeam = true
         }
-        if(masks.includes("a")){
+        if (masks.includes("a")) {
             arr.add("ally")
             hasTeam = true
         } else
-        if(masks.includes("g")){
-            arr.add("allyExceptCaster")
-            hasTeam = true
-        }
+            if (masks.includes("g")) {
+                arr.add("allyExceptCaster")
+                hasTeam = true
+            }
 
         // if(masks.includes("i"))
         for (let m of masks) {
@@ -653,8 +662,8 @@ export class Targets {
                 continue;
             }
             if (enemy.includes(m) || ally.includes(m)) {
-                if(!hasTeam) {
-                    if(m == m.toLowerCase()) {
+                if (!hasTeam) {
+                    if (m == m.toLowerCase()) {
                         arr.add("ally")
                     } else {
                         arr.add("enemy")
@@ -743,7 +752,7 @@ export class Targets {
         if (mask == "R")
             return "portal" // result = Boolean(usingPortal);
         if (mask == "r")
-            return "!portal" 
+            return "!portal"
         if (mask == "T")
             return "telefrag" //result = Boolean(param2.wasTelefraggedThisTurn());
         if (mask == "P")
@@ -751,7 +760,7 @@ export class Targets {
         if (mask == "K")
             return "carried"
         if (mask == "p")
-             return "!summonCaster"
+            return "!summonCaster"
         // if (mask == "U")
         //     return "visible"
         if (mask == "O")

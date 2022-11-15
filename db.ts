@@ -164,7 +164,7 @@ export class db {
 		// SEE:  EffectInstance, SpellheaderBlock.getSpellZoneChunkParams, SpellTooltipUi.getSpellZoneIconUri
 		let zoneEffect = SpellZone.parseZone(effect.rawZone);
 		// if(effect.effectUid == 285104) {
-		// 	console.log("zone: " + JSON.stringify(zoneEffect))
+			// console.log("zone: " + JSON.stringify(zoneEffect))
 		// }
 		let aoeName = zoneEffect.zoneName;
 		if (aoeName == "line3") aoeName = "line";
