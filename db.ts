@@ -8,6 +8,10 @@ import { DI, IEventAggregator, Registration } from 'aurelia';
 import { HttpClient } from '@aurelia/fetch-client';
 import importgreenlist from './static/greenlistEffects.json'
 
+
+import jsonFeatures from '../DofusDB/features.json'
+// import jsonVersions from '../DofusDB/versions.json'
+
 export class db {
 
 	private http = new HttpClient();
@@ -59,6 +63,20 @@ export class db {
 	public get isLoaded() {
 		return this.jsonSpells && this.jsonSpellsDetails && this.jsonBreeds
 			&& this.jsonSummons && this.jsonStates && this.i18n_fr && this.i18n_en
+	}
+
+	public isFeature(name: string): boolean {
+		return jsonFeatures[name];
+	}
+
+	public checkFeature(name: string): boolean {
+		if(this.isFeature(name)) {
+			let va = versions.indexOf(this.version);
+			let vf = versions.indexOf(jsonFeatures[name]);
+			// console.log("va, vf: " + va + ", " + vf)
+			return va <= vf; // (plus petit = plus récent dans le tableau)
+		}
+		return true;
 	}
 
 	public setLanguage(lang: string) {
