@@ -48,7 +48,7 @@ export class db {
 		if (osaSlot) this.selectedOsaSlot = osaSlot;
 		if(spellSlot < 0 && osaSlot < 0)
 			this.selectedSpellSlot = 0;
-		console.log("db slot: " + this.selectedSpellSlot + ", " + this.selectedOsaSlot)
+		// console.log("db slot: " + this.selectedSpellSlot + ", " + this.selectedOsaSlot)
 	}
 
 	public promiseLoadingSpells: Promise<boolean>;
