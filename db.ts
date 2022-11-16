@@ -33,6 +33,8 @@ export class db {
 	public jsonBreedsName = "breeds.json";
 	public jsonSummonsName = "summons.json";
 	public breedId: number = 1;
+	private _selectedSpellSlot: number = 0;
+	private _selectedOsaSummonSlot: number = -1;
 
 	public constructor(@IEventAggregator readonly ea: IEventAggregator) {
 		// load cached version and language
@@ -40,6 +42,13 @@ export class db {
 		if (ver) this.setVersion(ver);
 		let lan = localStorage.getItem("language");
 		if (lan) this.setLanguage(lan);
+		let spellSlot = +localStorage.getItem("selectedSpellSlot");
+		if (spellSlot) this.selectedSpellSlot = spellSlot;
+		let osaSlot = +localStorage.getItem("selectedOsaSummonSlot");
+		if (osaSlot) this.selectedOsaSlot = osaSlot;
+		if(spellSlot < 0 && osaSlot < 0)
+			this.selectedSpellSlot = 0;
+		// console.log("db slot: " + this.selectedSpellSlot + ", " + this.selectedOsaSlot)
 	}
 
 	public promiseLoadingSpells: Promise<boolean>;
@@ -76,6 +85,28 @@ export class db {
 				localStorage.setItem("version", version);
 				this.loadJson();
 			}
+	}
+
+	public get selectedSpellSlot() {
+		return this._selectedSpellSlot;
+	}
+	public set selectedSpellSlot(slot: number) {
+		if(this._selectedSpellSlot != slot) {
+			this._selectedSpellSlot = slot;
+			localStorage.setItem("selectedSpellSlot", slot + "");
+			// console.log("db set slot: " + this._selectedSpellSlot + ", " + this._selectedOsaSummonSlot)
+		}
+	}
+
+	public get selectedOsaSlot() {
+		return this._selectedOsaSummonSlot;
+	}
+	public set selectedOsaSlot(slot: number) {
+		if(this._selectedOsaSummonSlot != slot) {
+			this._selectedOsaSummonSlot = slot;
+			localStorage.setItem("selectedOsaSummonSlot", slot + "");
+			// console.log("db set slot: " + this._selectedSpellSlot + ", " + this._selectedOsaSummonSlot)
+		}
 	}
 
 	public async loadJson() {
@@ -164,10 +195,15 @@ export class db {
 		// SEE:  EffectInstance, SpellheaderBlock.getSpellZoneChunkParams, SpellTooltipUi.getSpellZoneIconUri
 		let zoneEffect = SpellZone.parseZone(effect.rawZone);
 		// if(effect.effectUid == 285104) {
-		// 	console.log("zone: " + JSON.stringify(zoneEffect))
+			// console.log("zone: " + JSON.stringify(zoneEffect))
 		// }
 		let aoeName = zoneEffect.zoneName;
-		if (aoeName == "line3") aoeName = "line";
+		if(aoeName == "star") 
+			return this.commonUrlPath + "icons/star.png";
+		if(aoeName == "squareChecker") 
+			return this.commonUrlPath + "icons/check.png";
+		if (aoeName == "line3") 
+			aoeName = "line";
 		if (aoeName)
 			return this.commonUrlPath + "areas/" + aoeName + ".png";
 		// return "vertical-align: middle; width: 37px; height: 32px; background-image: url('" + this.commonUrlPath + "areas/" + aoeName + ".png');"
@@ -180,6 +216,10 @@ export class db {
 		let pos = "background-position: -56px " + Math.ceil(-56.8 * breedIndex) + "px;";
 		if (breedIndex == 19 - 1) {
 			url = this.gitFolderPath + "sprites/spells/350.png"; // icône flamiche
+			pos = "background-size: 55px; background-position: 50%";
+		}
+		if(breedIndex == 20 - 1) {
+			url = this.gitFolderPath + "sprites/spells/4313.png"; // icône forgelance
 			pos = "background-size: 55px; background-position: 50%";
 		}
 		return "height: 54px; width: 54px;" +
