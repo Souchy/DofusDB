@@ -11,6 +11,9 @@ import importgreenlist from './static/greenlistEffects.json'
 
 import jsonFeatures from '../DofusDB/features.json'
 // import jsonVersions from '../DofusDB/versions.json'
+import zango from 'zangodb';
+import { Util } from '../ts/util';
+
 
 export class db {
 
@@ -31,11 +34,14 @@ export class db {
 	public i18n_en: any;
 	public jsonMaps: {} = {};
 	public jsonGreenListEffects = importgreenlist;
+	public isItemsLoaded = false;
 	// json names
 	public jsonSpellsName = "spells.json";
 	public jsonSpellsDetailsName = "spellsDetails.json";
 	public jsonBreedsName = "breeds.json";
 	public jsonSummonsName = "summons.json";
+
+
 	public breedId: number = 1;
 	private _selectedSpellSlot: number = 0;
 	private _selectedOsaSummonSlot: number = -1;
@@ -63,6 +69,11 @@ export class db {
 	public get isLoaded() {
 		return this.jsonSpells && this.jsonSpellsDetails && this.jsonBreeds
 			&& this.jsonSummons && this.jsonStates && this.i18n_fr && this.i18n_en
+	}
+
+	public get isLoadedI18n() {
+		if(this.lang == "fr") return this.i18n_fr;
+		return this.i18n_en;
 	}
 
 	public isFeature(name: string): boolean {
@@ -151,6 +162,17 @@ export class db {
 		// await this.fetchJson(this.getMapPath(i), (json) => this.jsonMaps[i] = json);
 		// }
 
+		if(this.checkFeatureVersion(jsonFeatures.items) && Util.isLocal()) {
+			// let zdb = new zango.Db("encyclofus-" + this.version, 0, { items: []});
+			// let items = zdb.collection('items');
+
+			this.fetchJson(this.gitFolderPath + "items.json", (json: []) => {
+				console.log("loaded items: " + json.length)
+				this.isItemsLoaded = true;
+				// items.insert(json);
+			})
+		}
+
 		this.ea.publish("db:loaded");
 	}
 
@@ -201,10 +223,15 @@ export class db {
 	}
 
 	public getI18n(id: string): string {
-		if (this.lang == "fr")
-			return this.i18n_fr[id];
-		if (this.lang == "en")
-			return this.i18n_en[id];
+		try {
+			if (this.lang == "fr")
+				return this.i18n_fr[id];
+			if (this.lang == "en")
+				return this.i18n_en[id];
+		} catch(error) {
+			console.log("db.getI18n error key: " + id + ". Wait 30 seconds for the site to load.");
+			return id;
+		}
 	}
 
 	public getIconPath(name: string) {
