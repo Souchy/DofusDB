@@ -71,12 +71,14 @@ export class db {
 
 	public checkFeature(name: string): boolean {
 		if(this.isFeature(name)) {
-			let va = versions.indexOf(this.version);
-			let vf = versions.indexOf(jsonFeatures[name]);
-			// console.log("va, vf: " + va + ", " + vf)
-			return va <= vf; // (plus petit = plus récent dans le tableau)
+			return this.checkFeatureVersion(jsonFeatures[name]);
 		}
 		return true;
+	}
+	public checkFeatureVersion(version: string): boolean {
+		let va = versions.indexOf(this.version);
+		let vf = versions.indexOf(version);
+		return va <= vf; // (plus petit = plus récent dans le tableau)
 	}
 
 	public setLanguage(lang: string) {
