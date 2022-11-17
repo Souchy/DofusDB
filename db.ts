@@ -41,12 +41,21 @@ export class db {
 	public jsonBreedsName = "breeds.json";
 	public jsonSummonsName = "summons.json";
 
+	// zangodb
+	public zdb: zango.Db;
+	public items: zango.Collection;
+	public itemSets: zango.Collection;
 
+	// selected
 	public breedId: number = 1;
 	private _selectedSpellSlot: number = 0;
 	private _selectedOsaSummonSlot: number = -1;
 
+
 	public constructor(@IEventAggregator readonly ea: IEventAggregator) {
+		this.zdb = new zango.Db("encyclofus-" + this.version, 0, { items: []});
+		this.items = this.zdb.collection('items');
+
 		// load cached version and language
 		let ver = localStorage.getItem("version");
 		if (ver) this.setVersion(ver);
@@ -163,18 +172,27 @@ export class db {
 		// }
 
 		if(this.checkFeatureVersion(jsonFeatures.items) && Util.isLocal()) {
-			// let zdb = new zango.Db("encyclofus-" + this.version, 0, { items: []});
-			// let items = zdb.collection('items');
-
+			this.fetchJson(this.gitFolderPath + "itemtypes.json", (json: []) => {
+				console.log("loaded itemtypes: " + json.length)
+				this.jsonItemTypes = json;
+			})
+			this.fetchJson(this.gitFolderPath + "itemsets.json", (json: []) => {
+				console.log("loaded itemsets: " + json.length)
+				this.jsonItemSets = json;
+			})
 			this.fetchJson(this.gitFolderPath + "items.json", (json: []) => {
 				console.log("loaded items: " + json.length)
+				this.jsonItems = json;
 				this.isItemsLoaded = true;
-				// items.insert(json);
+				this.items.insert(json);
 			})
 		}
 
 		this.ea.publish("db:loaded");
 	}
+	public jsonItemTypes;
+	public jsonItemSets;
+	public jsonItems;
 
 	public async loadMap(mapid: string) {
 		// console.log("load map " + mapid)
