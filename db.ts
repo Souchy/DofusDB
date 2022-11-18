@@ -172,6 +172,8 @@ export class db {
 		// }
 
 		if(this.checkFeatureVersion(jsonFeatures.items) && Util.isLocal()) {
+			await this.fetchJson(this.gitFolderPath + "characteristics.json", (json) => this.jsonCharacteristics = json);
+			await this.fetchJson(this.gitFolderPath + "effects.json", (json) => this.jsonEffects = json);
 			this.fetchJson(this.gitFolderPath + "itemtypes.json", (json: []) => {
 				console.log("loaded itemtypes: " + json.length)
 				this.jsonItemTypes = json;
@@ -190,6 +192,8 @@ export class db {
 
 		this.ea.publish("db:loaded");
 	}
+	public jsonEffects;
+	public jsonCharacteristics;
 	public jsonItemTypes;
 	public jsonItemSets;
 	public jsonItems;
