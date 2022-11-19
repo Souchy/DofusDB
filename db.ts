@@ -26,7 +26,7 @@ export class db {
 
 	// actual json fetched 
 	public jsonSpells: any;
-	public jsonSpellsDetails: any;
+	// public jsonSpellsDetails: any;
 	public jsonBreeds: any;
 	public jsonSummons: any;
 	public jsonStates: any;
@@ -37,7 +37,7 @@ export class db {
 	public isItemsLoaded = false;
 	// json names
 	public jsonSpellsName = "spells.json";
-	public jsonSpellsDetailsName = "spellsDetails.json";
+	// public jsonSpellsDetailsName = "spellsDetails.json";
 	public jsonBreedsName = "breeds.json";
 	public jsonSummonsName = "summons.json";
 
@@ -71,13 +71,14 @@ export class db {
 	}
 
 	public promiseLoadingSpells: Promise<boolean>;
-	public promiseLoadingSpellsDetails: Promise<boolean>;
+	// public promiseLoadingSpellsDetails: Promise<boolean>;
 	public promiseLoadingBreeds: Promise<boolean>;
 	public promiseLoadingSummons: Promise<boolean>;
 
 	public get isLoaded() {
-		return this.jsonSpells && this.jsonSpellsDetails && this.jsonBreeds
+		return this.jsonSpells && this.jsonBreeds
 			&& this.jsonSummons && this.jsonStates && this.i18n_fr && this.i18n_en
+			// && this.jsonSpellsDetails 
 	}
 
 	public get isLoadedI18n() {
@@ -151,9 +152,9 @@ export class db {
 
 	public async loadJson() {
 		this.promiseLoadingSpells = this.fetchJson(this.gitFolderPath + this.jsonSpellsName, (json) => this.jsonSpells = json);
-		this.promiseLoadingSpellsDetails = this.fetchJson(this.gitFolderPath + this.lang + "/" + this.jsonSpellsDetailsName,
-			(json) => this.jsonSpellsDetails = json
-		);
+		// this.promiseLoadingSpellsDetails = this.fetchJson(this.gitFolderPath + this.lang + "/" + this.jsonSpellsDetailsName,
+		// 	(json) => this.jsonSpellsDetails = json
+		// );
 		this.promiseLoadingBreeds = this.fetchJson(this.gitFolderPath + this.jsonBreedsName, (json) => this.jsonBreeds = json);
 		this.promiseLoadingSummons = this.fetchJson(this.gitFolderPath + this.jsonSummonsName, (json) => this.jsonSummons = json);
 		// console.log("loaded = promise: " + this.promiseLoadingSpells)
@@ -162,7 +163,7 @@ export class db {
 		await this.promiseLoadingSummons;
 
 		let result = await this.promiseLoadingSpells;
-		result = await this.promiseLoadingSpellsDetails;
+		// result = await this.promiseLoadingSpellsDetails;
 
 		await this.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.i18n_fr = json);
 		await this.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.i18n_en = json);
