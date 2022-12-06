@@ -2995,7 +2995,7 @@
         },
         {
           "cellId": 181,
-          "elementsCount": 1,
+          "elementsCount": 2,
           "elements": [
             {
               "elementName": "Graphical",
@@ -3008,6 +3008,20 @@
               "shadow_3": -6,
               "offsetX": 0,
               "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 112557,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 91,
+              "offsetY": 129,
               "altitude": 0,
               "identifier": 0
             }
@@ -11760,7 +11774,7 @@
               "shadow_3": -2,
               "offsetX": -3,
               "offsetY": 70,
-              "altitude": 0,
+              "altitude": 5,
               "identifier": 0
             }
           ]
