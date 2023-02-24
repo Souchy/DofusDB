@@ -53,7 +53,7 @@ export class db {
 
 
 	public constructor(@IEventAggregator readonly ea: IEventAggregator) {
-		this.zdb = new zango.Db("encyclofus-" + this.version, 0, { items: []});
+		this.zdb = new zango.Db("encyclofus-" + this.version, 0, { items: [] });
 		this.items = this.zdb.collection('items');
 
 		// load cached version and language
@@ -65,7 +65,7 @@ export class db {
 		if (spellSlot) this.selectedSpellSlot = spellSlot;
 		let osaSlot = +localStorage.getItem("selectedOsaSummonSlot");
 		if (osaSlot) this.selectedOsaSlot = osaSlot;
-		if(spellSlot < 0 && osaSlot < 0)
+		if (spellSlot < 0 && osaSlot < 0)
 			this.selectedSpellSlot = 0;
 		// console.log("db slot: " + this.selectedSpellSlot + ", " + this.selectedOsaSlot)
 	}
@@ -78,11 +78,11 @@ export class db {
 	public get isLoaded() {
 		return this.jsonSpells && this.jsonBreeds
 			&& this.jsonSummons && this.jsonStates && this.i18n_fr && this.i18n_en
-			// && this.jsonSpellsDetails 
+		// && this.jsonSpellsDetails 
 	}
 
 	public get isLoadedI18n() {
-		if(this.lang == "fr") return this.i18n_fr;
+		if (this.lang == "fr") return this.i18n_fr;
 		return this.i18n_en;
 	}
 
@@ -91,7 +91,7 @@ export class db {
 	}
 
 	public checkFeature(name: string): boolean {
-		if(this.isFeature(name)) {
+		if (this.isFeature(name)) {
 			return this.checkFeatureVersion(jsonFeatures[name]);
 		}
 		return true;
@@ -132,7 +132,7 @@ export class db {
 		return this._selectedSpellSlot;
 	}
 	public set selectedSpellSlot(slot: number) {
-		if(this._selectedSpellSlot != slot) {
+		if (this._selectedSpellSlot != slot) {
 			this._selectedSpellSlot = slot;
 			localStorage.setItem("selectedSpellSlot", slot + "");
 			// console.log("db set slot: " + this._selectedSpellSlot + ", " + this._selectedOsaSummonSlot)
@@ -143,7 +143,7 @@ export class db {
 		return this._selectedOsaSummonSlot;
 	}
 	public set selectedOsaSlot(slot: number) {
-		if(this._selectedOsaSummonSlot != slot) {
+		if (this._selectedOsaSummonSlot != slot) {
 			this._selectedOsaSummonSlot = slot;
 			localStorage.setItem("selectedOsaSummonSlot", slot + "");
 			// console.log("db set slot: " + this._selectedSpellSlot + ", " + this._selectedOsaSummonSlot)
@@ -172,32 +172,32 @@ export class db {
 		// await this.fetchJson(this.getMapPath(i), (json) => this.jsonMaps[i] = json);
 		// }
 
-		if(this.checkFeatureVersion(jsonFeatures.items) && Util.isLocal()) {
-			await this.fetchJson(this.gitFolderPath + "characteristics.json", (json) => this.jsonCharacteristics = json);
-			await this.fetchJson(this.gitFolderPath + "effects.json", (json) => this.jsonEffects = json);
-			this.fetchJson(this.gitFolderPath + "itemtypes.json", (json: []) => {
-				console.log("loaded itemtypes: " + json.length)
-				this.jsonItemTypes = json;
-			})
-			this.fetchJson(this.gitFolderPath + "itemsets.json", (json: []) => {
-				console.log("loaded itemsets: " + json.length)
-				this.jsonItemSets = json;
-			})
-			this.fetchJson(this.gitFolderPath + "items.json", (json: []) => {
-				console.log("loaded items: " + json.length)
-				this.jsonItems = json;
-				this.isItemsLoaded = true;
-				this.items.insert(json);
-			})
+		if (this.checkFeatureVersion(jsonFeatures.items) && Util.isLocal()) {
+			// await this.fetchJson(this.gitFolderPath + "characteristics.json", (json) => this.jsonCharacteristics = json);
+			// await this.fetchJson(this.gitFolderPath + "effects.json", (json) => this.jsonEffects = json);
+			// this.fetchJson(this.gitFolderPath + "itemtypes.json", (json: []) => {
+			// 	console.log("loaded itemtypes: " + json.length)
+			// 	this.jsonItemTypes = json;
+			// })
+			// this.fetchJson(this.gitFolderPath + "itemsets.json", (json: []) => {
+			// 	console.log("loaded itemsets: " + json.length)
+			// 	this.jsonItemSets = json;
+			// })
+			// this.fetchJson(this.gitFolderPath + "items.json", (json: []) => {
+			// 	console.log("loaded items: " + json.length)
+			// 	this.jsonItems = json;
+			// 	this.isItemsLoaded = true;
+			// 	this.items.insert(json);
+			// })
 		}
 
 		this.ea.publish("db:loaded");
 	}
-	public jsonEffects;
-	public jsonCharacteristics;
-	public jsonItemTypes;
-	public jsonItemSets;
-	public jsonItems;
+	// public jsonEffects;
+	// public jsonCharacteristics;
+	// public jsonItemTypes;
+	// public jsonItemSets;
+	// public jsonItems;
 
 	public async loadMap(mapid: string) {
 		// console.log("load map " + mapid)
@@ -225,9 +225,9 @@ export class db {
 
 	// https://raw.githubusercontent.com/Souchy/DofusDB/master/scraped/2.65/fr/spellsDetails.json
 	// "http://192.168.2.11:9000/src/DofusDB/" //
-	private dofusDBGithubUrl = "https://raw.githubusercontent.com/Souchy/DofusDB/master/";
-	private githubScrapedUrlPath = this.dofusDBGithubUrl + "scraped/";
-	private commonUrlPath: string = this.githubScrapedUrlPath + "common/";
+	public dofusDBGithubUrl = "https://raw.githubusercontent.com/Souchy/DofusDB/master/";
+	public githubScrapedUrlPath = this.dofusDBGithubUrl + "scraped/";
+	public commonUrlPath: string = this.githubScrapedUrlPath + "common/";
 	public get gitFolderPath() {
 		return this.githubScrapedUrlPath + this.version + "/";
 	}
@@ -251,7 +251,7 @@ export class db {
 				return this.i18n_fr[id];
 			if (this.lang == "en")
 				return this.i18n_en[id];
-		} catch(error) {
+		} catch (error) {
 			console.log("db.getI18n error key: " + id + ". Wait 30 seconds for the site to load.");
 			return id;
 		}
@@ -263,16 +263,19 @@ export class db {
 
 	public getAoeIconUrl(effect: any) {
 		// SEE:  EffectInstance, SpellheaderBlock.getSpellZoneChunkParams, SpellTooltipUi.getSpellZoneIconUri
+		if (effect.rawZone == "C") // caster
+			return "";
+
 		let zoneEffect = SpellZone.parseZone(effect.rawZone);
 		// if(effect.effectUid == 285104) {
-			// console.log("zone: " + JSON.stringify(zoneEffect))
+		// console.log("zone: " + JSON.stringify(zoneEffect))
 		// }
 		let aoeName = zoneEffect.zoneName;
-		if(aoeName == "star") 
+		if (aoeName == "star")
 			return this.commonUrlPath + "icons/star.png";
-		if(aoeName == "squareChecker") 
+		if (aoeName == "squareChecker")
 			return this.commonUrlPath + "icons/check.png";
-		if (aoeName == "line3") 
+		if (aoeName == "line3")
 			aoeName = "line";
 		if (aoeName)
 			return this.commonUrlPath + "areas/" + aoeName + ".png";
@@ -288,7 +291,7 @@ export class db {
 			url = this.gitFolderPath + "sprites/spells/350.png"; // icône flamiche
 			pos = "background-size: 55px; background-position: 50%";
 		}
-		if(breedIndex == 20 - 1) {
+		if (breedIndex == 20 - 1) {
 			url = this.gitFolderPath + "sprites/spells/4313.png"; // icône forgelance
 			pos = "background-size: 55px; background-position: 50%";
 		}
@@ -314,58 +317,65 @@ export class db {
 	// 	// + "background-position: " + x + "px; background-position-y: " + y + "px;";
 	// }
 
-	public getModIconStyle(mod: string) {
+	public getModIconStyle(mod: string, item: boolean = false) {
 		mod = mod.replace("(", "").replace(")", "").replace(".", "");
 		let words = mod.toLowerCase().split(" ");
+
+		// console.log("getModIconStyle: " + mod + " : " + words)
 
 		// console.log("mod: " + mod)
 		// console.log("words: " + words)
 
-		if (mod.toLowerCase().includes("résistance poussée")) return this.modSprite(97, 832);
-		if (mod.toLowerCase().includes("résistance critique")) return this.modSprite(97, 1200);
-		if (mod.toLowerCase().includes("esquive pm")) return this.modSprite(97, 1016);
-		if (mod.toLowerCase().includes("esquive pa")) return this.modSprite(97, 1064);
-		if (mod.toLowerCase().includes("retrait pa")) return this.modSprite(97, 1340);
-		if (mod.toLowerCase().includes("retrait pm")) return this.modSprite(97, 1340);
+		if (mod.toLowerCase().includes("résistance poussée")) return this.modSprite(97, 832, item);
+		if (mod.toLowerCase().includes("résistance critique")) return this.modSprite(97, 1200, item);
+		if (mod.toLowerCase().includes("esquive pm")) return this.modSprite(97, 1016, item);
+		if (mod.toLowerCase().includes("esquive pa")) return this.modSprite(97, 1064, item);
+		if (mod.toLowerCase().includes("retrait pa")) return this.modSprite(97, 1340, item);
+		if (mod.toLowerCase().includes("retrait pm")) return this.modSprite(97, 1340, item);
 
-		if (words.includes("pa")) return this.modSprite(97, 245);
-		if (words.includes("pm")) return this.modSprite(97, 52);
-		if (words.includes("portée")) return this.modSprite(97, 128);
+		if (words.includes("pa")) return this.modSprite(97, 245, item);
+		if (words.includes("pm")) return this.modSprite(97, 52, item);
+		if (words.includes("portée")) return this.modSprite(97, 128, item);
 
-		if (words.includes("initiative")) return this.modSprite(97, 205);
-		if (words.includes("invocation")) return this.modSprite(97, 507);
-		if (words.includes("% critique")) return this.modSprite(97, 589);
-		if (words.includes("prospection")) return this.modSprite(97, 279);
+		if (words.includes("initiative")) return this.modSprite(97, 205, item);
+		if (words.includes("invocation")) return this.modSprite(97, 507, item);
+		if (words.includes("% critique")) return this.modSprite(97, 589, item);
+		if (words.includes("prospection")) return this.modSprite(97, 279, item);
 
-		if (words.includes("vie")) return this.modSprite(97, 919);
-		if (words.includes("vitalité")) return this.modSprite(97, 319);
-		if (words.includes("sagesse")) return this.modSprite(97, 358);
+		if (words.includes("vie")) return this.modSprite(97, 919, item);
+		if (words.includes("vitalité")) return this.modSprite(97, 319, item);
+		if (words.includes("sagesse")) return this.modSprite(97, 358, item);
 
-		if (words.includes("neutre")) return this.modSprite(95, 15);
-		if (words.includes("force") || words.includes("terre")) return this.modSprite(97, 432);
-		if (words.includes("intelligence") || words.includes("feu")) return this.modSprite(97, 394);
-		if (words.includes("chance") || words.includes("eau")) return this.modSprite(97, 89);
-		if (words.includes("agilité") || words.includes("air")) return this.modSprite(97, 167);
-		if (words.includes("puissance")) return this.modSprite(97, 1108);
+		if (words.includes("neutre")) return this.modSprite(95, 15, item);
+		if (words.includes("force") || words.includes("terre")) return this.modSprite(97, 432, item);
+		if (words.includes("intelligence") || words.includes("feu")) return this.modSprite(97, 394, item);
+		if (words.includes("chance") || words.includes("eau")) return this.modSprite(97, 89, item);
+		if (words.includes("agilité") || words.includes("air")) return this.modSprite(97, 167, item);
+		if (words.includes("puissance")) return this.modSprite(97, 1108, item);
 
-		if (words.includes("tacle")) return this.modSprite(97, 545);
-		if (words.includes("fuite")) return this.modSprite(97, 469);
+		if (words.includes("tacle")) return this.modSprite(97, 545, item);
+		if (words.includes("fuite")) return this.modSprite(97, 469, item);
 
-		if (words.includes("soin") || words.includes("soigne") || mod.toLowerCase().includes("pv rendus")) return this.modSprite(97, 966);
-		if (mod == "Dommages") return this.modSprite(97, 1156);
-		if (mod == "Dommages Poussée") return this.modSprite(97, 872);
-		if (mod == "Dommages Critiques") return this.modSprite(97, 1248);
-		if (mod == "Puissance aux pièges") return this.modSprite(97, 672);
-		if (mod == "Dommages aux pièges") return this.modSprite(97, 712);
+		if (words.includes("soin") || words.includes("soigne") || mod.toLowerCase().includes("pv rendus")) return this.modSprite(97, 966, item);
+		if (mod == "Dommages") return this.modSprite(97, 1156, item);
+		if (mod == "Dommages Poussée") return this.modSprite(97, 872, item);
+		if (mod == "Dommages Critiques") return this.modSprite(97, 1248, item);
+		if (mod == "Puissance aux pièges") return this.modSprite(97, 672, item);
+		if (mod == "Dommages aux pièges") return this.modSprite(97, 712, item);
 
 		return "";
 	}
 
-	private modSprite(x: number, y: number) {
-		y -= 6;
+	private modSprite(x: number, y: number, item: boolean = false) {
+		// str = str.replace("height: 32px;", "height: 22px;");
+		if(item)
+			y -= 2;
+		else
+			y -= 6;
+		let height = item ? 22 : 32;
 		// x -= 1;
 		// return "display: inline-block; zoom: 1.0; vertical-align: middle; width: 22px; height: 22px; background-image: url('/src/DofusDB/scraped/icons.png'); background-position: -" + x + "px; background-position-y: -" + y + "px;"
-		return "vertical-align: middle; width: 22px; height: 32px; background-image: url('" + this.commonUrlPath + "icons.png');"
+		return "vertical-align: middle; width: 22px; height: " + height + "px; background-image: url('" + this.commonUrlPath + "icons.png');"
 			+ "background-position: -" + x + "px; background-position-y: -" + y + "px;"
 	}
 
