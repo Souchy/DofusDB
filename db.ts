@@ -304,7 +304,9 @@ export class db {
 		// if (mod.includes("{ally}")) return this.fighterSprite('ally.png', 0, 9);
 		// if (mod.includes("{fighter}")) return this.fighterSprite('fighter.png', 0, 9);
 		// if (mod.includes("{caster}")) return this.fighterSprite('caster.png', 0, 9);
-
+		// console.log("mod: "+ mod);
+		if(mod == "allyExceptCaster") mod = "ally";
+		if(mod == "allExceptCaster") mod = "fighter";
 		return this.commonUrlPath + mod + ".png";
 	}
 
