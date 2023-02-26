@@ -23,6 +23,7 @@ export class db {
 	public lang_default = "fr";
 	public lang: string = this.lang_default;
 	private _version: string = versions[0]; // first version is the latest
+	private _effectMode: string = "basic";
 
 	// actual json fetched 
 	public jsonSpells: any;
@@ -61,6 +62,8 @@ export class db {
 		if (ver) this.setVersion(ver);
 		let lan = localStorage.getItem("language");
 		if (lan) this.setLanguage(lan);
+		let mod = localStorage.getItem("effectMode");
+		if(mod) this.setEffectMode(mod)
 		let spellSlot = +localStorage.getItem("selectedSpellSlot");
 		if (spellSlot) this.selectedSpellSlot = spellSlot;
 		let osaSlot = +localStorage.getItem("selectedOsaSummonSlot");
@@ -103,15 +106,23 @@ export class db {
 	}
 
 	public setLanguage(lang: string) {
-		if (this.lang == lang) {
-			// do nothing
-		} else {
+		if (this.lang != lang) {
 			this.lang = lang;
 			localStorage.setItem("language", lang);
 			this.loadJson();
 		}
 	}
+	public setEffectMode(mode: string) {
+		// console.log("db setEffectMode: " + this._effectMode + " -> " + mode)
+		if(this._effectMode != mode) {
+			this._effectMode = mode;
+			localStorage.setItem("effectMode", mode);
+		}
+	}
 
+	public get effectMode() {
+		return this._effectMode;
+	}
 	public get version() {
 		return this._version;
 	}
