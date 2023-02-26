@@ -634,6 +634,9 @@ export class Targets {
         return false;
     }
 
+
+    
+
     public static mask(masks: string[]) {
         // console.log("masks: " + masks)
         // A,a
@@ -642,18 +645,28 @@ export class Targets {
         let ally = ["a", "g", "d", "h", "i", "j", "l", "m", "s"]
 
         let hasTeam = false;
-        if (masks.includes("A")) {
-            arr.add("enemy")
+
+
+        if (masks.includes("A") && masks.includes("a")) {
+            arr.add("fighter")
             hasTeam = true
-        }
-        if (masks.includes("a")) {
-            arr.add("ally")
+        } else if (masks.includes("A") && masks.includes("g")) {
+            arr.add("allExceptCaster")
             hasTeam = true
-        } else
-            if (masks.includes("g")) {
+        } else {
+            if (masks.includes("A")) {
+                arr.add("enemy")
+                hasTeam = true
+            }
+            if (masks.includes("a")) {
+                arr.add("ally")
+                hasTeam = true
+            } else if (masks.includes("g")) {
                 arr.add("allyExceptCaster")
                 hasTeam = true
             }
+        }
+
 
         // if(masks.includes("i"))
         for (let m of masks) {
@@ -672,35 +685,30 @@ export class Targets {
                         arr.add("enemy")
                     }
                 }
-                let basic = Targets.basicMasks(m);
+                let basic = Targets.teamMasks(m);
                 let basics = basic.split(",");
                 for (let b of basics)
                     if (b)
                         arr.add(cond ? "*" + b : b);
                 continue;
             }
-            let r = Targets.otherMasks(m);
+
+            let r = Targets.conditionMasks(m);
             if (r) {
+                if (cond) r = "*" + r;
+                // console.log("parse mask: " + m + " to " + r);
                 arr.add(r);
                 continue;
             }
-            if (m.startsWith("f")) {
-                m = m.replace("f", "creature!")
-            } else if (m.startsWith("e")) {
-                m = m.replace("e", "state!")
-            }
 
-            if (m.startsWith("F")) {
-                m = m.replace("F", "creature")
-            } else if (m.startsWith("E")) {
-                m = m.replace("E", "state")
-            }
-
-            if (cond) m = "*" + m;
-            arr.add(m);
+            // if (cond) m = "*" + m;
+            // arr.add(m);
         }
-        if (arr.has("summonCaster"))
+        if (arr.has("summonCaster")) {
             arr.delete("summon")
+            arr.delete("ally")
+            arr.delete("allyExceptCaster")
+        }
         if (arr.has("enemy") && arr.has("ally")) {
             arr.add("fighter");
         }
@@ -712,65 +720,84 @@ export class Targets {
         return Array.from(arr);
     }
 
-    public static basicMasks(mask: string): string {
-        if (mask == "A") {
+    public static teamMasks(mask: string): string {
+        if (mask == "A") 
             return ""
-        }
-        if (mask == "a") {
+        if (mask == "a") 
             return ""
-        }
-        if (mask == "g") {
+        if (mask == "g") 
             return ""
-        }
         // let sameTeam = false;
         // if(mask == mask.toLowerCase()) {
         //     sameTeam = true;
         // }
         mask = mask.toLowerCase();
-        if (mask == "d") {
+        if (mask == "d") 
             return "" //"SIDEKICK";
-        }
-        if (mask == "h") {
+        if (mask == "h") 
             return "summoner" //"HUMAN,!isSummon";
-        }
-        if (mask == "i") {
+        if (mask == "i") 
             return "summon,!static" //"!SIDEKICK,isSummon,!isStaticElement";
-        }
-        if (mask == "j") {
+        if (mask == "j") 
             return "summon" //"!SIDEKICK,isSummon";
-        }
-        if (mask == "l") {
+        if (mask == "l") 
             return "summoner";
-        }
-        if (mask == "m") {
+        if (mask == "m") 
             return "summoner,!static" //"!HUMAN,!isSummon,!isStaticElement";
-        }
-        if (mask == "s") {
+        if (mask == "s") 
             return "summon,static" //"!SIDEKICK,isSummon,isStaticElement";
-        }
-        return "";
+
+        return mask;
     }
 
-    public static otherMasks(mask: string) {
+    /**
+     * Condition masks
+     * @param mask 
+     * @returns 
+     */
+    public static conditionMasks(mask: string) {
+        let m = mask;
+        if (m.startsWith("f"))
+            return mask.replace("f", "!creature");
+        if (m.startsWith("e"))
+            return mask.replace("e", "!state");
+        if (m.startsWith("F"))
+            return mask.replace("F", "creature");
+        if (m.startsWith("E"))
+            return mask.replace("E", "state");
+
+        if (mask == "p")
+            return "!summonCaster"
+        if (mask == "P")
+            return "summonCaster"
         if (mask == "R")
             return "portal" // result = Boolean(usingPortal);
         if (mask == "r")
             return "!portal"
         if (mask == "T")
             return "telefrag" //result = Boolean(param2.wasTelefraggedThisTurn());
-        if (mask == "P")
-            return "summonCaster"
         if (mask == "K")
             return "carried"
-        if (mask == "p")
-            return "!summonCaster"
-        // if (mask == "U")
-        //     return "visible"
+        if (mask == "U")
+            return "onSummon"
+        if (mask == "u")
+            return "!onSummon"
         if (mask == "O")
             return "attackerCaster"
         if (mask == "o")
             return "attacker"
-        return "";
+
+        return mask;
+    }
+
+    public static hasCondition(targetMask: string) {
+        let split = targetMask.split(",");
+        for(let m of split) {
+            if(!m.toLowerCase().endsWith("f50000") && (this.conditionMasks(m) || m.startsWith("*")))
+                return true;
+        }
+        console.log("has no condition: " + targetMask)
+        return false;
     }
 
     /*
