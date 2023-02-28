@@ -297,14 +297,15 @@ export class db {
 
 	public getBreedIconStyle(breedIndex: number) {
 		let url = this.commonUrlPath + "big.png";
-		let pos = "background-position: -56px " + Math.ceil(-56.8 * breedIndex) + "px;";
+		let pos;
 		if (breedIndex == 19 - 1) {
 			url = this.gitFolderPath + "sprites/spells/350.png"; // icône flamiche
 			pos = "background-size: 55px; background-position: 50%";
-		}
-		if (breedIndex == 20 - 1) {
-			url = this.gitFolderPath + "sprites/spells/4313.png"; // icône forgelance
-			pos = "background-size: 55px; background-position: 50%";
+		} else {
+			if (breedIndex == 20 - 1) {
+				breedIndex--;
+			}
+			pos = "background-position: 0px " + Math.ceil(-56.8 * breedIndex) + "px;";
 		}
 		return "height: 54px; width: 54px;" +
 			"margin-bottom: 5px; margin-left: 2px; margin-right: 3px;" +
