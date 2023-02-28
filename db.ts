@@ -43,9 +43,9 @@ export class db {
 	public jsonSummonsName = "summons.json";
 
 	// zangodb
-	public zdb: zango.Db;
-	public items: zango.Collection;
-	public itemSets: zango.Collection;
+	// public zdb: zango.Db;
+	// public items: zango.Collection;
+	// public itemSets: zango.Collection;
 
 	// selected
 	public breedId: number = 1;
@@ -54,8 +54,8 @@ export class db {
 
 
 	public constructor(@IEventAggregator readonly ea: IEventAggregator) {
-		this.zdb = new zango.Db("encyclofus-" + this.version, 0, { items: [] });
-		this.items = this.zdb.collection('items');
+		// this.zdb = new zango.Db("encyclofus-" + this.version, 0, { items: [] });
+		// this.items = this.zdb.collection('items');
 
 		// load cached version and language
 		let ver = localStorage.getItem("version");
