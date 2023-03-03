@@ -496,6 +496,39 @@ export class db {
 		// return "vertical-align: middle; width: 25px; height: 32px; background-image: url('" + this.commonUrlPath + name + "'); background-repeat: no-repeat;"
 		// 	+ "background-position: 50%;";
 	}
+	
+	
+	public static getStatSections(): Map<string, number> {
+		var sections = new Map<string, number>();
+		sections.set("quickfus.filter.sections.pseudo", 0);
+		sections.set("quickfus.filter.sections.primary", 2);
+		sections.set("quickfus.filter.sections.secondary", 3);
+		sections.set("quickfus.filter.sections.damage", 4);
+		sections.set("quickfus.filter.sections.resistance", 5);
+		return sections;
+	}
+	public pseudoCharacs: any[] = [
+		{
+			"id": 10000,
+			"name": "numres",
+			"categoryId": 0,
+		},
+		{
+			"id": 10001,
+			"name": "numresele",
+			"categoryId": 0,
+		},
+		{
+			"id": 10002,
+			"name": "totres",
+			"categoryId": 0,
+		},
+		{
+			"id": 10003,
+			"name": "totresele",
+			"categoryId": 0,
+		},
+	];
 
 }
 
