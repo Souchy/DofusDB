@@ -14,7 +14,6 @@ import jsonFeatures from '../DofusDB/features.json'
 import zango from 'zangodb';
 import { Util } from '../ts/util';
 
-
 export class db {
 
 	private http = new HttpClient();
@@ -57,6 +56,8 @@ export class db {
 		// this.zdb = new zango.Db("encyclofus-" + this.version, 0, { items: [] });
 		// this.items = this.zdb.collection('items');
 
+		// connect to mongo
+		this.getToken();
 		// load cached version and language
 		let ver = localStorage.getItem("version");
 		if (ver) this.setVersion(ver);
@@ -529,6 +530,45 @@ export class db {
 			"categoryId": 0,
 		},
 	];
+
+	private token: any;
+	public isConnected() {
+		return this.token;
+	}
+	public async getToken() {
+		if(this.token != "") return this.token;
+		let res = await this.http.get("https://realm.mongodb.com/api/client/v2.0/app/data-ewvjc/auth/providers/anon-user/login");
+		let json = await res.json();
+		this.token = json.access_token;
+		this.ea.publish("mongo:login", json.access_token);
+		return this.token;
+	}
+	public async mongoItemsAggregate(pipeline): Promise<any> {
+		let token = await this.getToken(); 
+		// console.log("fetch with token: " + JSON.stringify(token));
+		let url = "https://data.mongodb-api.com/app/data-ewvjc/endpoint/data/v1/action/aggregate";
+		let bod = {
+			"dataSource": "SouchyAtlasCluster0",
+			"database": "encyclofus-2-66-5-18", // quickfus
+			"collection": "items",
+			"pipeline": pipeline
+		}
+		let pro = this.http.fetch(url, {
+			method: "post",
+			headers: {
+				Authorization: 'Bearer ' + token
+			},
+			body: JSON.stringify(bod)
+		});
+		let res = await pro;
+		if(res.ok) {
+			let json = await res.json();
+			return json.documents;
+		} else {
+			this.token = "";
+			return this.mongoItemsAggregate(pipeline);
+		}
+	}
 
 }
 
