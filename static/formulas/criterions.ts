@@ -2,12 +2,19 @@ import { inject } from "aurelia";
 import { db } from "../../db";
 
 export class Criteria {
-    public name
-    public operator
-    public value
+    public name: string
+    public operator: string
+    public value: string
 }
-
-// @inject(db)
+export class CriteriaGroup {
+    public operator
+    public criterions: any[] = [] 
+}
+/**
+ * ItemCriterion
+ * GroupItemCriterion
+ * ItemCriterionOperator
+ */
 export class Citerions {
 
     public static readonly SUPERIOR: string = ">";
@@ -16,53 +23,44 @@ export class Citerions {
     public static readonly DIFFERENT: string = "!";
     public static readonly OPERATORS_LIST: string[] = [Citerions.SUPERIOR, Citerions.INFERIOR, Citerions.EQUAL, Citerions.DIFFERENT, "#", "~", "s", "S", "e", "E", "v", "i", "X", "/"];
 
-    // public constructor(readonly db: db) {
-
-    // }
-
-    // public translate(criterias: string, db: db) {
-
-    // }
-
-    public static parseGroup(criterias: string): Criteria[] {
-        let criterions: Criteria[] = [];
-        let subCriterions: string[] = this.splitParenthesises(criterias);
-        for (let sub of subCriterions) {
-            criterias = criterias.replace("(" + sub + ")", "");
-            criterions.push(...this.parseGroup(sub))
-        }
-        criterions.push(...this.splitGroupToCriterions(criterias));
-        return criterions
-    }
-
-    private static splitGroupToCriterions(group: string): Criteria[] {
-        let solos: Criteria[] = [];
-        for (let c of group.split(/[&|]/)) {
-            solos.push(this.getInfos(c));
-        }
-        return solos;
-    }
-
-    public static splitParenthesises(text: string): string[] {
-        let arr: string[] = [];
+    public static parse(str: string) {
+        let groups = []
         let i = -1;
-        while ((i = text.indexOf("(")) >= 0) {
-            let j = text.indexOf(")");
-            let parenthesis = text.slice(i + 1, j);
-            arr.push(parenthesis);
-            text = text.slice(j + 1);
+        try {
+            while((i = str.indexOf("(")) >= 0) {
+                let j = str.indexOf(")");
+                let group = str.slice(i, j + 1);
+                str = str.replace(group, "");
+                group = group.replace("(", "").replace(")", "")
+                groups.push(group);
+            }
+        } catch(ex) {
+            console.error(ex)
         }
-        return arr;
+        let root = this.splitGroupToCriterions(str);
+        for(let g of groups) {
+            let cg = this.splitGroupToCriterions(g);
+            root.criterions.push(cg)
+        }
+        // console.log({root})
+        return root;
+    }
+
+    private static splitGroupToCriterions(group: string): CriteriaGroup {
+        let cg = new CriteriaGroup();
+        if(group.includes("&")) cg.operator = "&";
+        if(group.includes("|")) cg.operator = "|";
+        for (let c of group.split(cg.operator)) { 
+            // console.log("c: "+ c)
+            cg.criterions.push(this.getInfos(c));
+        }
+        cg.criterions = cg.criterions.filter(s => s != null);
+        return cg;
     }
 
     public static getInfos(criteria: string): Criteria {
-        var operator: string = null;
-        for (operator in Citerions.OPERATORS_LIST) {
+        for (let operator of Citerions.OPERATORS_LIST) {
             if (criteria.indexOf(operator) == 2) {
-                //   let _operator = new ItemCriterionOperator(operator);
-                // let _criterionRef = criteria.split(operator)[0];
-                // let _criterionValue = criteria.split(operator)[1];
-                // let _criterionValueText = criteria.split(operator)[1];
                 let c = new Criteria();
                 c.name = criteria.split(operator)[0]
                 c.operator = operator
@@ -367,39 +365,66 @@ export class CriterionUtil {
         return this.knownCriteriaList.indexOf(_criterionRef);
     }
 
-    public static getCaractext(_criterionRef: string): string { // , forTooltip: Boolean = false): string {
-        var readableCriterionRef: string = null;
-        switch (_criterionRef) {
-            case "CM":
-                readableCriterionRef = "ui.stats.movementPoints";
-                break;
-            case "CP":
-                readableCriterionRef = "ui.stats.actionPoints";
-                break;
+    
+    public static getCriterion(criteria) {
+        switch (criteria) {
+            case "Ca":
+                return "base.agility";
+            case "CA":
+                return "total.agility";
+            case "Cc":
+                return "base.chance";
+            case "CC":
+                return "total.chance";
+            case "Ce":
+                return "base.energy";
+            case "CE":
+                return "total.energy";
             case "CH":
-                readableCriterionRef = "ui.stats.honourPoints";
-                break;
+                return "total.honour";
             case "CD":
-                readableCriterionRef = "ui.stats.disgracePoints";
-                break;
-            case "CT":
-                readableCriterionRef = "ui.stats.takleBlock";
-                break;
+                return "total.dishonour"
+            case "Ci":
+                return "base.intelligence";
+            case "CI":
+                return "total.intelligence";
+            case "CL":
+                return "total.hp";
+            case "CM":
+                return "total.mp";
+            case "CP":
+                return "total.ap";
+            case "Cs":
+                return "base.strength";
+            case "CS":
+                return "total.strength";
+            case "Cv":
+                return "base.vitality";
+            case "CV":
+                return "total.vitality";
+            case "Cw":
+                return "base.wisdom";
+            case "CW":
+                return "total.wisdom";
             case "Ct":
-                readableCriterionRef = "ui.stats.takleEvade";
-                break;
+                return "total.evade";
+            case "CT":
+                return "total.block";
+            case "ca":
+                return "add.agility";
+            case "cc":
+                return "add.chance";
+            case "ci":
+                return "add.intelligence";
+            case "cs":
+                return "add.strength";
+            case "cv":
+                return "add.vitality";
+            case "cw":
+                return "add.wisdom";
             default:
-                let index = this.getKnownCriteriaIndex(_criterionRef);
-                if (index > -1) {
-                    readableCriterionRef = "ui.item.characteristics"; //.split(",")[index]; //I18n.getUiText("ui.item.characteristics").split(",")[index];
-                } else {
-                    // _log.warn("Unknown criteria \'" + _criterionRef + "\'");
-                }
+                return null;
         }
-        // if (forTooltip) {
-        //     return index > -1 ? readableCriterionRef + " " + "<span class=\'#valueCssClass\'>" + this._operator.text + " " + this._criterionValue + "</span>" : null;
-        // }
-        return readableCriterionRef; // + " " + this._operator.text + " " + this._criterionValue;
     }
 
 

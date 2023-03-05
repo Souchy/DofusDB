@@ -549,6 +549,24 @@ export class db {
 		}
 	}
 
+    public parseStateToString(mask) {
+        let stateId = +mask; 
+        let state = this.jsonStates[stateId];
+        if (!state) {
+            console.log("state doesnt exist: " + stateId)
+            return "";
+        }
+        let stateName = this.getI18n(state.nameId);
+        if(stateName.includes("{") ){
+            stateName = stateName.replace("{", "").replace("}", "");
+            let data = stateName.split(",");
+            let html = data.find(t => t.includes("::")).split("::")[1]; 
+            // console.log("state: " + html);
+            return html;
+        }
+        else
+            return `<font color="#ebc304">${stateName}</font>`
+    }
 }
 
 const container = DI.createContainer();
