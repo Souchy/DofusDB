@@ -26,7 +26,6 @@ export class db {
 
 	// actual json fetched 
 	public jsonSpells: any;
-	// public jsonSpellsDetails: any;
 	public jsonBreeds: any;
 	public jsonSummons: any;
 	public jsonStates: any;
@@ -34,10 +33,8 @@ export class db {
 	public i18n_en: any;
 	public jsonMaps: {} = {};
 	public jsonGreenListEffects = importgreenlist;
-	public isItemsLoaded = false;
 	// json names
 	public jsonSpellsName = "spells.json";
-	// public jsonSpellsDetailsName = "spellsDetails.json";
 	public jsonBreedsName = "breeds.json";
 	public jsonSummonsName = "summons.json";
 
@@ -81,8 +78,8 @@ export class db {
 
 	public get isLoaded() {
 		return this.jsonSpells && this.jsonBreeds
-			&& this.jsonSummons && this.jsonStates && this.i18n_fr && this.i18n_en
-		// && this.jsonSpellsDetails 
+			&& this.jsonSummons && this.jsonStates 
+			&& this.i18n_fr && this.i18n_en
 	}
 
 	public get isLoadedI18n() {
@@ -130,14 +127,15 @@ export class db {
 	public setVersion(version: string) {
 		if (this.version == version) {
 			// do nothing
-		} else
+		} else {
 			if (!versions.includes(version)) {
-				alert("Invalid version")
-			} else {
-				this._version = version;
-				localStorage.setItem("version", version);
-				this.loadJson();
+				// alert("Invalid version")
+				version = versions[0]
 			}
+			this._version = version;
+			localStorage.setItem("version", version);
+			this.loadJson();
+		}
 	}
 
 	public get selectedSpellSlot() {
@@ -164,52 +162,20 @@ export class db {
 
 	public async loadJson() {
 		this.promiseLoadingSpells = this.fetchJson(this.gitFolderPath + this.jsonSpellsName, (json) => this.jsonSpells = json);
-		// this.promiseLoadingSpellsDetails = this.fetchJson(this.gitFolderPath + this.lang + "/" + this.jsonSpellsDetailsName,
-		// 	(json) => this.jsonSpellsDetails = json
-		// );
 		this.promiseLoadingBreeds = this.fetchJson(this.gitFolderPath + this.jsonBreedsName, (json) => this.jsonBreeds = json);
 		this.promiseLoadingSummons = this.fetchJson(this.gitFolderPath + this.jsonSummonsName, (json) => this.jsonSummons = json);
 		// console.log("loaded = promise: " + this.promiseLoadingSpells)
 
 		await this.promiseLoadingBreeds;
 		await this.promiseLoadingSummons;
-
-		let result = await this.promiseLoadingSpells;
-		// result = await this.promiseLoadingSpellsDetails;
+		await this.promiseLoadingSpells;
 
 		await this.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.i18n_fr = json);
 		await this.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.i18n_en = json);
 		await this.fetchJson(this.gitFolderPath + "states.json", (json) => this.jsonStates = json);
-		// for (let i of maps_kolo_ids) {
-		// await this.fetchJson(this.getMapPath(i), (json) => this.jsonMaps[i] = json);
-		// }
-
-		if (this.checkFeatureVersion(jsonFeatures.items)) {
-			// await this.fetchJson(this.gitFolderPath + "characteristics.json", (json) => this.jsonCharacteristics = json);
-			// await this.fetchJson(this.gitFolderPath + "effects.json", (json) => this.jsonEffects = json);
-			// this.fetchJson(this.gitFolderPath + "itemtypes.json", (json: []) => {
-			// 	console.log("loaded itemtypes: " + json.length)
-			// 	this.jsonItemTypes = json;
-			// })
-			// this.fetchJson(this.gitFolderPath + "itemsets.json", (json: []) => {
-			// 	console.log("loaded itemsets: " + json.length)
-			// 	this.jsonItemSets = json;
-			// })
-			// this.fetchJson(this.gitFolderPath + "items.json", (json: []) => {
-			// 	console.log("loaded items: " + json.length)
-			// 	this.jsonItems = json;
-			// 	this.isItemsLoaded = true;
-			// 	this.items.insert(json);
-			// })
-		}
 
 		this.ea.publish("db:loaded");
 	}
-	// public jsonEffects;
-	// public jsonCharacteristics;
-	// public jsonItemTypes;
-	// public jsonItemSets;
-	// public jsonItems;
 
 	public async loadMap(mapid: string) {
 		// console.log("load map " + mapid)
