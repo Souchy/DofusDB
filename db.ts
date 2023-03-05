@@ -184,7 +184,7 @@ export class db {
 		// await this.fetchJson(this.getMapPath(i), (json) => this.jsonMaps[i] = json);
 		// }
 
-		if (this.checkFeatureVersion(jsonFeatures.items) && Util.isLocal()) {
+		if (this.checkFeatureVersion(jsonFeatures.items)) {
 			// await this.fetchJson(this.gitFolderPath + "characteristics.json", (json) => this.jsonCharacteristics = json);
 			// await this.fetchJson(this.gitFolderPath + "effects.json", (json) => this.jsonEffects = json);
 			// this.fetchJson(this.gitFolderPath + "itemtypes.json", (json: []) => {
