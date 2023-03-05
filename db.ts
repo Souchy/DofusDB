@@ -508,26 +508,36 @@ export class db {
 		sections.set("quickfus.filter.sections.resistance", 5);
 		return sections;
 	}
-	public pseudoCharacs: any[] = [
+	public characRes = [37, 33, 34, 35, 36];
+	public characResEle = [33, 34, 35, 36];
+	public pseudoCharacs = [
 		{
 			"id": 10000,
 			"name": "numres",
 			"categoryId": 0,
+			"mask": this.characRes,
+			"count": true
 		},
 		{
 			"id": 10001,
 			"name": "numresele",
 			"categoryId": 0,
+			"mask": this.characResEle,
+			"count": true
 		},
 		{
 			"id": 10002,
 			"name": "totres",
 			"categoryId": 0,
+			"mask": this.characRes,
+			"count": false
 		},
 		{
 			"id": 10003,
 			"name": "totresele",
 			"categoryId": 0,
+			"mask": this.characResEle,
+			"count": false
 		},
 	];
 
@@ -553,6 +563,7 @@ export class db {
 			"collection": "items",
 			"pipeline": pipeline
 		}
+		
 		let pro = this.http.fetch(url, {
 			method: "post",
 			headers: {
@@ -562,9 +573,11 @@ export class db {
 		});
 		let res = await pro;
 		if(res.ok) {
+			// console.log("response ok: " + JSON.stringify(res));
 			let json = await res.json();
 			return json.documents;
 		} else {
+			// console.log("response not ok: " + JSON.stringify(res));
 			this.token = "";
 			return this.mongoItemsAggregate(pipeline);
 		}
