@@ -12404,6 +12404,29 @@
         "cantBeTackled": false,
         "displayTurnRemaining": false
     },
+    "3823": {
+        "id": 3823,
+        "nameId": 991099,
+        "preventsSpellCast": false,
+        "preventsFight": false,
+        "isSilent": true,
+        "cantBeMoved": false,
+        "cantBePushed": false,
+        "cantDealDamage": false,
+        "invulnerable": false,
+        "cantSwitchPosition": false,
+        "incurable": false,
+        "effectsIds": [
+            16
+        ],
+        "icon": "",
+        "iconVisibilityMask": 0,
+        "invulnerableMelee": false,
+        "invulnerableRange": false,
+        "cantTackle": false,
+        "cantBeTackled": false,
+        "displayTurnRemaining": false
+    },
     "3824": {
         "id": 3824,
         "nameId": 991613,
