@@ -1,6 +1,5 @@
 import { ActionIds } from './code/ActionIds';
 import { SpellZone } from './formulas';
-import { loadavg } from "os";
 import versions from './versions.json'
 import maps_kolo_ids from './scraped/common/mapIdsFlat.json'
 
@@ -10,51 +9,38 @@ import importgreenlist from './static/greenlistEffects.json'
 
 
 import jsonFeatures from '../DofusDB/features.json'
-// import jsonVersions from '../DofusDB/versions.json'
-import zango from 'zangodb';
-import { Util } from '../ts/util';
 
 export class db {
 
-	private http = new HttpClient();
+	private static http = new HttpClient();
 
 	// lang should be stored on the client (local storage / session storage / cache / cookie)
 	public lang_default = "fr";
 	public lang: string = this.lang_default;
-	private _version: string = versions[0]; // first version is the latest
+	// private _version: string = versions[0]; // first version is the latest
 	private _effectMode: string = "basic";
 
 	// actual json fetched 
-	public jsonSpells: any;
-	public jsonBreeds: any;
-	public jsonSummons: any;
-	public jsonStates: any;
-	public i18n_fr: any;
-	public i18n_en: any;
+	public data: DB = new DB();
+	// json to compare with (i.e. a previous version)
+	public data2: DB = new DB();
+	//
 	public jsonMaps: {} = {};
 	public jsonGreenListEffects = importgreenlist;
-	// json names
-	public jsonSpellsName = "spells.json";
-	public jsonBreedsName = "breeds.json";
-	public jsonSummonsName = "summons.json";
-
-	// zangodb
-	// public zdb: zango.Db;
-	// public items: zango.Collection;
-	// public itemSets: zango.Collection;
-
+	
 	// selected
 	public breedId: number = 1;
 	private _selectedSpellSlot: number = 0;
 	private _selectedOsaSummonSlot: number = -1;
 
 
-	public constructor(@IEventAggregator readonly ea: IEventAggregator) {
-		// this.zdb = new zango.Db("encyclofus-" + this.version, 0, { items: [] });
-		// this.items = this.zdb.collection('items');
 
+	public constructor(@IEventAggregator readonly ea: IEventAggregator) {
+		// data
+		this.data.version = versions[0];
+		this.data2.version = versions[1];
 		// connect to mongo
-		this.getToken();
+		// this.getToken();
 		// load cached version and language
 		let ver = localStorage.getItem("version");
 		if (ver) this.setVersion(ver);
@@ -77,14 +63,15 @@ export class db {
 	public promiseLoadingSummons: Promise<boolean>;
 
 	public get isLoaded() {
-		return this.jsonSpells && this.jsonBreeds
-			&& this.jsonSummons && this.jsonStates 
-			&& this.i18n_fr && this.i18n_en
+		return this.data.isLoaded
+		// return this.jsonSpells && this.jsonBreeds
+		// 	&& this.jsonSummons && this.jsonStates 
+		// 	&& this.i18n_fr && this.i18n_en
 	}
 
 	public get isLoadedI18n() {
-		if (this.lang == "fr") return this.i18n_fr;
-		return this.i18n_en;
+		if (this.lang == "fr") return this.data.jsonI18n_fr;
+		return this.data.jsonI18n_en;
 	}
 
 	public isFeature(name: string): boolean {
@@ -107,7 +94,12 @@ export class db {
 		if (this.lang != lang) {
 			this.lang = lang;
 			localStorage.setItem("language", lang);
-			this.loadJson();
+			this.data.loadJson().then(() => {
+				this.ea.publish("db:loaded");
+			})
+			this.data2.loadJson().then(() => {
+				this.ea.publish("db:loaded:2");
+			})
 		}
 	}
 	public setEffectMode(mode: string) {
@@ -122,7 +114,7 @@ export class db {
 		return this._effectMode;
 	}
 	public get version() {
-		return this._version;
+		return this.data.version;
 	}
 	public setVersion(version: string) {
 		if (this.version == version) {
@@ -132,9 +124,11 @@ export class db {
 				// alert("Invalid version")
 				version = versions[0]
 			}
-			this._version = version;
+			this.data.version = version;
 			localStorage.setItem("version", version);
-			this.loadJson();
+			this.data.loadJson().then(() => {
+				this.ea.publish("db:loaded");
+			})
 		}
 	}
 
@@ -160,27 +154,10 @@ export class db {
 		}
 	}
 
-	public async loadJson() {
-		this.promiseLoadingSpells = this.fetchJson(this.gitFolderPath + this.jsonSpellsName, (json) => this.jsonSpells = json);
-		this.promiseLoadingBreeds = this.fetchJson(this.gitFolderPath + this.jsonBreedsName, (json) => this.jsonBreeds = json);
-		this.promiseLoadingSummons = this.fetchJson(this.gitFolderPath + this.jsonSummonsName, (json) => this.jsonSummons = json);
-		// console.log("loaded = promise: " + this.promiseLoadingSpells)
-
-		await this.promiseLoadingBreeds;
-		await this.promiseLoadingSummons;
-		await this.promiseLoadingSpells;
-
-		await this.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.i18n_fr = json);
-		await this.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.i18n_en = json);
-		await this.fetchJson(this.gitFolderPath + "states.json", (json) => this.jsonStates = json);
-
-		this.ea.publish("db:loaded");
-	}
-
 	public async loadMap(mapid: string) {
 		// console.log("load map " + mapid)
 		if (!mapid) return;
-		let promise = await this.fetchJson(this.getMapPath(mapid), (json) => this.jsonMaps[mapid] = json);
+		let promise = await db.fetchJson(this.getMapPath(mapid), (json) => this.jsonMaps[mapid] = json);
 		if (promise) {
 			// console.log("db.loaded map: " + mapid + " = " + this.jsonMaps[mapid])
 			this.ea.publish("db:loadmap");
@@ -189,8 +166,16 @@ export class db {
 		}
 	}
 
-	public async fetchJson(path: string, setter: (json) => any) {
-		return this.http.fetch(path)
+	// https://raw.githubusercontent.com/Souchy/DofusDB/master/scraped/2.65/fr/spellsDetails.json
+	// "http://192.168.2.11:9000/src/DofusDB/" //
+	public static dofusDBGithubUrl = "https://raw.githubusercontent.com/Souchy/DofusDB/master/";
+	public static githubScrapedUrlPath = db.dofusDBGithubUrl + "scraped/";
+	public commonUrlPath: string = db.githubScrapedUrlPath + "common/";
+	public get gitFolderPath() {
+		return db.githubScrapedUrlPath + this.version + "/";
+	}
+	public static async fetchJson(path: string, setter: (json) => any) {
+		return db.http.fetch(path)
 			.then(response => response.status == 404 ? null : response.text())
 			.then(data => {
 				if (data == null) return false;
@@ -200,35 +185,25 @@ export class db {
 				return false;
 			});
 	}
-
-	// https://raw.githubusercontent.com/Souchy/DofusDB/master/scraped/2.65/fr/spellsDetails.json
-	// "http://192.168.2.11:9000/src/DofusDB/" //
-	public dofusDBGithubUrl = "https://raw.githubusercontent.com/Souchy/DofusDB/master/";
-	public githubScrapedUrlPath = this.dofusDBGithubUrl + "scraped/";
-	public commonUrlPath: string = this.githubScrapedUrlPath + "common/";
-	public get gitFolderPath() {
-		return this.githubScrapedUrlPath + this.version + "/";
-	}
-
 	public getMapPath(id: string): string {
 		return this.commonUrlPath + "map_kolo/" + id + ".json";
 	}
 
 	public getSpellIconPath(spellId: number): string {
-		let iconid = this.jsonSpells[spellId].iconId;
+		let iconid = this.data.jsonSpells[spellId].iconId;
 		// console.log("getSpellIconPath " + spellId + " = " + iconid); //JSON.stringify(this.jsonSpells[spellId]));
-		return this.githubScrapedUrlPath + this.version + "/sprites/spells/" + iconid + ".png";
+		return db.githubScrapedUrlPath + this.version + "/sprites/spells/" + iconid + ".png";
 	}
 	public getMonsterIconPath(monsterId: number): string {
-		return this.githubScrapedUrlPath + this.version + "/sprites/monsters/" + monsterId + ".png";
+		return db.githubScrapedUrlPath + this.version + "/sprites/monsters/" + monsterId + ".png";
 	}
 
 	public getI18n(id: string): string {
 		try {
 			if (this.lang == "fr")
-				return this.i18n_fr[id];
+				return this.data.jsonI18n_fr[id];
 			if (this.lang == "en")
-				return this.i18n_en[id];
+				return this.data.jsonI18n_en[id];
 		} catch (error) {
 			console.log("db.getI18n error key: " + id + ". Wait 30 seconds for the site to load.");
 			return id;
@@ -513,7 +488,7 @@ export class db {
 	}
 	public async getToken() {
 		if(this.token != "") return this.token;
-		let res = await this.http.get("https://realm.mongodb.com/api/client/v2.0/app/data-ewvjc/auth/providers/anon-user/login");
+		let res = await db.http.get("https://realm.mongodb.com/api/client/v2.0/app/data-ewvjc/auth/providers/anon-user/login");
 		let json = await res.json();
 		this.token = json.access_token;
 		this.ea.publish("mongo:login", json.access_token);
@@ -529,8 +504,7 @@ export class db {
 			"collection": "items",
 			"pipeline": pipeline
 		}
-		
-		let pro = this.http.fetch(url, {
+		let pro = db.http.fetch(url, {
 			method: "post",
 			headers: {
 				Authorization: 'Bearer ' + token
@@ -551,7 +525,7 @@ export class db {
 
     public parseStateToString(mask) {
         let stateId = +mask; 
-        let state = this.jsonStates[stateId];
+        let state = this.data.jsonStates[stateId];
         if (!state) {
             console.log("state doesnt exist: " + stateId)
             return "";
@@ -567,6 +541,42 @@ export class db {
         else
             return `<font color="#ebc304">${stateName}</font>`
     }
+}
+
+
+export class DB {
+	public version: string;
+	public isLoaded: boolean = false;
+	// private http = new HttpClient();
+
+	public jsonSpells: any;
+	public jsonBreeds: any;
+	public jsonSummons: any;
+	public jsonStates: any;
+	public jsonI18n_fr: any;
+	public jsonI18n_en: any;
+	public jsonEffects: any[]
+	public jsonCharacteristics: any[]
+	public jsonItems: any[]
+	public jsonItemTypes: any[]
+	public jsonItemSets: any[]
+
+    public async loadJson() {
+		this.isLoaded = false;
+		await db.fetchJson(this.gitFolderPath + "spells.json", (json) => this.jsonSpells = json);
+		await db.fetchJson(this.gitFolderPath + "breeds.json", (json) => this.jsonBreeds = json);
+		await db.fetchJson(this.gitFolderPath + "summons.json", (json) => this.jsonSummons = json);
+		await db.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.jsonI18n_fr = json);
+		await db.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.jsonI18n_en = json);
+		await db.fetchJson(this.gitFolderPath + "states.json", (json) => this.jsonStates = json);
+        await db.fetchJson(this.gitFolderPath + "effects.json", (json) =>  this.jsonEffects = json);
+        await db.fetchJson(this.gitFolderPath + "characteristics.json", (json) =>  this.jsonCharacteristics = json);
+		this.isLoaded = true;
+		// this.ea.publish("db:loaded:diff");
+	}
+	public get gitFolderPath() {
+		return db.githubScrapedUrlPath + this.version + "/";
+	}
 }
 
 const container = DI.createContainer();
