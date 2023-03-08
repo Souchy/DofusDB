@@ -19,7 +19,8 @@
 		"huppermage",
 		"ouginak",
 		"communs",
-		"forgelance"
+		"forgelance",
+		"percepteur"
 	],
 	"orderByIcon": [
 		"feca",
@@ -41,7 +42,8 @@
 		"huppermage",
 		"ouginak",
 		"communs",
-		"forgelance"
+		"forgelance",
+		"percepteur"
 	],
 	"orderById": [
 		"feca",
@@ -63,7 +65,8 @@
 		"huppermage",
 		"ouginak",
 		"communs",
-		"forgelance"
+		"forgelance",
+		"percepteur"
 	],
 	"ids": {
 		"feca": 1,
@@ -85,7 +88,8 @@
 		"huppermage": 17,
 		"ouginak": 18,
 		"communs": 19,
-		"forgelance": 20
+		"forgelance": 20,
+		"percepteur": 25
 	},
 	"french": [
 		"Féca",
@@ -107,6 +111,7 @@
 		"Huppermage",
 		"Ouginak",
 		"Sorts communs",
-		"Forgelance"
+		"Forgelance",
+		"Percepteur"
 	]
 }

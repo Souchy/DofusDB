@@ -127,6 +127,7 @@ export class db {
 			this.data.version = version;
 			let nextidx = Math.min(versions.indexOf(version) + 1, versions.length - 1);
 			this.data2.version = versions[nextidx];
+			// console.log("setVersion: " + this.data.version + " -> " + this.data2.version)
 			localStorage.setItem("version", version);
 			this.data.loadJson().then(() => {
 				this.ea.publish("db:loaded");
@@ -202,10 +203,19 @@ export class db {
 
 	public getI18n(id: string): string {
 		try {
-			if (this.lang == "fr")
-				return this.data.jsonI18n_fr[id];
-			if (this.lang == "en")
-				return this.data.jsonI18n_en[id];
+			if (this.lang == "fr") {
+				let str = this.data.jsonI18n_fr[id];
+				// if(!str) console.log("no str " + id)
+				if(str && str != "undefined") return str;
+				else return this.data2.jsonI18n_fr[id];
+			}
+			if (this.lang == "en"){
+				// return this.data.jsonI18n_en[id] ?? this.data2.jsonI18n_en[id];
+				let str = this.data.jsonI18n_en[id];
+				// if(!str) console.log("no str " + id)
+				if(str && str != "undefined") return str;
+				else return this.data2.jsonI18n_en[id];
+			}
 		} catch (error) {
 			console.log("db.getI18n error key: " + id + ". Wait 30 seconds for the site to load.");
 			return id;
@@ -244,6 +254,10 @@ export class db {
 		let pos;
 		if (breedIndex == 19 - 1) {
 			url = this.gitFolderPath + "sprites/spells/350.png"; // icône flamiche
+			pos = "background-size: 55px; background-position: 50%";
+		} else 
+		if (breedIndex == 21 - 1) {
+			url = this.gitFolderPath + "sprites/spells/10973.png"; // icône ferrage
 			pos = "background-size: 55px; background-position: 50%";
 		} else {
 			if (breedIndex == 20 - 1) {
