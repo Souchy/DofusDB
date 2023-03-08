@@ -392,7 +392,7 @@ export class db {
 			|| e.effectId == ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_TARGET // 1018
 			|| e.effectId == ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_SOURCE // 1019
 			|| e.effectId == ActionIds.ACTION_CHARACTER_PROTECTION_FROM_SPELL
-
+			|| e.effectId == ActionIds.ACTION_CAST_STARTING_SPELL
 	}
 	public isSummonEffect(e: any) {
 		// return e.effectId == 181 || e.effectId == 405 || e.effectId == 1008 || e.effectId == 1011 || e.effectId == 2796;
