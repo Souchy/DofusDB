@@ -125,6 +125,8 @@ export class db {
 				version = versions[0]
 			}
 			this.data.version = version;
+			let nextidx = Math.min(versions.indexOf(version) + 1, versions.length - 1);
+			this.data2.version = versions[nextidx];
 			localStorage.setItem("version", version);
 			this.data.loadJson().then(() => {
 				this.ea.publish("db:loaded");
