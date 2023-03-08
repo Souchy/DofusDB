@@ -245,6 +245,10 @@ export class db {
 		if (breedIndex == 19 - 1) {
 			url = this.gitFolderPath + "sprites/spells/350.png"; // icône flamiche
 			pos = "background-size: 55px; background-position: 50%";
+		} else 
+		if (breedIndex == 21 - 1) {
+			url = this.gitFolderPath + "sprites/spells/10973.png"; // icône ferrage
+			pos = "background-size: 55px; background-position: 50%";
 		} else {
 			if (breedIndex == 20 - 1) {
 				breedIndex--;
