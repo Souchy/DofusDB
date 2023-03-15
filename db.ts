@@ -92,12 +92,16 @@ export class db {
 
 	public setLanguage(lang: string) {
 		if (this.lang != lang) {
+			// console.log("db set language")
 			this.lang = lang;
 			localStorage.setItem("language", lang);
-			this.data.loadJson().then(() => {
+			this.data.loadJson().then((b) => {
+				// console.log("db publish loaded")
+				this.data.isLoaded = true;
 				this.ea.publish("db:loaded");
 			})
-			this.data2.loadJson().then(() => {
+			this.data2.loadJson().then((b) => {
+				this.data2.isLoaded = true;
 				this.ea.publish("db:loaded:2");
 			})
 		}
@@ -120,6 +124,7 @@ export class db {
 		if (this.version == version) {
 			// do nothing
 		} else {
+			// console.log("db set version")
 			if (!versions.includes(version)) {
 				// alert("Invalid version")
 				version = versions[0]
@@ -129,8 +134,13 @@ export class db {
 			this.data2.version = versions[nextidx];
 			// console.log("setVersion: " + this.data.version + " -> " + this.data2.version)
 			localStorage.setItem("version", version);
-			this.data.loadJson().then(() => {
+			this.data.loadJson().then((b) => {
+				this.data.isLoaded = true;
 				this.ea.publish("db:loaded");
+			})
+			this.data2.loadJson().then((b) => {
+				this.data2.isLoaded = true;
+				this.ea.publish("db:loaded:2");
 			})
 		}
 	}
@@ -577,18 +587,24 @@ export class DB {
 	public jsonItemTypes: any[]
 	public jsonItemSets: any[]
 
-    public async loadJson() {
+    public async loadJson(): Promise<[boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean]> {
 		this.isLoaded = false;
-		await db.fetchJson(this.gitFolderPath + "spells.json", (json) => this.jsonSpells = json);
-		await db.fetchJson(this.gitFolderPath + "breeds.json", (json) => this.jsonBreeds = json);
-		await db.fetchJson(this.gitFolderPath + "summons.json", (json) => this.jsonSummons = json);
-		await db.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.jsonI18n_fr = json);
-		await db.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.jsonI18n_en = json);
-		await db.fetchJson(this.gitFolderPath + "states.json", (json) => this.jsonStates = json);
-        await db.fetchJson(this.gitFolderPath + "effects.json", (json) =>  this.jsonEffects = json);
-        await db.fetchJson(this.gitFolderPath + "characteristics.json", (json) =>  this.jsonCharacteristics = json);
-		this.isLoaded = true;
-		// this.ea.publish("db:loaded:diff");
+		// console.log("data loading")
+		let promise = Promise.all([
+			db.fetchJson(this.gitFolderPath + "spells.json", (json) => this.jsonSpells = json),
+			db.fetchJson(this.gitFolderPath + "breeds.json", (json) => this.jsonBreeds = json),
+			db.fetchJson(this.gitFolderPath + "summons.json", (json) => this.jsonSummons = json),
+			db.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.jsonI18n_fr = json),
+			db.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.jsonI18n_en = json),
+			db.fetchJson(this.gitFolderPath + "states.json", (json) => this.jsonStates = json),
+			db.fetchJson(this.gitFolderPath + "effects.json", (json) =>  this.jsonEffects = json),
+			db.fetchJson(this.gitFolderPath + "characteristics.json", (json) =>  this.jsonCharacteristics = json),
+			db.fetchJson(this.gitFolderPath + "items.json", (json) =>  this.jsonItems = json),
+			db.fetchJson(this.gitFolderPath + "itemtypes.json", (json) =>  this.jsonItemTypes = json),
+			db.fetchJson(this.gitFolderPath + "itemsets.json", (json) =>  this.jsonItemSets = json)
+		]);
+		// console.log("data loading 1")
+		return promise;
 	}
 	public get gitFolderPath() {
 		return db.githubScrapedUrlPath + this.version + "/";
