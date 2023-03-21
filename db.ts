@@ -610,14 +610,24 @@ export class DB {
 	public jsonItems: any[]
 	public jsonItemTypes: any[]
 	public jsonItemSets: any[]
+	// public jsonBombSpells: any[]
 
     public async loadJson(): Promise<[boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean]> {
 		this.isLoaded = false;
 		// console.log("data loading")
 		let promise = Promise.all([
-			db.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.jsonI18n_fr = json),
-			db.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.jsonI18n_en = json),
-			db.fetchJson(this.gitFolderPath + "i18n_es.json", (json) => this.jsonI18n_es = json),
+			db.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.jsonI18n_fr = json).then((result) => {
+				if(result) return true;
+				return db.fetchJson(db.githubScrapedUrlPath + versions[0] + "/" + "i18n_fr.json", (json) => this.jsonI18n_fr = json)
+			}),
+			db.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.jsonI18n_en = json).then((result) => {
+				if(result) return true;
+				return db.fetchJson(db.githubScrapedUrlPath + versions[0] + "/" + "i18n_en.json", (json) => this.jsonI18n_en = json)
+			}),
+			db.fetchJson(this.gitFolderPath + "i18n_es.json", (json) => this.jsonI18n_es = json).then((result) => {
+				if(result) return true;
+				return db.fetchJson(db.githubScrapedUrlPath + versions[0] + "/" + "i18n_es.json", (json) => this.jsonI18n_es = json)
+			}),
 			db.fetchJson(this.gitFolderPath + "spells.json", (json) => this.jsonSpells = json),
 			db.fetchJson(this.gitFolderPath + "breeds.json", (json) => this.jsonBreeds = json),
 			db.fetchJson(this.gitFolderPath + "summons.json", (json) => this.jsonSummons = json),
@@ -625,8 +635,9 @@ export class DB {
 			db.fetchJson(this.gitFolderPath + "effects.json", (json) =>  this.jsonEffects = json),
 			db.fetchJson(this.gitFolderPath + "characteristics.json", (json) =>  this.jsonCharacteristics = json),
 			db.fetchJson(this.gitFolderPath + "items.json", (json) =>  this.jsonItems = json),
+			db.fetchJson(this.gitFolderPath + "itemsets.json", (json) =>  this.jsonItemSets = json),
 			db.fetchJson(this.gitFolderPath + "itemtypes.json", (json) =>  this.jsonItemTypes = json),
-			db.fetchJson(this.gitFolderPath + "itemsets.json", (json) =>  this.jsonItemSets = json)
+			// db.fetchJson(this.gitFolderPath + "bombspells.json", (json) =>  this.jsonBombSpells = json)
 		]);
 		// console.log("data loading 1")
 		return promise;
