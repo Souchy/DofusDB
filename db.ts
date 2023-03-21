@@ -96,11 +96,12 @@ export class db {
 			this.lang = lang;
 			localStorage.setItem("language", lang);
 			this.data.loadJson().then((b) => {
-				// console.log("db publish loaded")
+				// console.log("db1 publish loaded")
 				this.data.isLoaded = true;
 				this.ea.publish("db:loaded");
 			})
 			this.data2.loadJson().then((b) => {
+				// console.log("db2 publish loaded")
 				this.data2.isLoaded = true;
 				this.ea.publish("db:loaded:2");
 			})
@@ -135,10 +136,12 @@ export class db {
 			// console.log("setVersion: " + this.data.version + " -> " + this.data2.version)
 			localStorage.setItem("version", version);
 			this.data.loadJson().then((b) => {
+				// console.log("db1 publish loaded")
 				this.data.isLoaded = true;
 				this.ea.publish("db:loaded");
 			})
 			this.data2.loadJson().then((b) => {
+				// console.log("db2 publish loaded")
 				this.data2.isLoaded = true;
 				this.ea.publish("db:loaded:2");
 			})
@@ -216,18 +219,24 @@ export class db {
 			if (this.lang == "fr") {
 				let str = this.data.jsonI18n_fr[id];
 				// if(!str) console.log("no str " + id)
-				if(str && str != "undefined") return str;
-				else return this.data2.jsonI18n_fr[id];
+				if(str == undefined) str = this.data2.jsonI18n_fr[id];
+				if(str == undefined) str = this.data.jsonI18n_en[id];
+				if(str == undefined) str = this.data2.jsonI18n_en[id];
+				if(str == undefined) throw new Error("missing text");
+				return str;
 			}
 			if (this.lang == "en") {
 				// return this.data.jsonI18n_en[id] ?? this.data2.jsonI18n_en[id];
 				let str = this.data.jsonI18n_en[id];
 				// if(!str) console.log("no str " + id)
-				if(str && str != "undefined") return str;
-				else return this.data2.jsonI18n_en[id];
+				if(str == undefined) str = this.data2.jsonI18n_en[id];
+				if(str == undefined) str = this.data.jsonI18n_fr[id];
+				if(str == undefined) str = this.data2.jsonI18n_fr[id];
+				if(str == undefined) throw new Error("missing text");
+				return str;
 			}
 		} catch (error) {
-			console.log("db.getI18n error key: " + id + ". Wait 30 seconds for the site to load.");
+			// console.log("db.getI18n error key: " + id + ". Wait 30 seconds for the site to load.");
 			if (this.lang == "fr") 
 				return "Texte manquant";
 			if (this.lang == "en")
@@ -560,7 +569,7 @@ export class db {
             return "";
         }
         let stateName = this.getI18n(state.nameId);
-        if(stateName.includes("{") ){
+        if(stateName && stateName.includes("{")) {
             stateName = stateName.replace("{", "").replace("}", "");
             let data = stateName.split(",");
             let html = data.find(t => t.includes("::")).split("::")[1]; 
