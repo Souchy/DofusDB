@@ -206,7 +206,8 @@ export class db {
 	}
 
 	public getSpellIconPath(spellId: number): string {
-		let iconid = this.data.jsonSpells[spellId].iconId;
+		let iconid = this.data.jsonSpells[spellId]?.iconId;
+		if(!iconid) iconid = this.data2.jsonSpells[spellId]?.iconId;
 		// console.log("getSpellIconPath " + spellId + " = " + iconid); //JSON.stringify(this.jsonSpells[spellId]));
 		return db.githubScrapedUrlPath + this.version + "/sprites/spells/" + iconid + ".png";
 	}
