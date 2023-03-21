@@ -219,7 +219,7 @@ export class db {
 				if(str && str != "undefined") return str;
 				else return this.data2.jsonI18n_fr[id];
 			}
-			if (this.lang == "en"){
+			if (this.lang == "en") {
 				// return this.data.jsonI18n_en[id] ?? this.data2.jsonI18n_en[id];
 				let str = this.data.jsonI18n_en[id];
 				// if(!str) console.log("no str " + id)
@@ -228,7 +228,10 @@ export class db {
 			}
 		} catch (error) {
 			console.log("db.getI18n error key: " + id + ". Wait 30 seconds for the site to load.");
-			return id;
+			if (this.lang == "fr") 
+				return "Texte manquant";
+			if (this.lang == "en")
+				return "Missing text";
 		}
 	}
 
