@@ -219,18 +219,24 @@ export class db {
 			if (this.lang == "fr") {
 				let str = this.data.jsonI18n_fr[id];
 				// if(!str) console.log("no str " + id)
-				if(str && str != "undefined") return str;
-				else return this.data2.jsonI18n_fr[id];
+				if(str == undefined) str = this.data2.jsonI18n_fr[id];
+				if(str == undefined) str = this.data.jsonI18n_en[id];
+				if(str == undefined) str = this.data2.jsonI18n_en[id];
+				if(str == undefined) throw new Error("missing text");
+				return str;
 			}
 			if (this.lang == "en") {
 				// return this.data.jsonI18n_en[id] ?? this.data2.jsonI18n_en[id];
 				let str = this.data.jsonI18n_en[id];
 				// if(!str) console.log("no str " + id)
-				if(str && str != "undefined") return str;
-				else return this.data2.jsonI18n_en[id];
+				if(str == undefined) str = this.data2.jsonI18n_en[id];
+				if(str == undefined) str = this.data.jsonI18n_fr[id];
+				if(str == undefined) str = this.data2.jsonI18n_fr[id];
+				if(str == undefined) throw new Error("missing text");
+				return str;
 			}
 		} catch (error) {
-			console.log("db.getI18n error key: " + id + ". Wait 30 seconds for the site to load.");
+			// console.log("db.getI18n error key: " + id + ". Wait 30 seconds for the site to load.");
 			if (this.lang == "fr") 
 				return "Texte manquant";
 			if (this.lang == "en")
