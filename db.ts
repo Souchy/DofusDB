@@ -71,7 +71,9 @@ export class db {
 
 	public get isLoadedI18n() {
 		if (this.lang == "fr") return this.data.jsonI18n_fr;
-		return this.data.jsonI18n_en;
+		if (this.lang == "en") return this.data.jsonI18n_en;
+		if (this.lang == "es") return this.data.jsonI18n_es;
+		return false;
 	}
 
 	public isFeature(name: string): boolean {
@@ -215,11 +217,12 @@ export class db {
 		return db.githubScrapedUrlPath + this.version + "/sprites/monsters/" + monsterId + ".png";
 	}
 
-	public getI18n(id: string): string {
+	public getI18n(id: string, lang: string = ""): string {
+		if(lang == "")
+			lang = this.lang;
 		try {
 			if (this.lang == "fr") {
 				let str = this.data.jsonI18n_fr[id];
-				// if(!str) console.log("no str " + id)
 				if(str == undefined) str = this.data2.jsonI18n_fr[id];
 				if(str == undefined) str = this.data.jsonI18n_en[id];
 				if(str == undefined) str = this.data2.jsonI18n_en[id];
@@ -227,12 +230,17 @@ export class db {
 				return str;
 			}
 			if (this.lang == "en") {
-				// return this.data.jsonI18n_en[id] ?? this.data2.jsonI18n_en[id];
 				let str = this.data.jsonI18n_en[id];
-				// if(!str) console.log("no str " + id)
 				if(str == undefined) str = this.data2.jsonI18n_en[id];
 				if(str == undefined) str = this.data.jsonI18n_fr[id];
 				if(str == undefined) str = this.data2.jsonI18n_fr[id];
+				if(str == undefined) throw new Error("missing text");
+				return str;
+			}
+			if (this.lang == "es") {
+				let str = this.data.jsonI18n_es[id];
+				if(str == undefined) str = this.data2.jsonI18n_es[id];
+				if(str == undefined) str = this.getI18n(id, "en");
 				if(str == undefined) throw new Error("missing text");
 				return str;
 			}
@@ -242,6 +250,8 @@ export class db {
 				return "Texte manquant";
 			if (this.lang == "en")
 				return "Missing text";
+			if (this.lang == "en")
+				return "Falta texto";
 		}
 	}
 
@@ -594,21 +604,23 @@ export class DB {
 	public jsonStates: any;
 	public jsonI18n_fr: any;
 	public jsonI18n_en: any;
+	public jsonI18n_es: any;
 	public jsonEffects: any[]
 	public jsonCharacteristics: any[]
 	public jsonItems: any[]
 	public jsonItemTypes: any[]
 	public jsonItemSets: any[]
 
-    public async loadJson(): Promise<[boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean]> {
+    public async loadJson(): Promise<[boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean]> {
 		this.isLoaded = false;
 		// console.log("data loading")
 		let promise = Promise.all([
+			db.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.jsonI18n_fr = json),
+			db.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.jsonI18n_en = json),
+			db.fetchJson(this.gitFolderPath + "i18n_es.json", (json) => this.jsonI18n_es = json),
 			db.fetchJson(this.gitFolderPath + "spells.json", (json) => this.jsonSpells = json),
 			db.fetchJson(this.gitFolderPath + "breeds.json", (json) => this.jsonBreeds = json),
 			db.fetchJson(this.gitFolderPath + "summons.json", (json) => this.jsonSummons = json),
-			db.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.jsonI18n_fr = json),
-			db.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.jsonI18n_en = json),
 			db.fetchJson(this.gitFolderPath + "states.json", (json) => this.jsonStates = json),
 			db.fetchJson(this.gitFolderPath + "effects.json", (json) =>  this.jsonEffects = json),
 			db.fetchJson(this.gitFolderPath + "characteristics.json", (json) =>  this.jsonCharacteristics = json),
