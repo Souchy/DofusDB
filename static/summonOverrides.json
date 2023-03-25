@@ -4,6 +4,18 @@
     },
 
 
+    "434": {
+        "agiToLockMultiplier": 2
+    },
+    "5192": {
+        "agiToLockMultiplier": 1.5
+    },
+
+
+    "5152": {
+        "lock": 80
+    },
+
 
     "5795": {
         "agiToLockMultiplier": 2
