@@ -1,0 +1,49 @@
+{
+    "5129": {
+        "agiToLockMultiplier": 1.33333
+    },
+
+
+    "434": {
+        "agiToLockMultiplier": 2
+    },
+    "5192": {
+        "agiToLockMultiplier": 1.5
+    },
+
+
+    "5152": {
+        "lock": 80
+    },
+
+
+    "5795": {
+        "agiToLockMultiplier": 2
+    },
+    "5797": {
+        "agiToLockMultiplier": 2
+    },
+    "5796": {
+        "agiToLockMultiplier": 2
+    },
+
+    "5792": {
+        "agiToLockMultiplier": 1
+    },
+    "5794": {
+        "agiToLockMultiplier": 1
+    },
+    "5793": {
+        "agiToLockMultiplier": 1
+    },
+
+    "5799": {
+        "agiToLockMultiplier": 1.5
+    },
+    "5800": {
+        "agiToLockMultiplier": 1.5
+    },
+    "5798": {
+        "agiToLockMultiplier": 1.5
+    }
+}
