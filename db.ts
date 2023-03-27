@@ -209,10 +209,15 @@ export class db {
 
 	public getSpellIconPath(spellId: number): string {
 		let iconid = this.data.jsonSpells[spellId]?.iconId;
-		if(!iconid) iconid = this.data2.jsonSpells[spellId]?.iconId;
+		if (!iconid) iconid = this.data2?.jsonSpells[spellId]?.iconId;
+		return db.githubScrapedUrlPath + this.version + "/sprites/spells/" + iconid + ".png";
 		// console.log("getSpellIconPath " + spellId + " = " + iconid); //JSON.stringify(this.jsonSpells[spellId]));
+	}
+	public getSpellObjectIconPath(spell: any): string {
+		let iconid = spell.iconId
 		return db.githubScrapedUrlPath + this.version + "/sprites/spells/" + iconid + ".png";
 	}
+
 	public getMonsterIconPath(monsterId: number): string {
 		return db.githubScrapedUrlPath + this.version + "/sprites/monsters/" + monsterId + ".png";
 	}
@@ -413,19 +418,21 @@ export class db {
 		// state condition, fouet osa dragocharge, +1 combo, morsure albinos
 		// return e.effectId == 1160 || e.effectId == 2160 || e.effectId == 2794 || e.effectId == 792 || e.effectId == 1018;
 		// in different order
-		return e.effectId == ActionIds.ACTION_CASTER_EXECUTE_SPELL // 1160
-			|| e.effectId == ActionIds.ACTION_CASTER_EXECUTE_SPELL_GLOBAL_LIMITATION // 2160
-			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_GLOBAL_LIMITATION // 2792
-			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_WITH_ANIMATION_GLOBAL_LIMITATION // 2793
-			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_CELL // 2794
-			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_CELL_GLOBAL_LIMITATION // 2795
-			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL // 792
-			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_WITH_ANIMATION // 793
-			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_SOURCE // 1017
-			|| e.effectId == ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_TARGET // 1018
-			|| e.effectId == ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_SOURCE // 1019
-			|| e.effectId == ActionIds.ACTION_CHARACTER_PROTECTION_FROM_SPELL
-			|| e.effectId == ActionIds.ACTION_CAST_STARTING_SPELL
+		return [
+			ActionIds.ACTION_CASTER_EXECUTE_SPELL, // 1160
+			ActionIds.ACTION_CASTER_EXECUTE_SPELL_GLOBAL_LIMITATION, // 2160
+			ActionIds.ACTION_TARGET_EXECUTE_SPELL_GLOBAL_LIMITATION, // 2792
+			ActionIds.ACTION_TARGET_EXECUTE_SPELL_WITH_ANIMATION_GLOBAL_LIMITATION, // 2793
+			ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_CELL, // 2794
+			ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_CELL_GLOBAL_LIMITATION, // 2795
+			ActionIds.ACTION_TARGET_EXECUTE_SPELL, // 792
+			ActionIds.ACTION_TARGET_EXECUTE_SPELL_WITH_ANIMATION, // 793
+			ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_SOURCE, // 1017
+			ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_TARGET, // 1018
+			ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_SOURCE, // 1019
+			ActionIds.ACTION_CHARACTER_PROTECTION_FROM_SPELL,
+			ActionIds.ACTION_CAST_STARTING_SPELL
+		].includes(e.effectId);
 	}
 	public isSummonEffect(e: any) {
 		// return e.effectId == 181 || e.effectId == 405 || e.effectId == 1008 || e.effectId == 1011 || e.effectId == 2796;
@@ -437,12 +444,14 @@ export class db {
 
 	}
 	public isCellEffect(e: any) {
-		// return (e.effectId == 400 || e.effectId == 401 || e.effectId == 402 || e.effectId == 1091 || e.effectId == 1165);
-		return e.effectId == ActionIds.ACTION_FIGHT_ADD_TRAP_CASTING_SPELL // 400
-			|| e.effectId == ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL // 401
-			|| e.effectId == ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL_ENDTURN // 402
-			|| e.effectId == ActionIds.ACTION_FIGHT_ADD_GLYPH_AURA // 1091
-			|| e.effectId == ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL_IMMEDIATE // 1165
+		return [
+			ActionIds.ACTION_FIGHT_ADD_TRAP_CASTING_SPELL,  // 400
+			ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL, // 401
+			ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL_ENDTURN, // 402
+			ActionIds.ACTION_FIGHT_ADD_GLYPH_AURA, // 1091
+			ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL_IMMEDIATE  // 2022
+			// || e.effectId == ActionIds.ACTION_FIGHT_ADD_RUNE_CASTING_SPELL // 2022
+		].includes(e.effectId);
 	}
 
 	public hasDispellIcon(e) {
