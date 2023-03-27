@@ -400,7 +400,8 @@ export class db {
 		// état
 		// return e.effectId == 950 || e.effectId == 951;
 		return e.effectId == ActionIds.ACTION_FIGHT_SET_STATE
-			|| e.effectId == ActionIds.ACTION_FIGHT_UNSET_STATE;
+			|| e.effectId == ActionIds.ACTION_FIGHT_UNSET_STATE
+			|| e.effectId == ActionIds.ACTION_FIGHT_DISABLE_STATE
 	}
 	public isEffectChargeCooldown(e) {
 		// augmente ou réduit le cooldown du sort 
@@ -419,7 +420,10 @@ export class db {
 			|| e.effectId == ActionIds.ACTION_BOOST_SPELL_MAXPERTARGET
 			|| e.effectId == ActionIds.ACTION_BOOST_SPELL_AP_COST // 285
 			|| e.effectId == ActionIds.ACTION_BOOST_SPELL_NOLINEOFSIGHT // 289 
-
+			|| e.effectId == 798 // Le sort 23756 doit être lancé sur une cible visible uniquement
+			|| e.effectId == 2905 // Fixe la portée maximale du sort 23756 à #3
+			|| e.effectId == 2906 // Fixe la portée minimal du sort 23756 à #3
+			|| e.effectId == 298 // Le sort 23828 peut être lancé sur une cellule occupée
 	}
 	public isSubSpell(e) {
 		// state condition, fouet osa dragocharge, +1 combo, morsure albinos
@@ -443,7 +447,7 @@ export class db {
 	}
 	public isSummonEffect(e: any) {
 		// return e.effectId == 181 || e.effectId == 405 || e.effectId == 1008 || e.effectId == 1011 || e.effectId == 2796;
-		return e.effectId == ActionIds.ACTION_SUMMON_CREATURE
+		return e.effectId == ActionIds.ACTION_SUMMON_CREATURE // 181
 			|| e.effectId == ActionIds.ACTION_FIGHT_KILL_AND_SUMMON
 			|| e.effectId == ActionIds.ACTION_SUMMON_BOMB
 			|| e.effectId == ActionIds.ACTION_SUMMON_SLAVE
