@@ -133,7 +133,7 @@ export class db {
 				version = versions[0]
 			}
 			this.data.version = version;
-			let nextidx = Math.min(versions.indexOf(version) + 1, versions.length - 1);
+			let nextidx = Math.min(versions.indexOf(version) + 1, versions.length - 2); // 2 to ignore first version which was 2.64
 			this.data2.version = versions[nextidx];
 			// console.log("setVersion: " + this.data.version + " -> " + this.data2.version)
 			localStorage.setItem("version", version);
@@ -258,6 +258,13 @@ export class db {
 			if (this.lang == "en")
 				return "Falta texto";
 		}
+	}
+	public hasI18n(id: string, lang: string = ""): boolean {
+		let tex = this.getI18n(id, lang);
+		if(tex == "Texte manquant") return false;
+		if(tex == "Missing text") return false;
+		if(tex == "Falta texto") return false;
+		return true;
 	}
 
 	public getIconPath(name: string) {
@@ -460,9 +467,9 @@ export class db {
 			return false;
 		}
 		// "triggers": "DA"
-		if (e.triggers.startsWith("D")) {
-			return false;
-		}
+		// if (e.triggers.startsWith("D")) {
+		// 	return false;
+		// }
 		if (e.duration > 0)
 			return true;
 		return false;
@@ -492,6 +499,7 @@ export class db {
 		if (e.dispellable == db.IS_NOT_DISPELLABLE) {
 			name = "icons/dispell_no.webp";
 		}
+		// console.log("dispellIcon: " + name)
 		return this.commonUrlPath + name;
 		// return "vertical-align: middle; width: 25px; height: 32px; background-image: url('" + this.commonUrlPath + name + "'); background-repeat: no-repeat;"
 		// 	+ "background-position: 50%;";
