@@ -133,7 +133,7 @@ export class db {
 				version = versions[0]
 			}
 			this.data.version = version;
-			let nextidx = Math.min(versions.indexOf(version) + 1, versions.length - 1);
+			let nextidx = Math.min(versions.indexOf(version) + 1, versions.length - 2); // 2 to ignore first version which was 2.64
 			this.data2.version = versions[nextidx];
 			// console.log("setVersion: " + this.data.version + " -> " + this.data2.version)
 			localStorage.setItem("version", version);
@@ -209,10 +209,15 @@ export class db {
 
 	public getSpellIconPath(spellId: number): string {
 		let iconid = this.data.jsonSpells[spellId]?.iconId;
-		if(!iconid) iconid = this.data2.jsonSpells[spellId]?.iconId;
+		if (!iconid) iconid = this.data2?.jsonSpells[spellId]?.iconId;
+		return db.githubScrapedUrlPath + this.version + "/sprites/spells/" + iconid + ".png";
 		// console.log("getSpellIconPath " + spellId + " = " + iconid); //JSON.stringify(this.jsonSpells[spellId]));
+	}
+	public getSpellObjectIconPath(spell: any): string {
+		let iconid = spell.iconId
 		return db.githubScrapedUrlPath + this.version + "/sprites/spells/" + iconid + ".png";
 	}
+
 	public getMonsterIconPath(monsterId: number): string {
 		return db.githubScrapedUrlPath + this.version + "/sprites/monsters/" + monsterId + ".png";
 	}
@@ -253,6 +258,13 @@ export class db {
 			if (this.lang == "en")
 				return "Falta texto";
 		}
+	}
+	public hasI18n(id: string, lang: string = ""): boolean {
+		let tex = this.getI18n(id, lang);
+		if(tex == "Texte manquant") return false;
+		if(tex == "Missing text") return false;
+		if(tex == "Falta texto") return false;
+		return true;
 	}
 
 	public getIconPath(name: string) {
@@ -324,7 +336,7 @@ export class db {
 
 	public getModIconStyle(mod: string, item: boolean = false) {
 		mod = mod.replace("(", "").replace(")", "").replace(".", "");
-		let words = mod.toLowerCase().split(" ");
+		let words = mod.toLowerCase().split(/[ ']/);
 
 		// console.log("getModIconStyle: " + mod + " : " + words)
 
@@ -413,19 +425,21 @@ export class db {
 		// state condition, fouet osa dragocharge, +1 combo, morsure albinos
 		// return e.effectId == 1160 || e.effectId == 2160 || e.effectId == 2794 || e.effectId == 792 || e.effectId == 1018;
 		// in different order
-		return e.effectId == ActionIds.ACTION_CASTER_EXECUTE_SPELL // 1160
-			|| e.effectId == ActionIds.ACTION_CASTER_EXECUTE_SPELL_GLOBAL_LIMITATION // 2160
-			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_GLOBAL_LIMITATION // 2792
-			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_WITH_ANIMATION_GLOBAL_LIMITATION // 2793
-			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_CELL // 2794
-			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_CELL_GLOBAL_LIMITATION // 2795
-			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL // 792
-			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_WITH_ANIMATION // 793
-			|| e.effectId == ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_SOURCE // 1017
-			|| e.effectId == ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_TARGET // 1018
-			|| e.effectId == ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_SOURCE // 1019
-			|| e.effectId == ActionIds.ACTION_CHARACTER_PROTECTION_FROM_SPELL
-			|| e.effectId == ActionIds.ACTION_CAST_STARTING_SPELL
+		return [
+			ActionIds.ACTION_CASTER_EXECUTE_SPELL, // 1160
+			ActionIds.ACTION_CASTER_EXECUTE_SPELL_GLOBAL_LIMITATION, // 2160
+			ActionIds.ACTION_TARGET_EXECUTE_SPELL_GLOBAL_LIMITATION, // 2792
+			ActionIds.ACTION_TARGET_EXECUTE_SPELL_WITH_ANIMATION_GLOBAL_LIMITATION, // 2793
+			ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_CELL, // 2794
+			ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_CELL_GLOBAL_LIMITATION, // 2795
+			ActionIds.ACTION_TARGET_EXECUTE_SPELL, // 792
+			ActionIds.ACTION_TARGET_EXECUTE_SPELL_WITH_ANIMATION, // 793
+			ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_SOURCE, // 1017
+			ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_TARGET, // 1018
+			ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_SOURCE, // 1019
+			ActionIds.ACTION_CHARACTER_PROTECTION_FROM_SPELL,
+			ActionIds.ACTION_CAST_STARTING_SPELL
+		].includes(e.effectId);
 	}
 	public isSummonEffect(e: any) {
 		// return e.effectId == 181 || e.effectId == 405 || e.effectId == 1008 || e.effectId == 1011 || e.effectId == 2796;
@@ -437,12 +451,14 @@ export class db {
 
 	}
 	public isCellEffect(e: any) {
-		// return (e.effectId == 400 || e.effectId == 401 || e.effectId == 402 || e.effectId == 1091 || e.effectId == 1165);
-		return e.effectId == ActionIds.ACTION_FIGHT_ADD_TRAP_CASTING_SPELL // 400
-			|| e.effectId == ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL // 401
-			|| e.effectId == ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL_ENDTURN // 402
-			|| e.effectId == ActionIds.ACTION_FIGHT_ADD_GLYPH_AURA // 1091
-			|| e.effectId == ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL_IMMEDIATE // 1165
+		return [
+			ActionIds.ACTION_FIGHT_ADD_TRAP_CASTING_SPELL,  // 400
+			ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL, // 401
+			ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL_ENDTURN, // 402
+			ActionIds.ACTION_FIGHT_ADD_GLYPH_AURA, // 1091
+			ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL_IMMEDIATE  // 2022
+			// || e.effectId == ActionIds.ACTION_FIGHT_ADD_RUNE_CASTING_SPELL // 2022
+		].includes(e.effectId);
 	}
 
 	public hasDispellIcon(e) {
@@ -451,9 +467,9 @@ export class db {
 			return false;
 		}
 		// "triggers": "DA"
-		if (e.triggers.startsWith("D")) {
-			return false;
-		}
+		// if (e.triggers.startsWith("D")) {
+		// 	return false;
+		// }
 		if (e.duration > 0)
 			return true;
 		return false;
@@ -483,6 +499,7 @@ export class db {
 		if (e.dispellable == db.IS_NOT_DISPELLABLE) {
 			name = "icons/dispell_no.webp";
 		}
+		// console.log("dispellIcon: " + name)
 		return this.commonUrlPath + name;
 		// return "vertical-align: middle; width: 25px; height: 32px; background-image: url('" + this.commonUrlPath + name + "'); background-repeat: no-repeat;"
 		// 	+ "background-position: 50%;";
