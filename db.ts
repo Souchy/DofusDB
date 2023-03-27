@@ -329,7 +329,7 @@ export class db {
 
 	public getModIconStyle(mod: string, item: boolean = false) {
 		mod = mod.replace("(", "").replace(")", "").replace(".", "");
-		let words = mod.toLowerCase().split(" ");
+		let words = mod.toLowerCase().split(/[ ']/);
 
 		// console.log("getModIconStyle: " + mod + " : " + words)
 
