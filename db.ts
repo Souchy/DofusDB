@@ -9,6 +9,7 @@ import importgreenlist from './static/greenlistEffects.json'
 
 
 import jsonFeatures from '../DofusDB/features.json'
+import { Statics } from './statics';
 
 export class db {
 
@@ -397,90 +398,22 @@ export class db {
 	}
 
 	public static isEffectState(e) {
-		// état
-		// return e.effectId == 950 || e.effectId == 951;
-		return [
-			ActionIds.ACTION_FIGHT_SET_STATE,
-			ActionIds.ACTION_FIGHT_UNSET_STATE,
-			ActionIds.ACTION_FIGHT_DISABLE_STATE
-		].includes(e.effectId);
+		return Statics.isEffectState(e);
 	}
 	public static isEffectChargeCooldown(e) {
-		// augmente ou réduit le cooldown du sort 
-		// return e.effectId == 1035 || e.effectId == 1036;
-		return e.effectId == ActionIds.ACTION_CHARACTER_ADD_SPELL_COOLDOWN // 1035
-			|| e.effectId == ActionIds.ACTION_CHARACTER_REMOVE_SPELL_COOLDOWN // 1036
-			|| e.effectId == ActionIds.ACTION_CHARACTER_SET_SPELL_COOLDOWN // 1045
+		return Statics.isEffectChargeCooldown(e);
 	}
 	public static isEffectCharge(e) {
-		// effet de charge
-		// return e.effectId == 293 || e.effectId == 281 || e.effectId == 290 || e.effectId == 291 || e.effectId == 280;
-		let chargeEffects = Array(20).fill(280).map((x, y) => x + y); // 280 -> 299
-		let chargeEffects2 = Array(22).fill(2913).map((x, y) => x + y); // 2913 -> 2934
-		chargeEffects.push(...chargeEffects2);
-		chargeEffects.push(1035, 1036, 1045); // ACTION_CHARACTER_ADD_SPELL_COOLDOWN, ACTION_CHARACTER_REMOVE_SPELL_COOLDOWN, ACTION_CHARACTER_SET_SPELL_COOLDOWN
-		chargeEffects.push(2905, 2906);
-		chargeEffects.push(798, 799);
-		// [
-		// 	ActionIds.ACTION_BOOST_SPELL_BASE_DMG,
-		// 	ActionIds.ACTION_BOOST_SPELL_RANGE_MIN,
-		// 	ActionIds.ACTION_BOOST_SPELL_RANGE_MAX,
-		// 	ActionIds.ACTION_BOOST_SPELL_MAXPERTURN,
-		// 	ActionIds.ACTION_BOOST_SPELL_MAXPERTARGET,
-		// 	ActionIds.ACTION_BOOST_SPELL_AP_COST, // 285
-		// 	ActionIds.ACTION_BOOST_SPELL_NOLINEOFSIGHT, // 289 
-		// 	798, // Le sort 23756 doit être lancé sur une cible visible uniquement
-		// 	2905, // Fixe la portée maximale du sort 23756 à #3
-		// 	2906, // Fixe la portée minimal du sort 23756 à #3
-		// 	298, // Le sort 23828 peut être lancé sur une cellule occupée
-		// 	296, // Augmente de #3 le coût en PA du sort 13444
-		// 	2932, // ACTION_ENABLE_SPELL_CASTOUTLINE
-		// 	2933, // ACTION_DISABLE_SPELL_CASTOUTDIAGONAL
-		// 	2934, // ACTION_ENABLE_SPELL_CASTOUTDIAGONAL
-		// ]
-		return chargeEffects.includes(e.effectId);
+		return Statics.isEffectCharge(e);
 	}
 	public static isSubSpell(e) {
-		// state condition, fouet osa dragocharge, +1 combo, morsure albinos
-		// return e.effectId == 1160 || e.effectId == 2160 || e.effectId == 2794 || e.effectId == 792 || e.effectId == 1018;
-		// in different order
-		return [
-			ActionIds.ACTION_CASTER_EXECUTE_SPELL, // 1160
-			ActionIds.ACTION_CASTER_EXECUTE_SPELL_GLOBAL_LIMITATION, // 2160
-			ActionIds.ACTION_TARGET_EXECUTE_SPELL_GLOBAL_LIMITATION, // 2792
-			ActionIds.ACTION_TARGET_EXECUTE_SPELL_WITH_ANIMATION_GLOBAL_LIMITATION, // 2793
-			ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_CELL, // 2794
-			ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_CELL_GLOBAL_LIMITATION, // 2795
-			ActionIds.ACTION_TARGET_EXECUTE_SPELL, // 792
-			ActionIds.ACTION_TARGET_EXECUTE_SPELL_WITH_ANIMATION, // 793
-			ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_SOURCE, // 1017
-			ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_TARGET, // 1018
-			ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_SOURCE, // 1019
-			ActionIds.ACTION_CHARACTER_PROTECTION_FROM_SPELL,
-			ActionIds.ACTION_CAST_STARTING_SPELL,
-			ActionIds.ACTION_CASTER_EXECUTE_SPELL_ON_CELL, // 2960
-		].includes(e.effectId);
+		return Statics.isSubSpell(e);
 	}
 	public static isSummonEffect(e: any) {
-		// return e.effectId == 181 || e.effectId == 405 || e.effectId == 1008 || e.effectId == 1011 || e.effectId == 2796;
-		return [
-			ActionIds.ACTION_SUMMON_CREATURE, // 181
-			ActionIds.ACTION_FIGHT_KILL_AND_SUMMON,
-			ActionIds.ACTION_SUMMON_BOMB,
-			ActionIds.ACTION_SUMMON_SLAVE,
-			ActionIds.ACTION_FIGHT_KILL_AND_SUMMON_SLAVE,
-		].includes(e.effectId);
-
+		return Statics.isSummonEffect(e);
 	}
 	public static isCellEffect(e: any) {
-		return [
-			ActionIds.ACTION_FIGHT_ADD_TRAP_CASTING_SPELL,  // 400
-			ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL, // 401
-			ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL_ENDTURN, // 402
-			ActionIds.ACTION_FIGHT_ADD_GLYPH_AURA, // 1091
-			ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL_IMMEDIATE  // 2022
-			// || e.effectId == ActionIds.ACTION_FIGHT_ADD_RUNE_CASTING_SPELL // 2022
-		].includes(e.effectId);
+		return Statics.isCellEffect(e);
 	}
 
 	public hasDispellIcon(e) {
