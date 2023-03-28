@@ -45,6 +45,8 @@ export class db {
 		// load cached version and language
 		let ver = localStorage.getItem("version");
 		if (ver) this.setVersion(ver);
+		let ver2 = localStorage.getItem("version2");
+		if (ver2) this.setVersion2(ver2);
 		let lan = localStorage.getItem("language");
 		if (lan) this.setLanguage(lan);
 		let mod = localStorage.getItem("effectMode");
@@ -150,6 +152,21 @@ export class db {
 			})
 		}
 	}
+	public setVersion2(version: string) {
+		if (this.data2.version == version) {
+			// do nothing
+		} else {
+			this.data2.version = version;
+			this.data2.isLoaded = false;
+			localStorage.setItem("version2", version);
+			this.data2.loadJson().then((b) => {
+				console.log("db2 publish loaded " + version);
+				this.data2.isLoaded = true;
+				this.ea.publish("db:loaded:2");
+			})
+		}
+	}
+
 
 	public get selectedSpellSlot() {
 		return this._selectedSpellSlot;
