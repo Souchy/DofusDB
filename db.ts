@@ -424,6 +424,7 @@ export class db {
 			|| e.effectId == 2905 // Fixe la portée maximale du sort 23756 à #3
 			|| e.effectId == 2906 // Fixe la portée minimal du sort 23756 à #3
 			|| e.effectId == 298 // Le sort 23828 peut être lancé sur une cellule occupée
+			|| e.effectId == 296 // Augmente de #3 le coût en PA du sort 13444
 	}
 	public isSubSpell(e) {
 		// state condition, fouet osa dragocharge, +1 combo, morsure albinos
