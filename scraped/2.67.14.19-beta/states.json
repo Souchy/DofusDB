@@ -5765,6 +5765,29 @@
         "cantBeTackled": false,
         "displayTurnRemaining": false
     },
+    "1460": {
+        "id": 1460,
+        "nameId": 996411,
+        "preventsSpellCast": false,
+        "preventsFight": false,
+        "isSilent": true,
+        "cantBeMoved": false,
+        "cantBePushed": false,
+        "cantDealDamage": false,
+        "invulnerable": false,
+        "cantSwitchPosition": false,
+        "incurable": false,
+        "effectsIds": [
+            16
+        ],
+        "icon": "",
+        "iconVisibilityMask": 0,
+        "invulnerableMelee": false,
+        "invulnerableRange": false,
+        "cantTackle": false,
+        "cantBeTackled": false,
+        "displayTurnRemaining": false
+    },
     "1461": {
         "id": 1461,
         "nameId": 996412,
@@ -18345,6 +18368,29 @@
     "3979": {
         "id": 3979,
         "nameId": 996413,
+        "preventsSpellCast": false,
+        "preventsFight": false,
+        "isSilent": true,
+        "cantBeMoved": false,
+        "cantBePushed": false,
+        "cantDealDamage": false,
+        "invulnerable": false,
+        "cantSwitchPosition": false,
+        "incurable": false,
+        "effectsIds": [
+            16
+        ],
+        "icon": "",
+        "iconVisibilityMask": 0,
+        "invulnerableMelee": false,
+        "invulnerableRange": false,
+        "cantTackle": false,
+        "cantBeTackled": false,
+        "displayTurnRemaining": false
+    },
+    "3980": {
+        "id": 3980,
+        "nameId": 996420,
         "preventsSpellCast": false,
         "preventsFight": false,
         "isSilent": true,
