@@ -41,18 +41,19 @@ export class Statics {
 			ActionIds.ACTION_TARGET_EXECUTE_SPELL_ON_SOURCE, // 1017
 			ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_TARGET, // 1018
 			ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_SOURCE, // 1019
-			ActionIds.ACTION_CHARACTER_PROTECTION_FROM_SPELL,
-			ActionIds.ACTION_CAST_STARTING_SPELL,
+			ActionIds.ACTION_CHARACTER_PROTECTION_FROM_SPELL, // 1044
+			ActionIds.ACTION_CAST_STARTING_SPELL, // 1175
 			ActionIds.ACTION_CASTER_EXECUTE_SPELL_ON_CELL, // 2960
 		].includes(e.effectId);
 	}
 	public static isSummonEffect(e: any) {
+		// ei.effectId == 181 || ei.effectId == 405 || ei.effectId == 1008 || ei.effectId == 1011 || ei.effectId == 2796
 		return [
 			ActionIds.ACTION_SUMMON_CREATURE, // 181
-			ActionIds.ACTION_FIGHT_KILL_AND_SUMMON,
-			ActionIds.ACTION_SUMMON_BOMB,
-			ActionIds.ACTION_SUMMON_SLAVE,
-			ActionIds.ACTION_FIGHT_KILL_AND_SUMMON_SLAVE,
+			ActionIds.ACTION_FIGHT_KILL_AND_SUMMON, // 405
+			ActionIds.ACTION_SUMMON_BOMB, // 1008
+			ActionIds.ACTION_SUMMON_SLAVE, // 1011
+			ActionIds.ACTION_FIGHT_KILL_AND_SUMMON_SLAVE // 2796
 		].includes(e.effectId);
 
 	}
@@ -62,7 +63,7 @@ export class Statics {
 			ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL, // 401
 			ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL_ENDTURN, // 402
 			ActionIds.ACTION_FIGHT_ADD_GLYPH_AURA, // 1091
-			ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL_IMMEDIATE  // 2022
+			ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL_IMMEDIATE  // 1165
 			// || e.effectId == ActionIds.ACTION_FIGHT_ADD_RUNE_CASTING_SPELL // 2022
 		].includes(e.effectId);
 	}
