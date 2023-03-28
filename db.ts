@@ -160,7 +160,7 @@ export class db {
 			this.data2.isLoaded = false;
 			localStorage.setItem("version2", version);
 			this.data2.loadJson().then((b) => {
-				console.log("db2 publish loaded " + version);
+				// console.log("db2 publish loaded " + version);
 				this.data2.isLoaded = true;
 				this.ea.publish("db:loaded:2");
 			})
