@@ -396,37 +396,51 @@ export class db {
 			+ "background-position: -" + x + "px; background-position-y: -" + y + "px;"
 	}
 
-	public isEffectState(e) {
+	public static isEffectState(e) {
 		// état
 		// return e.effectId == 950 || e.effectId == 951;
-		return e.effectId == ActionIds.ACTION_FIGHT_SET_STATE
-			|| e.effectId == ActionIds.ACTION_FIGHT_UNSET_STATE
-			|| e.effectId == ActionIds.ACTION_FIGHT_DISABLE_STATE
+		return [
+			ActionIds.ACTION_FIGHT_SET_STATE,
+			ActionIds.ACTION_FIGHT_UNSET_STATE,
+			ActionIds.ACTION_FIGHT_DISABLE_STATE
+		].includes(e.effectId);
 	}
-	public isEffectChargeCooldown(e) {
+	public static isEffectChargeCooldown(e) {
 		// augmente ou réduit le cooldown du sort 
 		// return e.effectId == 1035 || e.effectId == 1036;
 		return e.effectId == ActionIds.ACTION_CHARACTER_ADD_SPELL_COOLDOWN // 1035
 			|| e.effectId == ActionIds.ACTION_CHARACTER_REMOVE_SPELL_COOLDOWN // 1036
 			|| e.effectId == ActionIds.ACTION_CHARACTER_SET_SPELL_COOLDOWN // 1045
 	}
-	public isEffectCharge(e) {
+	public static isEffectCharge(e) {
 		// effet de charge
 		// return e.effectId == 293 || e.effectId == 281 || e.effectId == 290 || e.effectId == 291 || e.effectId == 280;
-		return e.effectId == ActionIds.ACTION_BOOST_SPELL_BASE_DMG
-			|| e.effectId == ActionIds.ACTION_BOOST_SPELL_RANGE_MIN
-			|| e.effectId == ActionIds.ACTION_BOOST_SPELL_RANGE_MAX
-			|| e.effectId == ActionIds.ACTION_BOOST_SPELL_MAXPERTURN
-			|| e.effectId == ActionIds.ACTION_BOOST_SPELL_MAXPERTARGET
-			|| e.effectId == ActionIds.ACTION_BOOST_SPELL_AP_COST // 285
-			|| e.effectId == ActionIds.ACTION_BOOST_SPELL_NOLINEOFSIGHT // 289 
-			|| e.effectId == 798 // Le sort 23756 doit être lancé sur une cible visible uniquement
-			|| e.effectId == 2905 // Fixe la portée maximale du sort 23756 à #3
-			|| e.effectId == 2906 // Fixe la portée minimal du sort 23756 à #3
-			|| e.effectId == 298 // Le sort 23828 peut être lancé sur une cellule occupée
-			|| e.effectId == 296 // Augmente de #3 le coût en PA du sort 13444
+		let chargeEffects = Array(20).fill(280).map((x, y) => x + y); // 280 -> 299
+		let chargeEffects2 = Array(22).fill(2913).map((x, y) => x + y); // 2913 -> 2934
+		chargeEffects.push(...chargeEffects2);
+		chargeEffects.push(1035, 1036, 1045); // ACTION_CHARACTER_ADD_SPELL_COOLDOWN, ACTION_CHARACTER_REMOVE_SPELL_COOLDOWN, ACTION_CHARACTER_SET_SPELL_COOLDOWN
+		chargeEffects.push(2905, 2906);
+		chargeEffects.push(798, 799);
+		// [
+		// 	ActionIds.ACTION_BOOST_SPELL_BASE_DMG,
+		// 	ActionIds.ACTION_BOOST_SPELL_RANGE_MIN,
+		// 	ActionIds.ACTION_BOOST_SPELL_RANGE_MAX,
+		// 	ActionIds.ACTION_BOOST_SPELL_MAXPERTURN,
+		// 	ActionIds.ACTION_BOOST_SPELL_MAXPERTARGET,
+		// 	ActionIds.ACTION_BOOST_SPELL_AP_COST, // 285
+		// 	ActionIds.ACTION_BOOST_SPELL_NOLINEOFSIGHT, // 289 
+		// 	798, // Le sort 23756 doit être lancé sur une cible visible uniquement
+		// 	2905, // Fixe la portée maximale du sort 23756 à #3
+		// 	2906, // Fixe la portée minimal du sort 23756 à #3
+		// 	298, // Le sort 23828 peut être lancé sur une cellule occupée
+		// 	296, // Augmente de #3 le coût en PA du sort 13444
+		// 	2932, // ACTION_ENABLE_SPELL_CASTOUTLINE
+		// 	2933, // ACTION_DISABLE_SPELL_CASTOUTDIAGONAL
+		// 	2934, // ACTION_ENABLE_SPELL_CASTOUTDIAGONAL
+		// ]
+		return chargeEffects.includes(e.effectId);
 	}
-	public isSubSpell(e) {
+	public static isSubSpell(e) {
 		// state condition, fouet osa dragocharge, +1 combo, morsure albinos
 		// return e.effectId == 1160 || e.effectId == 2160 || e.effectId == 2794 || e.effectId == 792 || e.effectId == 1018;
 		// in different order
@@ -443,19 +457,22 @@ export class db {
 			ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_TARGET, // 1018
 			ActionIds.ACTION_SOURCE_EXECUTE_SPELL_ON_SOURCE, // 1019
 			ActionIds.ACTION_CHARACTER_PROTECTION_FROM_SPELL,
-			ActionIds.ACTION_CAST_STARTING_SPELL
+			ActionIds.ACTION_CAST_STARTING_SPELL,
+			ActionIds.ACTION_CASTER_EXECUTE_SPELL_ON_CELL, // 2960
 		].includes(e.effectId);
 	}
-	public isSummonEffect(e: any) {
+	public static isSummonEffect(e: any) {
 		// return e.effectId == 181 || e.effectId == 405 || e.effectId == 1008 || e.effectId == 1011 || e.effectId == 2796;
-		return e.effectId == ActionIds.ACTION_SUMMON_CREATURE // 181
-			|| e.effectId == ActionIds.ACTION_FIGHT_KILL_AND_SUMMON
-			|| e.effectId == ActionIds.ACTION_SUMMON_BOMB
-			|| e.effectId == ActionIds.ACTION_SUMMON_SLAVE
-			|| e.effectId == ActionIds.ACTION_FIGHT_KILL_AND_SUMMON_SLAVE;
+		return [
+			ActionIds.ACTION_SUMMON_CREATURE, // 181
+			ActionIds.ACTION_FIGHT_KILL_AND_SUMMON,
+			ActionIds.ACTION_SUMMON_BOMB,
+			ActionIds.ACTION_SUMMON_SLAVE,
+			ActionIds.ACTION_FIGHT_KILL_AND_SUMMON_SLAVE,
+		].includes(e.effectId);
 
 	}
-	public isCellEffect(e: any) {
+	public static isCellEffect(e: any) {
 		return [
 			ActionIds.ACTION_FIGHT_ADD_TRAP_CASTING_SPELL,  // 400
 			ActionIds.ACTION_FIGHT_ADD_GLYPH_CASTING_SPELL, // 401
@@ -468,7 +485,7 @@ export class db {
 
 	public hasDispellIcon(e) {
 		// this.isEffectState(e) || 
-		if (this.isEffectCharge(e) || this.isEffectChargeCooldown(e) || this.isSubSpell(e) || this.isCellEffect(e) || this.isSummonEffect(e)) {
+		if (db.isEffectCharge(e) || db.isEffectChargeCooldown(e) || db.isSubSpell(e) || db.isCellEffect(e) || db.isSummonEffect(e)) {
 			return false;
 		}
 		// "triggers": "DA"
