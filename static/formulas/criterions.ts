@@ -366,8 +366,33 @@ export class CriterionUtil {
     }
 
     
-    public static getCriterion(criteria) {
-        switch (criteria) {
+    public static getCriterionBool(c: Criteria) {
+        switch (c.name) {
+            case "PZ": // ??
+                if (c.value == "1") return "condition.subscribed"
+                else return "condition.unsubscribed"
+            case "Bl": // ??
+                if (c.value == "1") return "condition.unequipable"
+                else c.name
+            case "Ps":
+                if (c.value == "1") return "condition.alignment.bonta"
+                if (c.value == "2") return "condition.alignment.brakmar"
+                else return c.name
+            default:
+                return null;
+        }
+    }
+    public static getCriterion(criteria: Criteria) {
+        switch (criteria.name) {
+            case "Qf": return "null" // quête
+            case "PK": return "condition.kamas";
+            case "Pk": return "condition.setBonus";
+            case "Mw": // ??
+                return "null";
+            case "PE": // connaitre l'attitude 'super-héros'
+                return "null";
+            case "PL":
+                return "total.level";
             case "Ca":
                 return "base.agility";
             case "CA":
