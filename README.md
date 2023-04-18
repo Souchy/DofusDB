@@ -1,5 +1,5 @@
 # DofusDB
 
-Donnnées Dofus récupérées par [DofusScraper](https://github.com/Souchy/DofusScraper) dans /scraped
+Donnnées Dofus récupérées par Alfred (privé) dans /scraped
 
 Données écrites à la main dans /static
