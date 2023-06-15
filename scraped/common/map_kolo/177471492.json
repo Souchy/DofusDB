@@ -779,7 +779,7 @@
       "alpha": 255
     }
   ],
-  "foregroundsCount": 28,
+  "foregroundsCount": 32,
   "foregroundsFixtures": [
     {
       "fixtureId": 32495,
@@ -926,6 +926,32 @@
     },
     {
       "fixtureId": 50815,
+      "offsetX": -432,
+      "offsetY": 766,
+      "rotation": 0,
+      "xScale": 2025,
+      "yScale": 2025,
+      "redMultiplier": 0,
+      "greenMultiplier": 0,
+      "blueMultiplier": 0,
+      "hue": 0,
+      "alpha": 255
+    },
+    {
+      "fixtureId": 50815,
+      "offsetX": -432,
+      "offsetY": 766,
+      "rotation": 0,
+      "xScale": 2025,
+      "yScale": 2025,
+      "redMultiplier": 0,
+      "greenMultiplier": 0,
+      "blueMultiplier": 0,
+      "hue": 0,
+      "alpha": 255
+    },
+    {
+      "fixtureId": 50815,
       "offsetX": -681,
       "offsetY": 743,
       "rotation": 0,
@@ -936,6 +962,32 @@
       "blueMultiplier": 0,
       "hue": 0,
       "alpha": 255
+    },
+    {
+      "fixtureId": 50815,
+      "offsetX": 258,
+      "offsetY": 926,
+      "rotation": 0,
+      "xScale": -2025,
+      "yScale": 2025,
+      "redMultiplier": 0,
+      "greenMultiplier": 0,
+      "blueMultiplier": 0,
+      "hue": 0,
+      "alpha": 139
+    },
+    {
+      "fixtureId": 50815,
+      "offsetX": 258,
+      "offsetY": 926,
+      "rotation": 0,
+      "xScale": -2025,
+      "yScale": 2025,
+      "redMultiplier": 0,
+      "greenMultiplier": 0,
+      "blueMultiplier": 0,
+      "hue": 0,
+      "alpha": 139
     },
     {
       "fixtureId": 50815,
@@ -11067,7 +11119,7 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 88846,
+              "elementId": 89008,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,

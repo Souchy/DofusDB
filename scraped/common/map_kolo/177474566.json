@@ -24,8 +24,22 @@
   "tacticalModeTemplateId": 43,
   "backgroundsCount": 0,
   "backgroundFixtures": [],
-  "foregroundsCount": 0,
-  "foregroundsFixtures": [],
+  "foregroundsCount": 1,
+  "foregroundsFixtures": [
+    {
+      "fixtureId": 32607,
+      "offsetX": -34,
+      "offsetY": 868,
+      "rotation": 0,
+      "xScale": 1854,
+      "yScale": 1000,
+      "redMultiplier": -128,
+      "greenMultiplier": -128,
+      "blueMultiplier": -128,
+      "hue": -128,
+      "alpha": 255
+    }
+  ],
   "groundCRC": 0,
   "layersCount": 2,
   "layers": [
