@@ -3,9 +3,8 @@ name: Send submodule updates to parent repo
 on:
   push:
     branches: 
-      - main
-  workflow_dispatch:
-  
+      - master
+      
 jobs:
   update:
     runs-on: ubuntu-latest
