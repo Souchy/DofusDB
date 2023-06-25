@@ -2,6 +2,7 @@ import { db } from './db';
 import { DI, IEventAggregator, Registration } from 'aurelia';
 import { addAbortSignal } from 'stream';
 import { I18N } from '@aurelia/i18n';
+import { MapTools } from './static/formulas/maptools';
 
 export class Formulas {
 
@@ -114,7 +115,111 @@ export class Board {
         return Math.floor(Number((x - y) * 14 + y + (x - y) / 2));
     }
 
+    // Check Dofus 2  LosDetector+MapTools+DOfus2Line+MapToolsConfig
+    public losDetectorDofus2(cell1: number, cell2: number) {
+        let line = MapTools.getCellsCoordBetween(cell1, cell2);
+        if (line.length == 0) return true;
+        for (let cell of line) {
+            this.checkCellView(cell.x, cell.y);
+        }
+    }
 
+    public getDist(cell1: number, cell2: number) {
+        let pos0 = this.getCellCoordById(cell1)
+        let pos1 = this.getCellCoordById(cell2)
+        let dist = Math.abs(pos0.x - pos1.x) + Math.abs(pos0.y - pos1.y);
+        return dist;
+    }
+
+    public getMapPoint(cellid) {
+        let coord = this.getCellCoordById(cellid);
+        return {
+            cellId: cellid,
+            x: coord.x,
+            y: coord.y
+        }
+    }
+
+    // LosDetector.getCell // range: number[], 
+    public getViews(target: number): number[] {
+        let check1 = 305;
+        let check2 = 275;
+        let log = false;
+
+        let range = [...Array(this.cells.length).keys()];
+
+        let refPosition = this.getMapPoint(target);
+        var orderedCell = range.map(c => {
+            return {
+                p: this.getMapPoint(c),
+                dist: this.getDist(target, c)
+            }
+        }).sort((c1, c2) => {
+            return c2.dist - c1.dist;
+        })
+        if(log) console.log(orderedCell)
+        // orderedCell.sortOn("dist", Array.DESCENDING | Array.NUMERIC);
+
+        var tested: boolean[] = [];
+        var result: number[] = [];
+        for (let i = 0; i < orderedCell.length; i++) {
+            // p = MapPoint(orderedCell[i].p);
+            let p = orderedCell[i].p;
+
+            if (!(tested[p.x + "_" + p.y] != null && refPosition.x + refPosition.y != p.x + p.y && refPosition.x - refPosition.y != p.x - p.y)) {
+                // line = Dofus2Line.getLine(refPosition.cellId, p.cellId);
+                let line = MapTools.getCellsCoordBetween(refPosition.cellId, p.cellId);
+                if (line.length == 0) {
+                    result.push(p.cellId);
+                }
+                else {
+                    let los = true;
+                    let currentPoint: string = null;
+
+                    for (let j = 0; j < line.length; j++) {
+                        let cell = line[j];
+                        let mapcell = this.cells[cell.id];
+                        currentPoint = Math.floor(cell.x) + "_" + Math.floor(cell.y);
+                        let isinmap = this.cells[cell.id] && this.isInMap(cell.x, cell.y);
+                        if(log && cell.id == check1) {
+                            console.log("isinmap: " + isinmap)
+                        }
+
+                        if (isinmap) { //MapPoint.isInMap(cell.x, cell.y)) {
+                            let hasObject = this.objects[cell.id]; //mapData.hasEntity(Math.floor(line[j - 1].x), Math.floor(line[j - 1].y), true);
+                            let hasLos = mapcell.los; //mapData.pointLos(Math.floor(cell.x), Math.floor(cell.y), true);
+                            if (j > 0 && hasObject) {
+                                los = false;
+                            }
+                            else if (cell.x + cell.y == refPosition.x + refPosition.y || cell.x - cell.y == refPosition.x - refPosition.y) {
+                                los = los && hasLos;
+                            }
+                            else if (tested[currentPoint] == null) {
+                                los = los && hasLos;
+                            }
+                            else {
+                                los = los && tested[currentPoint];
+                            }
+                        }
+                    }
+                    tested[currentPoint] = los;
+                }
+            }
+        }
+        for (let i = 0; i < range.length; i++) {
+            let mp = this.getMapPoint(range[i]);
+            if (tested[mp.x + "_" + mp.y]) {
+                result.push(mp.cellId);
+            }
+        }
+        return result;
+    }
+    public isInMap(x: number, y: number): boolean {
+        return x + y >= 0 && x - y >= 0 && x - y < MapTools.MAP_GRID_HEIGHT * 2 && x + y < MapTools.MAP_GRID_WIDTH * 2;
+    }
+
+
+    // Check FlashDevelop Dofus1.pathfinding
     public checkView(id0: number, id1: number) { // pos0: Vector2, pos1: Vector2) {
         // let pos0 = this.getPos(id0)
         // let pos1 = this.getPos(id1)
@@ -122,11 +227,11 @@ export class Board {
         let pos1 = this.getCellCoordById(id1) //this.getCaseCoordonnee(id1);
         // let id0 = this.getId(pos0.x, pos0.y);
         // let id1 = this.getId(pos1.x, pos1.y);
-        let log = false; // id1 == posVIP2;
+        let log = (id0 == 226 && id1 == 256) || (id0 == 256 && id1 == 226) || (id0 == 305 && id1 == 275); // id1 == posVIP2;
+        if (log) console.log("--------------")
 
         let dirY = pos1.y - pos0.y >= 0 ? 1 : -1;
         let dirX = pos1.x - pos0.x >= 0 ? 1 : -1;
-
 
         if (pos0.x == pos1.x) {
             for (let i = pos0.y; i * dirY <= pos1.y * dirY; i += dirY) {
@@ -158,7 +263,7 @@ export class Board {
 
         while (x * dirX <= x1Abs) {
             let y2 = f(x);
-            // if(log) console.log("xy2: " + x + ", " + y2)
+            if (log) console.log("xy2: " + x + ", " + y2)
 
             if (dirY > 0) y2 = Math.min(pos1.y, y2);
             else y2 = Math.max(pos1.y, y2);
@@ -174,7 +279,7 @@ export class Board {
             }
             y = v0;
 
-            // if(log) console.log("a " + x + ", " + y + " // y2: " + y2 + " l21: " + l21 + ", l22: " + l22);
+            if (log) console.log("a " + x + ", " + y + " // y2: " + y2 + " l21: " + y3 + ", l22: " + y4);
 
             while (y * dirY <= y4 * dirY) {
                 let tx = (x - this.cellHalf * dirX);
@@ -635,7 +740,7 @@ export class Targets {
     }
 
 
-    
+
 
     public static mask(masks: string[]) {
         // console.log("masks: " + masks)
@@ -721,30 +826,30 @@ export class Targets {
     }
 
     public static teamMasks(mask: string): string {
-        if (mask == "A") 
+        if (mask == "A")
             return ""
-        if (mask == "a") 
+        if (mask == "a")
             return ""
-        if (mask == "g") 
+        if (mask == "g")
             return ""
         // let sameTeam = false;
         // if(mask == mask.toLowerCase()) {
         //     sameTeam = true;
         // }
         mask = mask.toLowerCase();
-        if (mask == "d") 
+        if (mask == "d")
             return "" //"SIDEKICK";
-        if (mask == "h") 
+        if (mask == "h")
             return "summoner" //"HUMAN,!isSummon";
-        if (mask == "i") 
+        if (mask == "i")
             return "summon,!static" //"!SIDEKICK,isSummon,!isStaticElement";
-        if (mask == "j") 
+        if (mask == "j")
             return "summon" //"!SIDEKICK,isSummon";
-        if (mask == "l") 
+        if (mask == "l")
             return "summoner";
-        if (mask == "m") 
+        if (mask == "m")
             return "summoner,!static" //"!HUMAN,!isSummon,!isStaticElement";
-        if (mask == "s") 
+        if (mask == "s")
             return "summon,static" //"!SIDEKICK,isSummon,isStaticElement";
 
         return mask;
@@ -792,8 +897,8 @@ export class Targets {
 
     public static hasCondition(targetMask: string) {
         let split = targetMask.split(",");
-        for(let m of split) {
-            if(!m.toLowerCase().endsWith("f50000") && (this.conditionMasks(m) || m.startsWith("*")))
+        for (let m of split) {
+            if (!m.toLowerCase().endsWith("f50000") && (this.conditionMasks(m) || m.startsWith("*")))
                 return true;
         }
         console.log("has no condition: " + targetMask)
