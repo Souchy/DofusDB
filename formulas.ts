@@ -188,7 +188,7 @@ export class Board {
                         if (isinmap) { //MapPoint.isInMap(cell.x, cell.y)) {
                             let hasObject = this.objects[cell.id]; //mapData.hasEntity(Math.floor(line[j - 1].x), Math.floor(line[j - 1].y), true);
                             let hasLos = mapcell.los; //mapData.pointLos(Math.floor(cell.x), Math.floor(cell.y), true);
-                            if (j > 0 && hasObject) {
+                            if (j >= 0 && hasObject) {
                                 los = false;
                             }
                             else if (cell.x + cell.y == refPosition.x + refPosition.y || cell.x - cell.y == refPosition.x - refPosition.y) {
