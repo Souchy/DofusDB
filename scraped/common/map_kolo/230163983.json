@@ -4,7 +4,7 @@
   "mapId": 230163983,
   "encrypted": false,
   "encryptionVersion": 1,
-  "relativeId": 134412,
+  "relativeId": 138013,
   "mapType": 1,
   "subareaId": 750,
   "topNeighbourId": 230163982,
@@ -800,7 +800,7 @@
   "layers": [
     {
       "layerId": 0,
-      "cellsCount": 289,
+      "cellsCount": 292,
       "cells": [
         {
           "cellId": 0,
@@ -1866,7 +1866,7 @@
               "shadow_2": 0,
               "shadow_3": 0,
               "offsetX": -1,
-              "offsetY": -10,
+              "offsetY": -5,
               "altitude": 0,
               "identifier": 0
             }
@@ -3350,7 +3350,7 @@
               "shadow_2": 0,
               "shadow_3": 0,
               "offsetX": -94,
-              "offsetY": -3,
+              "offsetY": -1,
               "altitude": 0,
               "identifier": 0
             },
@@ -3411,14 +3411,14 @@
             {
               "elementName": "Graphical",
               "elementId": 114313,
-              "hue_1": 6,
-              "hue_2": -4,
-              "hue_3": -18,
+              "hue_1": -45,
+              "hue_2": -41,
+              "hue_3": -5,
               "shadow_1": -18,
               "shadow_2": -20,
               "shadow_3": -25,
-              "offsetX": 0,
-              "offsetY": 0,
+              "offsetX": -1,
+              "offsetY": 5,
               "altitude": 0,
               "identifier": 0
             }
@@ -3675,6 +3675,26 @@
               "shadow_3": 0,
               "offsetX": 0,
               "offsetY": 43,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 271,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114312,
+              "hue_1": -45,
+              "hue_2": -41,
+              "hue_3": -5,
+              "shadow_1": -18,
+              "shadow_2": -20,
+              "shadow_3": -25,
+              "offsetX": -43,
+              "offsetY": 24,
               "altitude": 0,
               "identifier": 0
             }
@@ -3945,26 +3965,6 @@
           ]
         },
         {
-          "cellId": 285,
-          "elementsCount": 1,
-          "elements": [
-            {
-              "elementName": "Graphical",
-              "elementId": 114312,
-              "hue_1": 6,
-              "hue_2": -4,
-              "hue_3": -18,
-              "shadow_1": -18,
-              "shadow_2": -20,
-              "shadow_3": -25,
-              "offsetX": 0,
-              "offsetY": 0,
-              "altitude": 0,
-              "identifier": 0
-            }
-          ]
-        },
-        {
           "cellId": 286,
           "elementsCount": 2,
           "elements": [
@@ -4148,7 +4148,7 @@
         },
         {
           "cellId": 297,
-          "elementsCount": 1,
+          "elementsCount": 3,
           "elements": [
             {
               "elementName": "Graphical",
@@ -4161,6 +4161,34 @@
               "shadow_3": 0,
               "offsetX": 0,
               "offsetY": 43,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -4702,7 +4730,7 @@
         },
         {
           "cellId": 323,
-          "elementsCount": 1,
+          "elementsCount": 3,
           "elements": [
             {
               "elementName": "Graphical",
@@ -4715,6 +4743,34 @@
               "shadow_3": 0,
               "offsetX": 0,
               "offsetY": 43,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -5003,14 +5059,14 @@
             {
               "elementName": "Graphical",
               "elementId": 114313,
-              "hue_1": 6,
-              "hue_2": -4,
-              "hue_3": -18,
+              "hue_1": -45,
+              "hue_2": -41,
+              "hue_3": -5,
               "shadow_1": -18,
               "shadow_2": -20,
               "shadow_3": -25,
               "offsetX": 0,
-              "offsetY": 0,
+              "offsetY": 5,
               "altitude": 0,
               "identifier": 0
             }
@@ -5072,7 +5128,7 @@
         },
         {
           "cellId": 342,
-          "elementsCount": 2,
+          "elementsCount": 4,
           "elements": [
             {
               "elementName": "Graphical",
@@ -5099,6 +5155,34 @@
               "shadow_3": -25,
               "offsetX": 0,
               "offsetY": 43,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -5165,14 +5249,14 @@
             {
               "elementName": "Graphical",
               "elementId": 114313,
-              "hue_1": 6,
-              "hue_2": -4,
-              "hue_3": -18,
+              "hue_1": -45,
+              "hue_2": -41,
+              "hue_3": -5,
               "shadow_1": -18,
               "shadow_2": -20,
               "shadow_3": -25,
               "offsetX": 0,
-              "offsetY": 0,
+              "offsetY": 4,
               "altitude": 0,
               "identifier": 0
             }
@@ -5336,7 +5420,7 @@
         },
         {
           "cellId": 354,
-          "elementsCount": 1,
+          "elementsCount": 3,
           "elements": [
             {
               "elementName": "Graphical",
@@ -5349,6 +5433,34 @@
               "shadow_3": 0,
               "offsetX": 0,
               "offsetY": 43,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -6285,6 +6397,26 @@
           ]
         },
         {
+          "cellId": 399,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114312,
+              "hue_1": -45,
+              "hue_2": -41,
+              "hue_3": -5,
+              "shadow_1": -18,
+              "shadow_2": -20,
+              "shadow_3": -25,
+              "offsetX": -43,
+              "offsetY": 24,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
           "cellId": 400,
           "elementsCount": 2,
           "elements": [
@@ -6487,26 +6619,6 @@
               "shadow_3": 0,
               "offsetX": 0,
               "offsetY": 43,
-              "altitude": 0,
-              "identifier": 0
-            }
-          ]
-        },
-        {
-          "cellId": 412,
-          "elementsCount": 1,
-          "elements": [
-            {
-              "elementName": "Graphical",
-              "elementId": 114312,
-              "hue_1": 6,
-              "hue_2": -4,
-              "hue_3": -18,
-              "shadow_1": 0,
-              "shadow_2": 0,
-              "shadow_3": 0,
-              "offsetX": 0,
-              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -6743,6 +6855,40 @@
           ]
         },
         {
+          "cellId": 424,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
           "cellId": 425,
           "elementsCount": 2,
           "elements": [
@@ -6778,7 +6924,7 @@
         },
         {
           "cellId": 426,
-          "elementsCount": 1,
+          "elementsCount": 3,
           "elements": [
             {
               "elementName": "Graphical",
@@ -6791,6 +6937,34 @@
               "shadow_3": -25,
               "offsetX": 0,
               "offsetY": 43,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -6905,14 +7079,14 @@
             {
               "elementName": "Graphical",
               "elementId": 114313,
-              "hue_1": 6,
-              "hue_2": -4,
-              "hue_3": -18,
+              "hue_1": -45,
+              "hue_2": -41,
+              "hue_3": -5,
               "shadow_1": -18,
               "shadow_2": -20,
               "shadow_3": -25,
               "offsetX": 0,
-              "offsetY": 0,
+              "offsetY": 5,
               "altitude": 0,
               "identifier": 0
             }
@@ -6966,7 +7140,7 @@
               "shadow_2": 0,
               "shadow_3": 0,
               "offsetX": 49,
-              "offsetY": -30,
+              "offsetY": -28,
               "altitude": 0,
               "identifier": 0
             },
@@ -6980,7 +7154,7 @@
               "shadow_2": 0,
               "shadow_3": 0,
               "offsetX": 9,
-              "offsetY": -5,
+              "offsetY": -1,
               "altitude": 0,
               "identifier": 0
             }
@@ -7102,7 +7276,7 @@
         },
         {
           "cellId": 442,
-          "elementsCount": 1,
+          "elementsCount": 3,
           "elements": [
             {
               "elementName": "Graphical",
@@ -7115,6 +7289,34 @@
               "shadow_3": 0,
               "offsetX": 0,
               "offsetY": 43,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -8027,28 +8229,8 @@
           ]
         },
         {
-          "cellId": 496,
-          "elementsCount": 1,
-          "elements": [
-            {
-              "elementName": "Graphical",
-              "elementId": 46182,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 0,
-              "shadow_2": 0,
-              "shadow_3": 0,
-              "offsetX": -47,
-              "offsetY": -205,
-              "altitude": 0,
-              "identifier": 0
-            }
-          ]
-        },
-        {
           "cellId": 497,
-          "elementsCount": 1,
+          "elementsCount": 3,
           "elements": [
             {
               "elementName": "Graphical",
@@ -8061,6 +8243,34 @@
               "shadow_3": 0,
               "offsetX": 0,
               "offsetY": 41,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -8258,6 +8468,40 @@
               "hue_1": -50,
               "hue_2": -67,
               "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 510,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
@@ -8487,6 +8731,40 @@
               "shadow_3": 0,
               "offsetX": 0,
               "offsetY": 5,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 528,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -8847,6 +9125,40 @@
               "shadow_3": -20,
               "offsetX": -30,
               "offsetY": 30,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 554,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -10072,7 +10384,7 @@
     },
     {
       "layerId": 2,
-      "cellsCount": 125,
+      "cellsCount": 126,
       "cells": [
         {
           "cellId": 0,
@@ -10795,37 +11107,29 @@
           ]
         },
         {
-          "cellId": 170,
-          "elementsCount": 3,
+          "cellId": 169,
+          "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 111951,
-              "hue_1": -14,
-              "hue_2": -14,
-              "hue_3": -24,
+              "elementId": 115217,
+              "hue_1": -37,
+              "hue_2": -44,
+              "hue_3": -51,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 12,
-              "offsetY": -7,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
-            },
-            {
-              "elementName": "Graphical",
-              "elementId": 112233,
-              "hue_1": -46,
-              "hue_2": -45,
-              "hue_3": -23,
-              "shadow_1": 0,
-              "shadow_2": 0,
-              "shadow_3": 0,
-              "offsetX": -5,
-              "offsetY": 1,
-              "altitude": 0,
-              "identifier": 0
-            },
+            }
+          ]
+        },
+        {
+          "cellId": 170,
+          "elementsCount": 1,
+          "elements": [
             {
               "elementName": "Graphical",
               "elementId": 92929,
@@ -10835,9 +11139,9 @@
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": -1,
-              "offsetY": -1,
-              "altitude": 5,
+              "offsetX": 9,
+              "offsetY": -11,
+              "altitude": 0,
               "identifier": 0
             }
           ]
@@ -11158,14 +11462,14 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 114362,
-              "hue_1": -46,
-              "hue_2": -45,
-              "hue_3": -23,
+              "elementId": 115220,
+              "hue_1": -37,
+              "hue_2": -44,
+              "hue_3": -51,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 86,
+              "offsetX": 0,
               "offsetY": 0,
               "altitude": 0,
               "identifier": 0
@@ -11499,8 +11803,8 @@
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": -2,
-              "offsetY": -2,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -11674,15 +11978,15 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 114360,
-              "hue_1": -65,
-              "hue_2": -76,
-              "hue_3": -90,
+              "elementId": 115218,
+              "hue_1": -37,
+              "hue_2": -44,
+              "hue_3": -51,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 85,
-              "offsetY": 4,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             },
@@ -11695,8 +11999,8 @@
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 73,
-              "offsetY": -30,
+              "offsetX": 80,
+              "offsetY": -25,
               "altitude": 0,
               "identifier": 0
             },
@@ -11844,14 +12148,14 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 114360,
-              "hue_1": -65,
-              "hue_2": -76,
-              "hue_3": -90,
+              "elementId": 115224,
+              "hue_1": -37,
+              "hue_2": -44,
+              "hue_3": -51,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 91,
+              "offsetX": 0,
               "offsetY": 0,
               "altitude": 0,
               "identifier": 0
@@ -11865,8 +12169,8 @@
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 61,
-              "offsetY": 3,
+              "offsetX": 92,
+              "offsetY": -14,
               "altitude": 0,
               "identifier": 0
             }
@@ -12654,14 +12958,14 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 114360,
-              "hue_1": -65,
-              "hue_2": -76,
-              "hue_3": -90,
+              "elementId": 115224,
+              "hue_1": -37,
+              "hue_2": -44,
+              "hue_3": -51,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 79,
+              "offsetX": 0,
               "offsetY": 0,
               "altitude": 0,
               "identifier": 0
@@ -12675,8 +12979,8 @@
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 85,
-              "offsetY": -31,
+              "offsetX": 91,
+              "offsetY": -24,
               "altitude": 0,
               "identifier": 0
             }
@@ -12905,8 +13209,8 @@
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": -5,
-              "offsetY": -1,
+              "offsetX": 1,
+              "offsetY": 1,
               "altitude": 0,
               "identifier": 0
             }
@@ -12925,8 +13229,8 @@
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": -2,
-              "offsetY": 1,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -12934,8 +13238,22 @@
         },
         {
           "cellId": 343,
-          "elementsCount": 1,
+          "elementsCount": 2,
           "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115221,
+              "hue_1": -37,
+              "hue_2": -44,
+              "hue_3": -51,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
             {
               "elementName": "Graphical",
               "elementId": 112836,
@@ -13042,33 +13360,19 @@
         },
         {
           "cellId": 357,
-          "elementsCount": 4,
+          "elementsCount": 3,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 114360,
-              "hue_1": -65,
-              "hue_2": -76,
-              "hue_3": -90,
+              "elementId": 115218,
+              "hue_1": -37,
+              "hue_2": -44,
+              "hue_3": -51,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 47,
-              "offsetY": -22,
-              "altitude": 0,
-              "identifier": 0
-            },
-            {
-              "elementName": "Graphical",
-              "elementId": 114360,
-              "hue_1": -65,
-              "hue_2": -76,
-              "hue_3": -90,
-              "shadow_1": 0,
-              "shadow_2": 0,
-              "shadow_3": 0,
-              "offsetX": 85,
-              "offsetY": -3,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             },
@@ -13081,8 +13385,8 @@
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 87,
-              "offsetY": -31,
+              "offsetX": 84,
+              "offsetY": -22,
               "altitude": 0,
               "identifier": 0
             },
@@ -13096,7 +13400,7 @@
               "shadow_2": 0,
               "shadow_3": 0,
               "offsetX": 79,
-              "offsetY": -39,
+              "offsetY": -32,
               "altitude": 0,
               "identifier": 0
             }
@@ -13486,33 +13790,19 @@
         },
         {
           "cellId": 412,
-          "elementsCount": 2,
+          "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 114289,
-              "hue_1": -57,
-              "hue_2": -62,
-              "hue_3": -65,
+              "elementId": 115220,
+              "hue_1": -37,
+              "hue_2": -44,
+              "hue_3": -51,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": -2,
-              "offsetY": 2,
-              "altitude": 0,
-              "identifier": 0
-            },
-            {
-              "elementName": "Graphical",
-              "elementId": 111118,
-              "hue_1": -5,
-              "hue_2": -5,
-              "hue_3": -17,
-              "shadow_1": 0,
-              "shadow_2": 0,
-              "shadow_3": 0,
-              "offsetX": 116,
-              "offsetY": 1,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -13520,7 +13810,7 @@
         },
         {
           "cellId": 425,
-          "elementsCount": 2,
+          "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
@@ -13534,20 +13824,6 @@
               "offsetX": 86,
               "offsetY": 0,
               "altitude": 0,
-              "identifier": 0
-            },
-            {
-              "elementName": "Graphical",
-              "elementId": 15931,
-              "hue_1": -41,
-              "hue_2": -44,
-              "hue_3": -42,
-              "shadow_1": 0,
-              "shadow_2": 0,
-              "shadow_3": 0,
-              "offsetX": 85,
-              "offsetY": 11,
-              "altitude": 2,
               "identifier": 0
             }
           ]
@@ -13622,33 +13898,19 @@
         },
         {
           "cellId": 443,
-          "elementsCount": 2,
+          "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 92925,
-              "hue_1": -10,
-              "hue_2": -10,
-              "hue_3": -10,
+              "elementId": 115222,
+              "hue_1": -37,
+              "hue_2": -44,
+              "hue_3": -51,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 73,
-              "offsetY": -7,
-              "altitude": 0,
-              "identifier": 0
-            },
-            {
-              "elementName": "Graphical",
-              "elementId": 114288,
-              "hue_1": -57,
-              "hue_2": -62,
-              "hue_3": -65,
-              "shadow_1": 0,
-              "shadow_2": 0,
-              "shadow_3": 0,
-              "offsetX": 3,
-              "offsetY": -1,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -13790,14 +14052,14 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 114362,
-              "hue_1": -46,
-              "hue_2": -45,
-              "hue_3": -23,
+              "elementId": 115221,
+              "hue_1": -37,
+              "hue_2": -44,
+              "hue_3": -51,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 86,
+              "offsetX": 0,
               "offsetY": 0,
               "altitude": 0,
               "identifier": 0
@@ -13811,8 +14073,8 @@
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 85,
-              "offsetY": -29,
+              "offsetX": 86,
+              "offsetY": -15,
               "altitude": 0,
               "identifier": 0
             }
@@ -13991,20 +14253,20 @@
           ]
         },
         {
-          "cellId": 514,
+          "cellId": 513,
           "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 114360,
-              "hue_1": -65,
-              "hue_2": -76,
-              "hue_3": -90,
+              "elementId": 115218,
+              "hue_1": -37,
+              "hue_2": -44,
+              "hue_3": -51,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": -4,
-              "offsetY": 5,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -18247,7 +18509,7 @@
       "nonWalkableDuringFight": false,
       "nonWalkableDuringRP": false,
       "los": true,
-      "blue": false,
+      "blue": true,
       "red": false,
       "visible": true,
       "farmCell": false,
@@ -20917,7 +21179,7 @@
       "nonWalkableDuringRP": false,
       "los": true,
       "blue": false,
-      "red": false,
+      "red": true,
       "visible": true,
       "farmCell": false,
       "havenbagCell": false,

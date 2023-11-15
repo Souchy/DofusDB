@@ -4,7 +4,7 @@
   "mapId": 230168065,
   "encrypted": false,
   "encryptionVersion": 1,
-  "relativeId": 134412,
+  "relativeId": 138013,
   "mapType": 1,
   "subareaId": 750,
   "topNeighbourId": 230168064,
@@ -31,7 +31,7 @@
   "layers": [
     {
       "layerId": 0,
-      "cellsCount": 21,
+      "cellsCount": 216,
       "cells": [
         {
           "cellId": 0,
@@ -54,20 +54,494 @@
           ]
         },
         {
+          "cellId": 175,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115261,
+              "hue_1": 97,
+              "hue_2": 16,
+              "hue_3": -116,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 203,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115257,
+              "hue_1": 97,
+              "hue_2": 16,
+              "hue_3": -116,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115259,
+              "hue_1": 97,
+              "hue_2": 16,
+              "hue_3": -116,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -5,
+              "shadow_2": -3,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 216,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115259,
+              "hue_1": 96,
+              "hue_2": 15,
+              "hue_3": -115,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -3,
+              "shadow_2": -2,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 217,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115257,
+              "hue_1": 93,
+              "hue_2": 14,
+              "hue_3": -113,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -2,
+              "shadow_2": -1,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 230,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115259,
+              "hue_1": 92,
+              "hue_2": 14,
+              "hue_3": -113,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -1,
+              "shadow_2": 1,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 231,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 1,
+              "shadow_2": 2,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 232,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115257,
+              "hue_1": 89,
+              "hue_2": 12,
+              "hue_3": -111,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 243,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115259,
+              "hue_1": 89,
+              "hue_2": 12,
+              "hue_3": -110,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 3,
+              "shadow_2": 3,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 244,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 3,
+              "shadow_2": 4,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
           "cellId": 245,
           "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 65177,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 3,
+              "shadow_2": 3,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 246,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115257,
+              "hue_1": 86,
+              "hue_2": 10,
+              "hue_3": -108,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 6,
-              "offsetY": 3,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 2,
+              "shadow_2": 2,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 257,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115259,
+              "hue_1": 85,
+              "hue_2": 10,
+              "hue_3": -108,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 4,
+              "shadow_2": 4,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 258,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 5,
+              "shadow_2": 5,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 259,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 5,
+              "shadow_2": 5,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 260,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 4,
+              "shadow_2": 4,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 261,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115257,
+              "hue_1": 82,
+              "hue_2": 8,
+              "hue_3": -106,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 2,
+              "shadow_2": 2,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 270,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115259,
+              "hue_1": 81,
+              "hue_2": 8,
+              "hue_3": -106,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 5,
+              "shadow_2": 5,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -79,15 +553,35 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 65177,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 0,
-              "shadow_2": 0,
-              "shadow_3": 0,
-              "offsetX": 5,
-              "offsetY": 2,
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 6,
+              "shadow_2": 7,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 272,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 7,
+              "shadow_2": 7,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -99,15 +593,103 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 65176,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 6,
+              "shadow_2": 7,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 274,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 5,
+              "shadow_2": 5,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 275,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115257,
+              "hue_1": 78,
+              "hue_2": 6,
+              "hue_3": -103,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": -3,
-              "offsetY": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 2,
+              "shadow_2": 3,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 284,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115259,
+              "hue_1": 78,
+              "hue_2": 6,
+              "hue_3": -103,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 5,
+              "shadow_2": 5,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -115,33 +697,39 @@
         },
         {
           "cellId": 285,
-          "elementsCount": 2,
+          "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 62541,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 0,
-              "shadow_2": 0,
-              "shadow_3": 0,
-              "offsetX": -3,
-              "offsetY": 1,
+              "elementId": 114668,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 7,
+              "shadow_2": 8,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
-            },
+            }
+          ]
+        },
+        {
+          "cellId": 286,
+          "elementsCount": 1,
+          "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 65176,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 0,
-              "shadow_2": 0,
-              "shadow_3": 0,
-              "offsetX": -3,
-              "offsetY": 1,
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 8,
+              "shadow_2": 9,
+              "shadow_3": 5,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -153,14 +741,122 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 65177,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
+              "elementId": 114667,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 8,
+              "shadow_2": 9,
+              "shadow_3": 5,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 288,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 7,
+              "shadow_2": 8,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 289,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 5,
+              "shadow_2": 5,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 290,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115257,
+              "hue_1": 74,
+              "hue_2": 4,
+              "hue_3": -101,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 3,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 0,
+              "shadow_2": 1,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 297,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115259,
+              "hue_1": 74,
+              "hue_2": 4,
+              "hue_3": -101,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 3,
+              "shadow_2": 3,
+              "shadow_3": 3,
+              "offsetX": 0,
               "offsetY": 0,
               "altitude": 0,
               "identifier": 0
@@ -173,15 +869,681 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 65177,
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 7,
+              "shadow_2": 8,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 299,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 9,
+              "shadow_2": 10,
+              "shadow_3": 5,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 79100,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": -2,
-              "offsetY": -12,
+              "offsetX": 3,
+              "offsetY": -3,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 300,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 10,
+              "shadow_2": 11,
+              "shadow_3": 6,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 301,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 9,
+              "shadow_2": 10,
+              "shadow_3": 5,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 302,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 7,
+              "shadow_2": 8,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 303,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 5,
+              "shadow_2": 5,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 304,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115257,
+              "hue_1": 70,
+              "hue_2": 2,
+              "hue_3": -99,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -3,
+              "shadow_2": -1,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 311,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115259,
+              "hue_1": 70,
+              "hue_2": 2,
+              "hue_3": -99,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -2,
+              "shadow_2": 0,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 312,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 7,
+              "shadow_2": 8,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 313,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 10,
+              "shadow_2": 11,
+              "shadow_3": 6,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 315,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 12,
+              "shadow_2": 13,
+              "shadow_3": 7,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 316,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 10,
+              "shadow_2": 11,
+              "shadow_3": 6,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 317,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 7,
+              "shadow_2": 8,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 318,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 0,
+              "shadow_2": 1,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 319,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115257,
+              "hue_1": 67,
+              "hue_2": 0,
+              "hue_3": -96,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -7,
+              "shadow_2": -5,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 324,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115259,
+              "hue_1": 66,
+              "hue_2": 0,
+              "hue_3": -96,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -5,
+              "shadow_2": -3,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 325,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 2,
+              "shadow_2": 4,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 326,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 9,
+              "shadow_2": 10,
+              "shadow_3": 5,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 329,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 12,
+              "shadow_2": 14,
+              "shadow_3": 7,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 330,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 9,
+              "shadow_2": 10,
+              "shadow_3": 5,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 331,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 4,
+              "shadow_2": 5,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 332,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -4,
+              "shadow_2": -2,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 333,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115257,
+              "hue_1": 63,
+              "hue_2": -2,
+              "hue_3": -94,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -10,
+              "shadow_2": -6,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 338,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115259,
+              "hue_1": 62,
+              "hue_2": -2,
+              "hue_3": -94,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -9,
+              "shadow_2": -5,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 339,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -2,
+              "shadow_2": 0,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 340,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 6,
+              "shadow_2": 7,
+              "shadow_3": 5,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 341,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 12,
+              "shadow_2": 13,
+              "shadow_3": 7,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 343,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 15,
+              "shadow_2": 16,
+              "shadow_3": 9,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -193,13 +1555,33 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 65177,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 0,
-              "shadow_2": 0,
-              "shadow_3": 0,
+              "elementId": 114667,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 12,
+              "shadow_2": 13,
+              "shadow_3": 7,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 345,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 8,
+              "shadow_2": 9,
+              "shadow_3": 5,
               "offsetX": 0,
               "offsetY": 0,
               "altitude": 0,
@@ -213,15 +1595,123 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 65176,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
+              "elementId": 114667,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 0,
+              "shadow_2": 2,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 347,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -7,
+              "shadow_2": -4,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 348,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115257,
+              "hue_1": 59,
+              "hue_2": -4,
+              "hue_3": -91,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": -1,
-              "offsetY": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -12,
+              "shadow_2": -8,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 351,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115259,
+              "hue_1": 59,
+              "hue_2": -4,
+              "hue_3": -91,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -12,
+              "shadow_2": -8,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 352,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -6,
+              "shadow_2": -3,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -233,67 +1723,75 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 65177,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 0,
-              "shadow_2": 0,
-              "shadow_3": 0,
-              "offsetX": 8,
-              "offsetY": 2,
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 2,
+              "shadow_2": 3,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
           ]
         },
         {
-          "cellId": 368,
+          "cellId": 354,
           "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 65176,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 0,
-              "shadow_2": 0,
-              "shadow_3": 0,
-              "offsetX": -1,
-              "offsetY": -4,
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 10,
+              "shadow_2": 11,
+              "shadow_3": 6,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
           ]
         },
         {
-          "cellId": 370,
-          "elementsCount": 1,
+          "cellId": 355,
+          "elementsCount": 3,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 65177,
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 14,
+              "shadow_2": 15,
+              "shadow_3": 8,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": -4,
-              "offsetY": 3,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
-            }
-          ]
-        },
-        {
-          "cellId": 374,
-          "elementsCount": 1,
-          "elements": [
+            },
             {
               "elementName": "Graphical",
-              "elementId": 61072,
+              "elementId": 115362,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
@@ -308,20 +1806,1364 @@
           ]
         },
         {
-          "cellId": 396,
+          "cellId": 356,
           "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 61072,
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 17,
+              "shadow_2": 19,
+              "shadow_3": 10,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 357,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 14,
+              "shadow_2": 15,
+              "shadow_3": 8,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": -8,
-              "offsetY": -14,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 358,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 10,
+              "shadow_2": 11,
+              "shadow_3": 6,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 359,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 5,
+              "shadow_2": 5,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 360,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -4,
+              "shadow_2": -1,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 361,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -10,
+              "shadow_2": -6,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 362,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115257,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -14,
+              "shadow_2": -9,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 365,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115259,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -14,
+              "shadow_2": -9,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 366,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -9,
+              "shadow_2": -5,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 367,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -2,
+              "shadow_2": 0,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 368,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 6,
+              "shadow_2": 7,
+              "shadow_3": 5,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 369,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 12,
+              "shadow_2": 13,
+              "shadow_3": 7,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 370,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 15,
+              "shadow_2": 16,
+              "shadow_3": 9,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 371,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 15,
+              "shadow_2": 16,
+              "shadow_3": 9,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 372,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 12,
+              "shadow_2": 13,
+              "shadow_3": 7,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 373,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 8,
+              "shadow_2": 9,
+              "shadow_3": 5,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 374,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 1,
+              "shadow_2": 2,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 375,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -7,
+              "shadow_2": -3,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 376,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -11,
+              "shadow_2": -7,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 377,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115257,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -14,
+              "shadow_2": -9,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 378,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115263,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": -86,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115259,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -14,
+              "shadow_2": -9,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 379,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -11,
+              "shadow_2": -7,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 380,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -5,
+              "shadow_2": -3,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 381,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 2,
+              "shadow_2": 4,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 382,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 9,
+              "shadow_2": 10,
+              "shadow_3": 5,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 383,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 12,
+              "shadow_2": 14,
+              "shadow_3": 7,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 384,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 14,
+              "shadow_2": 15,
+              "shadow_3": 8,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 385,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 12,
+              "shadow_2": 14,
+              "shadow_3": 7,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 386,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 9,
+              "shadow_2": 10,
+              "shadow_3": 5,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 387,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 6,
+              "shadow_2": 7,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 388,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -2,
+              "shadow_2": -1,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 389,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -8,
+              "shadow_2": -5,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 390,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -11,
+              "shadow_2": -7,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 391,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115257,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -14,
+              "shadow_2": -9,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115338,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 86,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 392,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115258,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 393,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -11,
+              "shadow_2": -7,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 394,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -8,
+              "shadow_2": -5,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 395,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -2,
+              "shadow_2": 0,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 396,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 7,
+              "shadow_2": 8,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 397,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 10,
+              "shadow_2": 11,
+              "shadow_3": 6,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 398,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 12,
+              "shadow_2": 13,
+              "shadow_3": 7,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 399,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 12,
+              "shadow_2": 13,
+              "shadow_3": 7,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 400,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 10,
+              "shadow_2": 11,
+              "shadow_3": 6,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 401,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 7,
+              "shadow_2": 8,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 402,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 2,
+              "shadow_2": 2,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 403,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -5,
+              "shadow_2": -4,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 404,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -9,
+              "shadow_2": -6,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 405,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -11,
+              "shadow_2": -7,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115260,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 86,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 406,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115258,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 407,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -9,
+              "shadow_2": -6,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 408,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -4,
+              "shadow_2": -2,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 409,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 3,
+              "shadow_2": 3,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 410,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 7,
+              "shadow_2": 8,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 411,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 9,
+              "shadow_2": 10,
+              "shadow_3": 5,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 412,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 10,
+              "shadow_2": 11,
+              "shadow_3": 6,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 413,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 9,
+              "shadow_2": 10,
+              "shadow_3": 5,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 414,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 7,
+              "shadow_2": 8,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -333,15 +3175,269 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 65177,
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 5,
+              "shadow_2": 5,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 416,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -1,
+              "shadow_2": 0,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 417,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -6,
+              "shadow_2": -4,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 418,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -8,
+              "shadow_2": -5,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 419,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115260,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 421,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115258,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 422,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -6,
+              "shadow_2": -4,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 423,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -1,
+              "shadow_2": 0,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 424,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 5,
+              "shadow_2": 5,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 425,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 7,
+              "shadow_2": 8,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 426,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 8,
+              "shadow_2": 9,
+              "shadow_3": 5,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 427,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 8,
+              "shadow_2": 9,
+              "shadow_3": 5,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 428,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 2,
-              "offsetY": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -353,14 +3449,94 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 65176,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 5,
+              "shadow_2": 5,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 430,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 2,
+              "shadow_2": 2,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 431,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -3,
+              "shadow_2": -2,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 432,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -5,
+              "shadow_2": -4,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 433,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115260,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": -3,
+              "offsetX": 0,
               "offsetY": 0,
               "altitude": 0,
               "identifier": 0
@@ -388,12 +3564,180 @@
           ]
         },
         {
+          "cellId": 435,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115258,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 436,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -3,
+              "shadow_2": -2,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 437,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 2,
+              "shadow_2": 3,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 438,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 5,
+              "shadow_2": 5,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 439,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 6,
+              "shadow_2": 7,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
           "cellId": 440,
           "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 65176,
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 7,
+              "shadow_2": 7,
+              "shadow_3": 4,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 443,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 2,
+              "shadow_2": 3,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 444,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
@@ -408,20 +3752,40 @@
           ]
         },
         {
-          "cellId": 442,
+          "cellId": 445,
           "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 65177,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -3,
+              "shadow_2": -2,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 446,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115260,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 5,
-              "offsetY": -3,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -448,52 +3812,80 @@
           ]
         },
         {
-          "cellId": 468,
-          "elementsCount": 2,
+          "cellId": 450,
+          "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 61072,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
+              "elementId": 115258,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 19,
-              "offsetY": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 451,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 452,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 2,
+              "shadow_2": 2,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             },
             {
               "elementName": "Graphical",
-              "elementId": 65176,
+              "elementId": 115362,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 19,
-              "offsetY": 1,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "layerId": 2,
-      "cellsCount": 22,
-      "cells": [
-        {
-          "cellId": 0,
-          "elementsCount": 1,
-          "elements": [
+            },
             {
               "elementName": "Graphical",
-              "elementId": 22688,
+              "elementId": 115362,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
@@ -508,78 +3900,1586 @@
           ]
         },
         {
-          "cellId": 245,
+          "cellId": 453,
           "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 22627,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 16,
-              "shadow_2": 16,
-              "shadow_3": 16,
-              "offsetX": 6,
-              "offsetY": 3,
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 4,
+              "shadow_2": 4,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
           ]
         },
         {
-          "cellId": 271,
-          "elementsCount": 1,
+          "cellId": 454,
+          "elementsCount": 3,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 16623,
+              "elementId": 114666,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 5,
+              "shadow_2": 5,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
-              "shadow_1": 16,
-              "shadow_2": 16,
-              "shadow_3": 16,
-              "offsetX": 8,
-              "offsetY": 9,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
           ]
         },
         {
-          "cellId": 273,
+          "cellId": 455,
           "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 78316,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 28,
-              "shadow_2": 28,
-              "shadow_3": 28,
-              "offsetX": -2,
-              "offsetY": 3,
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 5,
+              "shadow_2": 5,
+              "shadow_3": 3,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
           ]
         },
         {
-          "cellId": 285,
+          "cellId": 457,
           "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 42636,
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 2,
+              "shadow_2": 2,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 458,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 459,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 460,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115260,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 464,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115258,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 465,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 466,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 2,
+              "shadow_2": 2,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 467,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 3,
+              "shadow_2": 3,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 468,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 3,
+              "shadow_2": 4,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 469,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 3,
+              "shadow_2": 3,
+              "shadow_3": 2,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 470,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 2,
+              "shadow_2": 2,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 471,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 472,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 473,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115260,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 479,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115258,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 480,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 481,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 482,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 1,
+              "shadow_2": 2,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 483,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 1,
+              "shadow_2": 2,
+              "shadow_3": 1,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 484,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 485,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 486,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 487,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115260,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 493,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115258,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 494,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 495,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 496,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -2,
+              "shadow_2": -1,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 497,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -2,
+              "shadow_2": -1,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 498,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 499,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
-              "shadow_1": 20,
-              "shadow_2": 20,
-              "shadow_3": 20,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 500,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115260,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 508,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115258,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 509,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -2,
+              "shadow_2": -1,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 510,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -3,
+              "shadow_2": -2,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 511,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114666,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -4,
+              "shadow_2": -2,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 512,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114672,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -3,
+              "shadow_2": -2,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 513,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -2,
+              "shadow_2": -1,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 514,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115260,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 522,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115258,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 523,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -5,
+              "shadow_2": -3,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 524,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -6,
+              "shadow_2": -4,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 525,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114667,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -6,
+              "shadow_2": -4,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 526,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -5,
+              "shadow_2": -3,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 527,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115260,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 537,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115258,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 538,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -7,
+              "shadow_2": -5,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 539,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -8,
+              "shadow_2": -5,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 540,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -7,
+              "shadow_2": -5,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 541,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115260,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 551,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115258,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 552,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114670,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -10,
+              "shadow_2": -6,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115362,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 553,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 114668,
+              "hue_1": 21,
+              "hue_2": 14,
+              "hue_3": -1,
+              "shadow_1": -10,
+              "shadow_2": -6,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 554,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115260,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 559,
+          "elementsCount": 6,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115258,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": -645,
+              "offsetY": 21,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 114671,
+              "hue_1": 16,
+              "hue_2": -5,
+              "hue_3": -44,
+              "shadow_1": -12,
+              "shadow_2": -8,
+              "shadow_3": 0,
+              "offsetX": -559,
+              "offsetY": 21,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115260,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": -473,
+              "offsetY": 21,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115258,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": -602,
+              "offsetY": 43,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115260,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": -516,
+              "offsetY": 43,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115262,
+              "hue_1": 55,
+              "hue_2": -6,
+              "hue_3": -89,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": -559,
+              "offsetY": 64,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layerId": 2,
+      "cellsCount": 25,
+      "cells": [
+        {
+          "cellId": 0,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 22688,
+              "hue_1": -128,
+              "hue_2": -128,
+              "hue_3": -128,
+              "shadow_1": -128,
+              "shadow_2": -128,
+              "shadow_3": -128,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 244,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115222,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115230,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 270,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115224,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115231,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 272,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115217,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115227,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 284,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115219,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 286,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115222,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115227,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
               "offsetX": 0,
               "offsetY": 0,
               "altitude": 0,
@@ -593,15 +5493,63 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 63018,
+              "elementId": 63151,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
-              "shadow_1": 44,
-              "shadow_2": 44,
-              "shadow_3": 44,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
               "offsetX": 7,
-              "offsetY": -2,
+              "offsetY": -23,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 297,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115217,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115226,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 62693,
+              "hue_1": -55,
+              "hue_2": -47,
+              "hue_3": -44,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 110,
+              "offsetY": -34,
               "altitude": 0,
               "identifier": 0
             }
@@ -609,22 +5557,8 @@
         },
         {
           "cellId": 298,
-          "elementsCount": 2,
+          "elementsCount": 1,
           "elements": [
-            {
-              "elementName": "Graphical",
-              "elementId": 10419,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 16,
-              "shadow_2": 16,
-              "shadow_3": 16,
-              "offsetX": 3,
-              "offsetY": 0,
-              "altitude": 0,
-              "identifier": 0
-            },
             {
               "elementName": "Graphical",
               "elementId": 78332,
@@ -634,140 +5568,74 @@
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": -12,
-              "offsetY": 23,
-              "altitude": 2,
-              "identifier": 0
-            }
-          ]
-        },
-        {
-          "cellId": 299,
-          "elementsCount": 1,
-          "elements": [
-            {
-              "elementName": "Graphical",
-              "elementId": 79100,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 0,
-              "shadow_2": 0,
-              "shadow_3": 0,
-              "offsetX": 3,
-              "offsetY": -3,
+              "offsetX": -2,
+              "offsetY": -17,
               "altitude": 0,
               "identifier": 0
             }
           ]
         },
         {
-          "cellId": 344,
+          "cellId": 343,
           "elementsCount": 2,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 63019,
+              "elementId": 114568,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
-              "shadow_1": 28,
-              "shadow_2": 28,
-              "shadow_3": 28,
-              "offsetX": -3,
-              "offsetY": -6,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             },
             {
               "elementName": "Graphical",
-              "elementId": 63423,
+              "elementId": 78904,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": -21,
-              "offsetY": 7,
+              "offsetX": 91,
+              "offsetY": -24,
               "altitude": 0,
               "identifier": 0
             }
           ]
         },
         {
-          "cellId": 346,
-          "elementsCount": 1,
+          "cellId": 345,
+          "elementsCount": 2,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 78318,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 40,
-              "shadow_2": 40,
-              "shadow_3": 40,
-              "offsetX": 1,
-              "offsetY": 5,
+              "elementId": 115222,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
-            }
-          ]
-        },
-        {
-          "cellId": 353,
-          "elementsCount": 1,
-          "elements": [
+            },
             {
               "elementName": "Graphical",
-              "elementId": 62770,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 24,
-              "shadow_2": 24,
-              "shadow_3": 24,
-              "offsetX": 9,
-              "offsetY": 5,
-              "altitude": 0,
-              "identifier": 0
-            }
-          ]
-        },
-        {
-          "cellId": 360,
-          "elementsCount": 1,
-          "elements": [
-            {
-              "elementName": "Graphical",
-              "elementId": 61031,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 24,
-              "shadow_2": 24,
-              "shadow_3": 24,
-              "offsetX": -3,
-              "offsetY": 2,
-              "altitude": 0,
-              "identifier": 0
-            }
-          ]
-        },
-        {
-          "cellId": 368,
-          "elementsCount": 1,
-          "elements": [
-            {
-              "elementName": "Graphical",
-              "elementId": 78317,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 44,
-              "shadow_2": 44,
-              "shadow_3": 44,
+              "elementId": 115230,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
               "offsetX": 0,
               "offsetY": 0,
               "altitude": 0,
@@ -776,38 +5644,216 @@
           ]
         },
         {
-          "cellId": 370,
-          "elementsCount": 1,
+          "cellId": 352,
+          "elementsCount": 2,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 78321,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 40,
-              "shadow_2": 40,
-              "shadow_3": 40,
-              "offsetX": -3,
-              "offsetY": 2,
+              "elementId": 115217,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115226,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
           ]
         },
         {
-          "cellId": 415,
+          "cellId": 359,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115219,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115225,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 62717,
+              "hue_1": -51,
+              "hue_2": -45,
+              "hue_3": -34,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 85,
+              "offsetY": -23,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 367,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115219,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115225,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 369,
+          "elementsCount": 3,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115221,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115229,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 62767,
+              "hue_1": 0,
+              "hue_2": 0,
+              "hue_3": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 87,
+              "offsetY": -19,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 414,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115223,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115228,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 426,
           "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 63002,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 16,
-              "shadow_2": 16,
-              "shadow_3": 16,
+              "elementId": 115223,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
               "offsetX": 0,
               "offsetY": 0,
               "altitude": 0,
@@ -817,22 +5863,8 @@
         },
         {
           "cellId": 427,
-          "elementsCount": 2,
+          "elementsCount": 1,
           "elements": [
-            {
-              "elementName": "Graphical",
-              "elementId": 63409,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 16,
-              "shadow_2": 16,
-              "shadow_3": 16,
-              "offsetX": 0,
-              "offsetY": -6,
-              "altitude": 0,
-              "identifier": 0
-            },
             {
               "elementName": "Graphical",
               "elementId": 63423,
@@ -850,18 +5882,52 @@
           ]
         },
         {
-          "cellId": 429,
+          "cellId": 428,
           "elementsCount": 1,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 78321,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 32,
-              "shadow_2": 32,
-              "shadow_3": 32,
+              "elementId": 115221,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 439,
+          "elementsCount": 2,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115218,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 115226,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
               "offsetX": 0,
               "offsetY": 0,
               "altitude": 0,
@@ -871,22 +5937,8 @@
         },
         {
           "cellId": 440,
-          "elementsCount": 2,
+          "elementsCount": 1,
           "elements": [
-            {
-              "elementName": "Graphical",
-              "elementId": 63004,
-              "hue_1": 0,
-              "hue_2": 0,
-              "hue_3": 0,
-              "shadow_1": 24,
-              "shadow_2": 24,
-              "shadow_3": 24,
-              "offsetX": -3,
-              "offsetY": 3,
-              "altitude": 0,
-              "identifier": 0
-            },
             {
               "elementName": "Graphical",
               "elementId": 70699,
@@ -896,8 +5948,28 @@
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": 5,
-              "offsetY": -23,
+              "offsetX": 18,
+              "offsetY": -25,
+              "altitude": 0,
+              "identifier": 0
+            }
+          ]
+        },
+        {
+          "cellId": 441,
+          "elementsCount": 1,
+          "elements": [
+            {
+              "elementName": "Graphical",
+              "elementId": 115223,
+              "hue_1": -56,
+              "hue_2": -24,
+              "hue_3": 76,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 0,
               "altitude": 0,
               "identifier": 0
             }
@@ -916,20 +5988,20 @@
               "shadow_1": 16,
               "shadow_2": 16,
               "shadow_3": 16,
-              "offsetX": 5,
-              "offsetY": -3,
+              "offsetX": -6,
+              "offsetY": -20,
               "altitude": 0,
               "identifier": 0
             }
           ]
         },
         {
-          "cellId": 455,
-          "elementsCount": 1,
+          "cellId": 467,
+          "elementsCount": 2,
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 52835,
+              "elementId": 114568,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
@@ -940,24 +6012,18 @@
               "offsetY": 0,
               "altitude": 0,
               "identifier": 0
-            }
-          ]
-        },
-        {
-          "cellId": 468,
-          "elementsCount": 1,
-          "elements": [
+            },
             {
               "elementName": "Graphical",
-              "elementId": 78319,
+              "elementId": 78517,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
-              "shadow_1": 32,
-              "shadow_2": 32,
-              "shadow_3": 32,
-              "offsetX": 0,
-              "offsetY": 0,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 86,
+              "offsetY": -25,
               "altitude": 0,
               "identifier": 0
             }
@@ -969,15 +6035,15 @@
           "elements": [
             {
               "elementName": "Graphical",
-              "elementId": 79066,
+              "elementId": 115500,
               "hue_1": 0,
               "hue_2": 0,
               "hue_3": 0,
               "shadow_1": 0,
               "shadow_2": 0,
               "shadow_3": 0,
-              "offsetX": -559,
-              "offsetY": 14,
+              "offsetX": -557,
+              "offsetY": 17,
               "altitude": 0,
               "identifier": 0
             }
@@ -5847,7 +10913,7 @@
       "floor": 0,
       "mov": true,
       "nonWalkableDuringFight": false,
-      "nonWalkableDuringRP": false,
+      "nonWalkableDuringRP": true,
       "los": true,
       "blue": false,
       "red": false,
