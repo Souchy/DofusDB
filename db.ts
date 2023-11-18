@@ -316,7 +316,7 @@ export class db {
 		let url = this.commonUrlPath + "big.png";
 		let pos;
 		if (breedIndex == 19 - 1) {
-			url = this.gitFolderPath + "sprites/spells/350.png"; // icône flamiche
+			url = this.commonUrlPath + "11763.png"; //this.gitFolderPath + "sprites/spells/350.png"; // icône flamiche
 			pos = "background-size: 55px; background-position: 50%";
 		} else 
 		if (breedIndex == 21 - 1) {
