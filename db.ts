@@ -10,6 +10,7 @@ import importgreenlist from './static/greenlistEffects.json'
 
 import jsonFeatures from '../DofusDB/features.json'
 import { Statics } from './statics';
+import { DofusCharacteristic, DofusEffectModel, DofusItem, DofusSet, DofusSpell } from '../ts/dofusModels';
 
 export class db {
 
@@ -22,9 +23,9 @@ export class db {
 	private _effectMode: string = "basic";
 
 	// actual json fetched 
-	public data: DB = new DB();
+	public data: DB = new DB("1");
 	// json to compare with (i.e. a previous version)
-	public data2: DB = new DB();
+	public data2: DB = new DB("2");
 	//
 	public jsonMaps: {} = {};
 	public jsonGreenListEffects = importgreenlist;
@@ -40,6 +41,8 @@ export class db {
 		// data
 		this.data.version = versions[0];
 		this.data2.version = versions[1];
+		this.data.ea = ea;
+		this.data2.ea = ea;
 		// connect to mongo
 		// this.getToken();
 		// load cached version and language
@@ -239,8 +242,8 @@ export class db {
 	public getMonsterIconPath(monsterId: number): string {
 		return db.githubScrapedUrlPath + this.version + "/sprites/monsters/" + monsterId + ".png";
 	}
-
-	public getI18n(id: string, lang: string = ""): string {
+	
+	public getI18n(id, lang: string = ""): string {
 		if(lang == "")
 			lang = this.lang;
 		try {
@@ -277,6 +280,7 @@ export class db {
 				return "Falta texto";
 		}
 	}
+
 	public hasI18n(id: string, lang: string = ""): boolean {
 		let tex = this.getI18n(id, lang);
 		if(tex == "Texte manquant") return false;
@@ -414,6 +418,9 @@ export class db {
 			+ "background-position: -" + x + "px; background-position-y: -" + y + "px;"
 	}
 
+	public isEffectState(e) {
+		return Statics.isEffectState(e);
+	}
 	public static isEffectState(e) {
 		return Statics.isEffectState(e);
 	}
@@ -583,57 +590,125 @@ export class db {
 
 
 export class DB {
+	public name: string;
 	public version: string;
 	public isLoaded: boolean = false;
+	public ea: IEventAggregator;
 	// private http = new HttpClient();
 
-	public jsonSpells: any;
+	public jsonSpells: Record<string, DofusSpell>;
 	public jsonBreeds: any;
 	public jsonSummons: any;
 	public jsonStates: any;
 	public jsonI18n_fr: any;
 	public jsonI18n_en: any;
 	public jsonI18n_es: any;
-	public jsonEffects: any[]
+	public jsonEffects: DofusEffectModel[]
 	public jsonCharacteristics: any[]
-	public jsonItems: any[]
+	public jsonItems: DofusItem[]
 	public jsonItemTypes: any[]
-	public jsonItemSets: any[]
+	public jsonItemSets: DofusSet[]
 	// public jsonBombSpells: any[]
 
-    public async loadJson(): Promise<[boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean]> {
+	public jsonCharacteristicsById: Record<number, DofusCharacteristic> = {};
+	public jsonEffectsById:  Record<number, DofusEffectModel> = {};
+	public jsonItemsById: Record<number, DofusItem> = {};
+	public jsonItemSetsById: Record<number, DofusSet> = {};
+
+	public promiseItems: Promise<boolean>;
+	public promiseItemSets: Promise<boolean>;
+	public promiseItemTypes: Promise<boolean>;
+
+	constructor(name: string) {
+		this.name = name;
+	}
+
+	public async loadJson() { //: Promise<[boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean]> {
 		this.isLoaded = false;
 		// console.log("data loading")
+
+		this.promiseItems = db.fetchJson(this.gitFolderPath + "items.json", (json) => {
+			this.jsonItems = json
+			Object.assign(this.jsonItemsById, ...this.jsonItems.map((x) => ({ [x.id]: x })));
+		});
+		this.promiseItemSets = db.fetchJson(this.gitFolderPath + "itemsets.json", (json) => {
+			this.jsonItemSets = json;
+			Object.assign(this.jsonItemSetsById, ...this.jsonItemSets.map((x) => ({ [x.id]: x })));
+		});
+		this.promiseItemTypes = db.fetchJson(this.gitFolderPath + "itemtypes.json", (json) => this.jsonItemTypes = json);
+
 		let promise = Promise.all([
 			db.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.jsonI18n_fr = json).then((result) => {
-				if(result) return true;
+				if (result) return true;
 				return db.fetchJson(db.githubScrapedUrlPath + versions[0] + "/" + "i18n_fr.json", (json) => this.jsonI18n_fr = json)
 			}),
 			db.fetchJson(this.gitFolderPath + "i18n_en.json", (json) => this.jsonI18n_en = json).then((result) => {
-				if(result) return true;
+				if (result) return true;
 				return db.fetchJson(db.githubScrapedUrlPath + versions[0] + "/" + "i18n_en.json", (json) => this.jsonI18n_en = json)
 			}),
 			db.fetchJson(this.gitFolderPath + "i18n_es.json", (json) => this.jsonI18n_es = json).then((result) => {
-				if(result) return true;
+				if (result) return true;
 				return db.fetchJson(db.githubScrapedUrlPath + versions[0] + "/" + "i18n_es.json", (json) => this.jsonI18n_es = json)
 			}),
 			db.fetchJson(this.gitFolderPath + "spells.json", (json) => this.jsonSpells = json),
 			db.fetchJson(this.gitFolderPath + "breeds.json", (json) => this.jsonBreeds = json),
 			db.fetchJson(this.gitFolderPath + "summons.json", (json) => this.jsonSummons = json),
 			db.fetchJson(this.gitFolderPath + "states.json", (json) => this.jsonStates = json),
-			db.fetchJson(this.gitFolderPath + "effects.json", (json) =>  this.jsonEffects = json),
-			db.fetchJson(this.gitFolderPath + "characteristics.json", (json) =>  this.jsonCharacteristics = json),
-			db.fetchJson(this.gitFolderPath + "items.json", (json) =>  this.jsonItems = json),
-			db.fetchJson(this.gitFolderPath + "itemsets.json", (json) =>  this.jsonItemSets = json),
-			db.fetchJson(this.gitFolderPath + "itemtypes.json", (json) =>  this.jsonItemTypes = json),
+			db.fetchJson(this.gitFolderPath + "effects.json", (json) => {
+				this.jsonEffects = json;
+				Object.assign(this.jsonEffectsById, ...this.jsonEffects.map((x) => ({ [x.id]: x })));
+			}),
+			db.fetchJson(this.gitFolderPath + "characteristics.json", (json) => {
+				this.jsonCharacteristics = json;
+				Object.assign(this.jsonCharacteristicsById, ...this.jsonCharacteristics.map((x) => ({ [x.id]: x })));
+			}),
+			this.promiseItems,
+			this.promiseItemSets,
+			this.promiseItemTypes
 			// db.fetchJson(this.gitFolderPath + "bombspells.json", (json) =>  this.jsonBombSpells = json)
 		]);
+		
+		this.manipulateSets();
+
+		await promise;
+		this.isLoaded = true;
+		this.ea.publish("db:loaded:" + this.name);
 		// console.log("data loading 1")
 		return promise;
 	}
 	public get gitFolderPath() {
 		return db.githubScrapedUrlPath + this.version + "/";
 	}
+
+	public async manipulateSets() {
+		await this.promiseItemSets;
+		await this.promiseItems
+		this.jsonItemSets = this.jsonItemSets.map(set => {
+				if (!set.itemsData)
+					set.itemsData = [];
+				if (set.itemsData?.length == 0) {
+					let items = set.items.map(i => this.jsonItems.find(i2 => i2.id == i)).filter(i => i != null);
+					set.itemsData = items;
+				}
+				// console.log(set)
+				return set;
+			})
+			.filter((value, index, array) => value.effects.length > 0)
+			.sort((a, b) => {
+				let diff = this.highestItemLevel(b) - this.highestItemLevel(a);
+				if (diff != 0) return diff;
+				else return b.id - a.id;
+			});
+	}
+
+	public highestItemLevel(set: DofusSet) {
+        if(!set.itemsData) 
+            return 0;
+        let levels: number[] = set.itemsData.map(i => i.level)
+        let max = Math.max(...levels);
+        // console.log("Max set item level: " + max)
+        return max;
+    }
 }
 
 const container = DI.createContainer();
