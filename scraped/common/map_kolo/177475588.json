@@ -5826,7 +5826,7 @@
         },
         {
           "cellId": 414,
-          "elementsCount": 1,
+          "elementsCount": 2,
           "elements": [
             {
               "elementName": "Graphical",
@@ -5839,6 +5839,20 @@
               "shadow_3": 0,
               "offsetX": 0,
               "offsetY": 6,
+              "altitude": 0,
+              "identifier": 0
+            },
+            {
+              "elementName": "Graphical",
+              "elementId": 87816,
+              "hue_1": -34,
+              "hue_2": -52,
+              "hue_3": -47,
+              "shadow_1": 0,
+              "shadow_2": 0,
+              "shadow_3": 0,
+              "offsetX": 0,
+              "offsetY": 75,
               "altitude": 0,
               "identifier": 0
             }
