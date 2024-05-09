@@ -247,7 +247,7 @@ export class db {
 		if(lang == "")
 			lang = this.lang;
 		try {
-			if (this.lang == "fr") {
+			if (lang == "fr") {
 				let str = this.data.jsonI18n_fr[id];
 				if(str == undefined) str = this.data2.jsonI18n_fr[id];
 				if(str == undefined) str = this.data.jsonI18n_en[id];
@@ -255,7 +255,7 @@ export class db {
 				if(str == undefined) throw new Error("missing text");
 				return str;
 			}
-			if (this.lang == "en") {
+			if (lang == "en") {
 				let str = this.data.jsonI18n_en[id];
 				if(str == undefined) str = this.data2.jsonI18n_en[id];
 				if(str == undefined) str = this.data.jsonI18n_fr[id];
@@ -263,7 +263,7 @@ export class db {
 				if(str == undefined) throw new Error("missing text");
 				return str;
 			}
-			if (this.lang == "es") {
+			if (lang == "es") {
 				let str = this.data.jsonI18n_es[id];
 				if(str == undefined) str = this.data2.jsonI18n_es[id];
 				if(str == undefined) str = this.getI18n(id, "en");
@@ -272,11 +272,11 @@ export class db {
 			}
 		} catch (error) {
 			// console.log("db.getI18n error key: " + id + ". Wait 30 seconds for the site to load.");
-			if (this.lang == "fr") 
+			if (lang == "fr") 
 				return "Texte manquant";
-			if (this.lang == "en")
+			if (lang == "en")
 				return "Missing text";
-			if (this.lang == "en")
+			if (lang == "en")
 				return "Falta texto";
 		}
 	}
@@ -709,6 +709,38 @@ export class DB {
         // console.log("Max set item level: " + max)
         return max;
     }
+	
+	public getI18n(id, lang: string): string {
+		try {
+			if (lang == "fr") {
+				let str = this.jsonI18n_fr[id];
+				if(str == undefined) str = this.jsonI18n_en[id];
+				if(str == undefined) throw new Error("missing text");
+				return str;
+			}
+			if (lang == "en") {
+				let str = this.jsonI18n_en[id];
+				if(str == undefined) str = this.jsonI18n_fr[id];
+				if(str == undefined) throw new Error("missing text");
+				return str;
+			}
+			if (lang == "es") {
+				let str = this.jsonI18n_es[id];
+				if(str == undefined) str = this.jsonI18n_es[id];
+				if(str == undefined) str = this.getI18n(id, "en");
+				if(str == undefined) throw new Error("missing text");
+				return str;
+			}
+		} catch (error) {
+			// console.log("db.getI18n error key: " + id + ". Wait 30 seconds for the site to load.");
+			if (lang == "fr") 
+				return "Texte manquant";
+			if (lang == "en")
+				return "Missing text";
+			if (lang == "en")
+				return "Falta texto";
+		}
+	}
 }
 
 const container = DI.createContainer();
