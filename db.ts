@@ -714,33 +714,24 @@ export class DB {
 		try {
 			if (lang == "fr") {
 				let str = this.jsonI18n_fr[id];
-				if(str == undefined) str = this.jsonI18n_en[id];
 				if(str == undefined) throw new Error("missing text");
 				return str;
 			}
 			if (lang == "en") {
 				let str = this.jsonI18n_en[id];
-				if(str == undefined) str = this.jsonI18n_fr[id];
 				if(str == undefined) throw new Error("missing text");
 				return str;
 			}
 			if (lang == "es") {
 				let str = this.jsonI18n_es[id];
-				if(str == undefined) str = this.jsonI18n_es[id];
-				if(str == undefined) str = this.getI18n(id, "en");
 				if(str == undefined) throw new Error("missing text");
 				return str;
 			}
 		} catch (error) {
-			// console.log("db.getI18n error key: " + id + ". Wait 30 seconds for the site to load.");
-			if (lang == "fr") 
-				return "Texte manquant";
-			if (lang == "en")
-				return "Missing text";
-			if (lang == "en")
-				return "Falta texto";
+			return null;
 		}
 	}
+	
 }
 
 const container = DI.createContainer();
