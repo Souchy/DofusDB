@@ -488,6 +488,8 @@ export class db {
 	public static getStatSections(): Map<string, number> {
 		var sections = new Map<string, number>();
 		sections.set("quickfus.filter.sections.pseudo", 0);
+		// sections.set("quickfus.filter.sections.pseudoProperty", 10);
+		// sections.set("quickfus.filter.sections.specials", 1);
 		sections.set("quickfus.filter.sections.primary", 2);
 		sections.set("quickfus.filter.sections.secondary", 3);
 		sections.set("quickfus.filter.sections.damage", 4);
@@ -502,29 +504,51 @@ export class db {
 			"name": "numres",
 			"categoryId": 0,
 			"mask": this.characRes,
-			"count": true
+			"count": true,
+			"subcategoryId": 0
 		},
 		{
 			"id": 10001,
 			"name": "numresele",
 			"categoryId": 0,
 			"mask": this.characResEle,
-			"count": true
+			"count": true,
+			"subcategoryId": 0
 		},
 		{
 			"id": 10002,
 			"name": "totres",
 			"categoryId": 0,
 			"mask": this.characRes,
-			"count": false
+			"count": false,
+			"subcategoryId": 0
 		},
 		{
 			"id": 10003,
 			"name": "totresele",
 			"categoryId": 0,
 			"mask": this.characResEle,
-			"count": false
+			"count": false,
+			"subcategoryId": 0
 		},
+		// 11 000+ = properties
+		{
+			"id": 11004,
+			"name": "isLegendary",
+			"categoryId": 0,
+			"mask": [],
+			"count": false,
+			"subcategoryId": 1
+		},
+		// 12 000+ = specials
+		// {
+		// 	"id": 12004,
+		// 	"name": "changed",
+		// 	"categoryId": 0,
+		// 	"mask": [],
+		// 	"count": false,
+		// 	"subcategoryId": 2
+		// },
 	];
 
 	private token: any;
