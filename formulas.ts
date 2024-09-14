@@ -391,6 +391,36 @@ export class Board {
 
 }
 
+export enum SpellZoneShape {
+	None = 0,
+	Empty = 32,
+	DiagonalCrossWithoutCenter = 35,
+	Star = 42,
+	DiagonalCross = 43,
+	DiagonalPerpendicularLine = 45,
+	DiagonalLine = 47,
+	Custom = 59,
+	WholeMapWithTheDead = 65,
+	Boomerang = 66,
+	Circle = 67,
+	Checkerboard = 68,
+	Fork = 70,
+	Square = 71,
+	OutsideCircle = 73,
+	Line = 76,
+	Ring = 79,
+	Point = 80,
+	CrossWithoutCenter = 81,
+	Rectangle = 82,
+	PerpendicularLine = 84,
+	HalfCircle = 85,
+	Cone = 86,
+	SquareWithoutDiagonals = 87,
+	Cross = 88,
+	OutsideComplexCircle = 90,
+	WholeMap = 97,
+	LineFromCaster = 108,
+}
 
 export class SpellZone {
 
@@ -431,6 +461,14 @@ export class SpellZone {
     public zoneStopAtTarget: number
     public zoneMaxEfficiency: number
 
+    public static parseZoneUnity(zoneDescr): SpellZone {
+        var zone = new SpellZone();
+        zone.zoneSize = zoneDescr.param1;
+        zone.zoneMinSize = zoneDescr.param2;
+        let shape = SpellZoneShape[zoneDescr.shape];
+        zone.zoneName = shape.toString().toLowerCase();
+        return zone;
+    }
 
     public static parseZone(rawZone: string): SpellZone {
         let zone: SpellZone = new SpellZone();

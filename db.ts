@@ -29,7 +29,7 @@ export class db {
 	//
 	public jsonMaps: {} = {};
 	public jsonGreenListEffects = importgreenlist;
-	
+
 	// selected
 	public breedId: number = 1;
 	private _selectedSpellSlot: number = 0;
@@ -53,7 +53,7 @@ export class db {
 		let lan = localStorage.getItem("language");
 		if (lan) this.setLanguage(lan);
 		let mod = localStorage.getItem("effectMode");
-		if(mod) this.setEffectMode(mod)
+		if (mod) this.setEffectMode(mod)
 		let spellSlot = +localStorage.getItem("selectedSpellSlot");
 		if (spellSlot) this.selectedSpellSlot = spellSlot;
 		let osaSlot = +localStorage.getItem("selectedOsaSummonSlot");
@@ -117,7 +117,7 @@ export class db {
 	}
 	public setEffectMode(mode: string) {
 		// console.log("db setEffectMode: " + this._effectMode + " -> " + mode)
-		if(this._effectMode != mode) {
+		if (this._effectMode != mode) {
 			this._effectMode = mode;
 			localStorage.setItem("effectMode", mode);
 		}
@@ -242,37 +242,37 @@ export class db {
 	public getMonsterIconPath(monsterId: number): string {
 		return db.githubScrapedUrlPath + this.version + "/sprites/monsters/" + monsterId + ".png";
 	}
-	
+
 	public getI18n(id, lang: string = ""): string {
-		if(lang == "")
+		if (lang == "")
 			lang = this.lang;
 		try {
 			if (lang == "fr") {
 				let str = this.data.jsonI18n_fr[id];
-				if(str == undefined) str = this.data2.jsonI18n_fr[id];
-				if(str == undefined) str = this.data.jsonI18n_en[id];
-				if(str == undefined) str = this.data2.jsonI18n_en[id];
-				if(str == undefined) throw new Error("missing text");
+				if (str == undefined) str = this.data2.jsonI18n_fr[id];
+				if (str == undefined) str = this.data.jsonI18n_en[id];
+				if (str == undefined) str = this.data2.jsonI18n_en[id];
+				if (str == undefined) throw new Error("missing text");
 				return str;
 			}
 			if (lang == "en") {
 				let str = this.data.jsonI18n_en[id];
-				if(str == undefined) str = this.data2.jsonI18n_en[id];
-				if(str == undefined) str = this.data.jsonI18n_fr[id];
-				if(str == undefined) str = this.data2.jsonI18n_fr[id];
-				if(str == undefined) throw new Error("missing text");
+				if (str == undefined) str = this.data2.jsonI18n_en[id];
+				if (str == undefined) str = this.data.jsonI18n_fr[id];
+				if (str == undefined) str = this.data2.jsonI18n_fr[id];
+				if (str == undefined) throw new Error("missing text");
 				return str;
 			}
 			if (lang == "es") {
 				let str = this.data.jsonI18n_es[id];
-				if(str == undefined) str = this.data2.jsonI18n_es[id];
-				if(str == undefined) str = this.getI18n(id, "en");
-				if(str == undefined) throw new Error("missing text");
+				if (str == undefined) str = this.data2.jsonI18n_es[id];
+				if (str == undefined) str = this.getI18n(id, "en");
+				if (str == undefined) throw new Error("missing text");
 				return str;
 			}
 		} catch (error) {
 			// console.log("db.getI18n error key: " + id + ". Wait 30 seconds for the site to load.");
-			if (lang == "fr") 
+			if (lang == "fr")
 				return "Texte manquant";
 			if (lang == "en")
 				return "Missing text";
@@ -283,9 +283,9 @@ export class db {
 
 	public hasI18n(id: string, lang: string = ""): boolean {
 		let tex = this.getI18n(id, lang);
-		if(tex == "Texte manquant") return false;
-		if(tex == "Missing text") return false;
-		if(tex == "Falta texto") return false;
+		if (tex == "Texte manquant") return false;
+		if (tex == "Missing text") return false;
+		if (tex == "Falta texto") return false;
 		return true;
 	}
 
@@ -294,6 +294,31 @@ export class db {
 	}
 
 	public getAoeIconUrl(effect: any) {
+		if (this.checkFeature("unity")) {
+			// out/ui/guidebook/Sprite/
+			// combat_zoneeffet_anneau_200x200.png
+			// combat_zoneeffet_anneauvrai_200x200.png
+			// combat_zoneeffet_cerclerond_200x200.png
+			// combat_zoneeffet_ligne_200x200.png
+			// combat_zoneeffet_diagonale_200x200.png
+			// combat_zoneeffet_etoile_200x200.png
+			// combat_zoneeffet_point_200x200.png
+			// combat_zoneeffet_vraiecroix_200x200.png
+			// combat_zoneeffet_vraiecroixvide_200x200.png
+			let zone = SpellZone.parseZoneUnity(effect.zoneDescr);
+			// console.log("Zone: ");
+			// let comparer = {
+			// 	zoneDescr: effect.zoneDescr,
+			// 	SpellZone: zone
+			// }
+			// console.log(comparer);
+			if(zone) {
+				return this.commonUrlPath + "icons/" + zone?.zoneName?.toLowerCase() + ".webp";
+			} else {
+				return "";
+			}
+		}
+
 		// SEE:  EffectInstance, SpellheaderBlock.getSpellZoneChunkParams, SpellTooltipUi.getSpellZoneIconUri
 		if (effect.rawZone == "C") // caster
 			return "";
@@ -322,16 +347,16 @@ export class db {
 		if (breedIndex == 19 - 1) {
 			url = this.commonUrlPath + "commonSpell.png"; //this.gitFolderPath + "sprites/spells/350.png"; // icône flamiche
 			pos = "background-size: 55px; background-position: 50%";
-		} else 
-		if (breedIndex == 21 - 1) {
-			url = this.gitFolderPath + "sprites/spells/10973.png"; // icône ferrage
-			pos = "background-size: 55px; background-position: 50%";
-		} else {
-			if (breedIndex == 20 - 1) {
-				breedIndex--;
+		} else
+			if (breedIndex == 21 - 1) {
+				url = this.gitFolderPath + "sprites/spells/10973.png"; // icône ferrage
+				pos = "background-size: 55px; background-position: 50%";
+			} else {
+				if (breedIndex == 20 - 1) {
+					breedIndex--;
+				}
+				pos = "background-position: 0px " + Math.ceil(-56.8 * breedIndex) + "px;";
 			}
-			pos = "background-position: 0px " + Math.ceil(-56.8 * breedIndex) + "px;";
-		}
 		return "height: 54px; width: 54px;" +
 			"margin-bottom: 5px; margin-left: 2px; margin-right: 3px;" +
 			"box-sizing: border-box;" +
@@ -345,8 +370,8 @@ export class db {
 		// if (mod.includes("{fighter}")) return this.fighterSprite('fighter.png', 0, 9);
 		// if (mod.includes("{caster}")) return this.fighterSprite('caster.png', 0, 9);
 		// console.log("mod: "+ mod);
-		if(mod == "allyExceptCaster") mod = "ally";
-		if(mod == "allExceptCaster") mod = "fighter";
+		if (mod == "allyExceptCaster") mod = "ally";
+		if (mod == "allExceptCaster") mod = "fighter";
 		return this.commonUrlPath + mod + ".png";
 	}
 
@@ -407,7 +432,7 @@ export class db {
 
 	private modSprite(x: number, y: number, item: boolean = false) {
 		// str = str.replace("height: 32px;", "height: 22px;");
-		if(item)
+		if (item)
 			y -= 2;
 		else
 			y -= 6;
@@ -483,8 +508,8 @@ export class db {
 		// return "vertical-align: middle; width: 25px; height: 32px; background-image: url('" + this.commonUrlPath + name + "'); background-repeat: no-repeat;"
 		// 	+ "background-position: 50%;";
 	}
-	
-	
+
+
 	public static getStatSections(): Map<string, number> {
 		var sections = new Map<string, number>();
 		sections.set("quickfus.filter.sections.pseudo", 0);
@@ -556,7 +581,7 @@ export class db {
 		return this.token;
 	}
 	public async getToken() {
-		if(this.token != "") return this.token;
+		if (this.token != "") return this.token;
 		let res = await db.http.get("https://realm.mongodb.com/api/client/v2.0/app/data-ewvjc/auth/providers/anon-user/login");
 		let json = await res.json();
 		this.token = json.access_token;
@@ -564,7 +589,7 @@ export class db {
 		return this.token;
 	}
 	public async mongoItemsAggregate(pipeline): Promise<any> {
-		let token = await this.getToken(); 
+		let token = await this.getToken();
 		// console.log("fetch with token: " + JSON.stringify(token));
 		let url = "https://data.mongodb-api.com/app/data-ewvjc/endpoint/data/v1/action/aggregate";
 		let bod = {
@@ -581,7 +606,7 @@ export class db {
 			body: JSON.stringify(bod)
 		});
 		let res = await pro;
-		if(res.ok) {
+		if (res.ok) {
 			// console.log("response ok: " + JSON.stringify(res));
 			let json = await res.json();
 			return json.documents;
@@ -592,24 +617,24 @@ export class db {
 		}
 	}
 
-    public parseStateToString(mask) {
-        let stateId = +mask; 
-        let state = this.data.jsonStates[stateId];
-        if (!state) {
-            console.log("state doesnt exist: " + stateId)
-            return "";
-        }
-        let stateName = this.getI18n(state.nameId);
-        if(stateName && stateName.includes("{")) {
-            stateName = stateName.replace("{", "").replace("}", "");
-            let data = stateName.split(",");
-            let html = data.find(t => t.includes("::")).split("::")[1]; 
-            // console.log("state: " + html);
-            return html;
-        }
-        else
-            return `<font color="#ebc304">${stateName}</font>`
-    }
+	public parseStateToString(mask) {
+		let stateId = +mask;
+		let state = this.data.jsonStates[stateId];
+		if (!state) {
+			console.log("state doesnt exist: " + stateId)
+			return "";
+		}
+		let stateName = this.getI18n(state.nameId);
+		if (stateName && stateName.includes("{")) {
+			stateName = stateName.replace("{", "").replace("}", "");
+			let data = stateName.split(",");
+			let html = data.find(t => t.includes("::")).split("::")[1];
+			// console.log("state: " + html);
+			return html;
+		}
+		else
+			return `<font color="#ebc304">${stateName}</font>`
+	}
 }
 
 
@@ -635,7 +660,7 @@ export class DB {
 	// public jsonBombSpells: any[]
 
 	public jsonCharacteristicsById: Record<number, DofusCharacteristic> = {};
-	public jsonEffectsById:  Record<number, DofusEffectModel> = {};
+	public jsonEffectsById: Record<number, DofusEffectModel> = {};
 	public jsonItemsById: Record<number, DofusItem> = {};
 	public jsonItemSetsById: Record<number, DofusSet> = {};
 
@@ -691,7 +716,7 @@ export class DB {
 			this.promiseItemTypes
 			// db.fetchJson(this.gitFolderPath + "bombspells.json", (json) =>  this.jsonBombSpells = json)
 		]);
-		
+
 		this.manipulateSets();
 
 		await promise;
@@ -708,15 +733,15 @@ export class DB {
 		await this.promiseItemSets;
 		await this.promiseItems
 		this.jsonItemSets = this.jsonItemSets.map(set => {
-				if (!set.itemsData)
-					set.itemsData = [];
-				if (set.itemsData?.length == 0) {
-					let items = set.items.map(i => this.jsonItems.find(i2 => i2.id == i)).filter(i => i != null);
-					set.itemsData = items;
-				}
-				// console.log(set)
-				return set;
-			})
+			if (!set.itemsData)
+				set.itemsData = [];
+			if (set.itemsData?.length == 0) {
+				let items = set.items.map(i => this.jsonItems.find(i2 => i2.id == i)).filter(i => i != null);
+				set.itemsData = items;
+			}
+			// console.log(set)
+			return set;
+		})
 			.filter((value, index, array) => value.effects.length > 0)
 			.sort((a, b) => {
 				let diff = this.highestItemLevel(b) - this.highestItemLevel(a);
@@ -726,36 +751,36 @@ export class DB {
 	}
 
 	public highestItemLevel(set: DofusSet) {
-        if(!set.itemsData) 
-            return 0;
-        let levels: number[] = set.itemsData.map(i => i.level)
-        let max = Math.max(...levels);
-        // console.log("Max set item level: " + max)
-        return max;
-    }
-	
+		if (!set.itemsData)
+			return 0;
+		let levels: number[] = set.itemsData.map(i => i.level)
+		let max = Math.max(...levels);
+		// console.log("Max set item level: " + max)
+		return max;
+	}
+
 	public getI18n(id, lang: string): string {
 		try {
 			if (lang == "fr") {
 				let str = this.jsonI18n_fr[id];
-				if(str == undefined) throw new Error("missing text");
+				if (str == undefined) throw new Error("missing text");
 				return str;
 			}
 			if (lang == "en") {
 				let str = this.jsonI18n_en[id];
-				if(str == undefined) throw new Error("missing text");
+				if (str == undefined) throw new Error("missing text");
 				return str;
 			}
 			if (lang == "es") {
 				let str = this.jsonI18n_es[id];
-				if(str == undefined) throw new Error("missing text");
+				if (str == undefined) throw new Error("missing text");
 				return str;
 			}
 		} catch (error) {
 			return null;
 		}
 	}
-	
+
 }
 
 const container = DI.createContainer();
