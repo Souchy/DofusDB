@@ -294,6 +294,8 @@ export class db {
 	}
 
 	public getAoeIconUrl(effect: any) {
+		let zoneEffect: SpellZone = null;
+
 		if (this.checkFeature("unity")) {
 			// out/ui/guidebook/Sprite/
 			// combat_zoneeffet_anneau_200x200.png
@@ -305,28 +307,29 @@ export class db {
 			// combat_zoneeffet_point_200x200.png
 			// combat_zoneeffet_vraiecroix_200x200.png
 			// combat_zoneeffet_vraiecroixvide_200x200.png
-			let zone = SpellZone.parseZoneUnity(effect.zoneDescr);
+			zoneEffect = SpellZone.parseZoneUnity(effect.zoneDescr);
 			// console.log("Zone: ");
 			// let comparer = {
 			// 	zoneDescr: effect.zoneDescr,
-			// 	SpellZone: zone
+			// 	SpellZone: zoneEffect
 			// }
 			// console.log(comparer);
-			if(zone) {
-				return this.commonUrlPath + "icons/" + zone?.zoneName?.toLowerCase() + ".webp";
-			} else {
+			// if(zoneEffect) {
+			// 	return this.commonUrlPath + "icons/" + zoneEffect?.zoneName?.toLowerCase() + ".webp";
+			// } else {
+			// 	return "";
+			// }
+		} else {
+			// SEE:  EffectInstance, SpellheaderBlock.getSpellZoneChunkParams, SpellTooltipUi.getSpellZoneIconUri
+			if (effect.rawZone == "C") // caster
 				return "";
-			}
+
+			zoneEffect = SpellZone.parseZone(effect.rawZone);
+			// if(effect.effectUid == 285104) {
+			// console.log("zone: " + JSON.stringify(zoneEffect))
+			// }
 		}
 
-		// SEE:  EffectInstance, SpellheaderBlock.getSpellZoneChunkParams, SpellTooltipUi.getSpellZoneIconUri
-		if (effect.rawZone == "C") // caster
-			return "";
-
-		let zoneEffect = SpellZone.parseZone(effect.rawZone);
-		// if(effect.effectUid == 285104) {
-		// console.log("zone: " + JSON.stringify(zoneEffect))
-		// }
 		let aoeName = zoneEffect.zoneName;
 		if (aoeName == "star")
 			return this.commonUrlPath + "icons/star.png";

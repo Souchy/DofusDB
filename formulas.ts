@@ -421,7 +421,36 @@ export enum SpellZoneShape {
 	WholeMap = 97,
 	LineFromCaster = 108,
 }
-
+export enum OldZoneShape {
+    empty = 32,
+    sharp = 35,
+    star = 42,
+    plus = 43,
+    minus = 45,
+    slash = 47,
+    semicolon = 59,
+    A = 65,
+    B = 66,
+    C = 67,
+    D = 68,
+    G = 71,
+    I = 73,
+    L = 76,
+    O = 79,
+    P = 80,
+    Q = 81,
+    T = 84,
+    U = 85,
+    V = 86,
+    W = 87,
+    X = 88,
+    Z = 90,
+    a = 97,
+    l = 108,
+    R = 82,
+    F = 70,
+    UNKNOWN = 0,
+}
 export class SpellZone {
 
     public static readonly empty: number = 32;
@@ -463,10 +492,17 @@ export class SpellZone {
 
     public static parseZoneUnity(zoneDescr): SpellZone {
         var zone = new SpellZone();
+        if(!zoneDescr)
+            return zone;
         zone.zoneSize = zoneDescr.param1;
         zone.zoneMinSize = zoneDescr.param2;
-        let shape = SpellZoneShape[zoneDescr.shape];
-        zone.zoneName = shape.toString().toLowerCase();
+        // let shape = SpellZoneShape[zoneDescr.shape];
+        // zone.zoneName = shape.toString().toLowerCase();
+
+        // let oldshape = OldZoneShape[zoneDescr.shape];
+        zone.zoneShape = zoneDescr.shape;
+
+        zone.zoneName = this.getZoneName(zone);
         return zone;
     }
 
