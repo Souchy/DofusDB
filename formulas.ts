@@ -1103,3 +1103,46 @@ export class Targets {
 
 }
 
+export enum ItemFlags {
+	Cursed = 1,
+	Usable = 2,
+	Targetable = 4,
+	Exchangeable = 8,
+	TwoHanded = 16,
+	Etheral = 32,
+	HideEffects = 64,
+	Enhanceable = 128,
+	NonUsableOnAnother = 256,
+	SecretRecipe = 512,
+	ObjectIsDisplayOnWeb = 1024,
+	BonusIsSecret = 2048,
+	NeedUseConfirm = 4096,
+	IsDestructible = 8192,
+	IsSaleable = 16384,
+	IsLegendary = 32768,
+}
+
+export enum EffectInstanceFlags {
+	VisibleInTooltip = 1,
+	VisibleInBuffUi = 2,
+	VisibleInFightLog = 4,
+	VisibleOnTerrain = 8,
+	ForClientOnly = 16,
+	Trigger = 32,
+}
+
+export enum SpellLevelFlags {
+	CastInLine = 1,
+	CastInDiagonal = 2,
+	CastTestLos = 4,
+	NeedFreeCell = 8,
+	NeedTakenCell = 16,
+	NeedFreeTrapCell = 32,
+	RangeCanBeBoosted = 64,
+	HideEffects = 128,
+	Hidden = 256,
+	PlayAnimation = 512,
+	NeedVisibleEntity = 1024,
+	NeedCellWithoutPortal = 2048,
+	PortalProjectionForbidden = 4096,
+}
