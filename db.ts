@@ -263,7 +263,12 @@ export class db {
 	}
 
 	public getMonsterIconPath(monsterId: number): string {
-		return db.githubScrapedUrlPath + this.version + "/sprites/monsters/" + monsterId + ".png";
+		let iconid = this.data.jsonSummons[monsterId]?.gfxId;
+		if (!iconid && this.data2?.jsonSummons) {
+			iconid = this.data2?.jsonSummons[monsterId]?.gfxId;
+		}
+		iconid ??= monsterId;
+		return db.githubScrapedUrlPath + this.version + "/sprites/monsters/" + iconid + ".png";
 	}
 
 	public getI18n(id, lang: string = ""): string {
