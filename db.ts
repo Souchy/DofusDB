@@ -10,7 +10,7 @@ import importgreenlist from './static/greenlistEffects.json'
 
 import jsonFeatures from '../DofusDB/features.json'
 import { Statics } from './statics';
-import { DofusCharacteristic, DofusEffectModel, DofusItem, DofusSet, DofusSpell } from '../ts/dofusModels';
+import { DofusCharacteristic, DofusEffectModel, DofusItem, DofusSet, DofusSpell, DofusSpellLevel, DofusSpellNew } from '../ts/dofusModels';
 
 export class db {
 
@@ -26,6 +26,8 @@ export class db {
 	public data: DB = new DB("1");
 	// json to compare with (i.e. a previous version)
 	public data2: DB = new DB("2");
+	// Dofus3
+	// public ankaData: AnkaDb = new AnkaDb("3");
 	//
 	public jsonMaps: {} = {};
 	public jsonGreenListEffects = importgreenlist;
@@ -34,7 +36,7 @@ export class db {
 	public breedId: number = 1;
 	private _selectedSpellSlot: number = 0;
 	private _selectedOsaSummonSlot: number = -1;
-
+	private _selectedGradeSlot: number = 6;
 
 
 	public constructor(@IEventAggregator readonly ea: IEventAggregator) {
@@ -43,6 +45,8 @@ export class db {
 		this.data2.version = versions[1];
 		this.data.ea = ea;
 		this.data2.ea = ea;
+		// this.ankaData.ea = ea;
+		// this.ankaData.loadJson();
 		// connect to mongo
 		// this.getToken();
 		// load cached version and language
@@ -61,6 +65,7 @@ export class db {
 		if (spellSlot < 0 && osaSlot < 0)
 			this.selectedSpellSlot = 0;
 		// console.log("db slot: " + this.selectedSpellSlot + ", " + this.selectedOsaSlot)
+
 	}
 
 	public promiseLoadingSpells: Promise<boolean>;
@@ -74,6 +79,10 @@ export class db {
 		// 	&& this.jsonSummons && this.jsonStates 
 		// 	&& this.i18n_fr && this.i18n_en
 	}
+	
+	// public get isAnkaLoaded() {
+	// 	return this.ankaData.isLoaded
+	// }
 
 	public get isLoadedI18n() {
 		if (this.lang == "fr") return this.data.jsonI18n_fr;
@@ -192,6 +201,17 @@ export class db {
 			// console.log("db set slot: " + this._selectedSpellSlot + ", " + this._selectedOsaSummonSlot)
 		}
 	}
+	
+	public get selectedGradeSlot() {
+		return this._selectedGradeSlot;
+	}
+	public set selectedGradeSlot(slot: number) {
+		if (this._selectedGradeSlot != slot) {
+			this._selectedGradeSlot = slot;
+			localStorage.setItem("selectedGradeSlot", slot + "");
+			// console.log("db set slot: " + this._selectedSpellSlot + ", " + this._selectedOsaSummonSlot)
+		}
+	}
 
 	public async loadMap(mapid: string) {
 		// console.log("load map " + mapid)
@@ -229,8 +249,11 @@ export class db {
 	}
 
 	public getSpellIconPath(spellId: number): string {
-		let iconid = this.data.jsonSpells[spellId]?.iconId;
-		if (!iconid) iconid = this.data2?.jsonSpells[spellId]?.iconId;
+		// console.log("getSpellIconPath(" + spellId + ")");
+		let iconid = this.data.spells[spellId]?.iconId;
+		if (!iconid && this.data2?.spells) {
+			iconid = this.data2?.spells[spellId]?.iconId;
+		}
 		return db.githubScrapedUrlPath + this.version + "/sprites/spells/" + iconid + ".png";
 		// console.log("getSpellIconPath " + spellId + " = " + iconid); //JSON.stringify(this.jsonSpells[spellId]));
 	}
@@ -641,6 +664,61 @@ export class db {
 }
 
 
+// export class AnkaDb {
+// 	public gitMetadataPath = "https://raw.githubusercontent.com/Souchy/AnkaDB/refs/heads/dofus-beta/data/Core/DataCenter/Metadata/";
+	
+// 	public name: string;
+// 	// public version: string;
+// 	public isLoaded: boolean = false;
+// 	public ea: IEventAggregator;
+
+// 	public jsonSpells: Record<number, any> = {};
+// 	public jsonSpellLevels: Record<number, any> = {};
+
+// 	constructor(name: string) {
+// 		this.name = name;
+// 	}
+
+// 	public async loadJson() {
+// 		await Promise.all([
+// 			this.loadParts("Spell/Spells", this.jsonSpells),
+// 			this.loadParts("Spell/SpellLevels", this.jsonSpellLevels)
+// 		]);
+// 		this.isLoaded = true;
+// 		this.ea.publish("db:loaded:" + this.name);
+
+
+// 		console.log("first level: ");
+// 		console.log(this.jsonSpellLevels[0]);
+
+// 		// retour du baton
+// 		let spell = this.jsonSpells[12983];
+// 		console.log(spell);
+// 		for(let levelId of spell.spellLevels) {
+// 			let level = this.jsonSpellLevels[levelId];
+// 			console.log(levelId);
+// 			console.log(level);
+// 		}
+// 		// return this.ankaspell.spellLevels.map((x) => this.db.ankaData.jsonSpellLevels[x]);
+// 	}
+
+// 	private async loadParts(str: string, store: Record<number, any>) {
+// 		for (let i = 0; i < 10; i++) {
+// 			let url = this.gitMetadataPath + str + "-" + i + ".json";
+// 			let fetched = await db.fetchJson(url, (json) => {
+// 				// Object.assign(store, json);
+// 				console.log("First of " + url);
+// 				console.log(json[0]);
+// 				Object.assign(store, ...json.map((x) => ({ [x.id]: x })));
+// 			});
+// 			if(!fetched) { // Si on ne trouve pas cet url, ça ne sert à rien d'aller plus loin
+// 				console.log("Cant find " + url);
+// 				return;
+// 			}
+// 		}
+// 	}
+// }
+
 export class DB {
 	public name: string;
 	public version: string;
@@ -649,6 +727,8 @@ export class DB {
 	// private http = new HttpClient();
 
 	public jsonSpells: Record<string, DofusSpell>;
+	public jsonSpellsNew: Record<string, DofusSpellNew>;
+	public jsonSpellLevels: Record<string, DofusSpellLevel>;
 	public jsonBreeds: any;
 	public jsonSummons: any;
 	public jsonStates: any;
@@ -675,6 +755,10 @@ export class DB {
 		this.name = name;
 	}
 
+	public get spells() {
+		return this.jsonSpells ?? this.jsonSpellsNew;
+	}
+
 	public async loadJson() { //: Promise<[boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean]> {
 		this.isLoaded = false;
 		// console.log("data loading")
@@ -688,8 +772,8 @@ export class DB {
 			Object.assign(this.jsonItemSetsById, ...this.jsonItemSets.map((x) => ({ [x.id]: x })));
 		});
 		this.promiseItemTypes = db.fetchJson(this.gitFolderPath + "itemtypes.json", (json) => this.jsonItemTypes = json);
-
-		let promise = Promise.all([
+		
+		let promises = [
 			db.fetchJson(this.gitFolderPath + "i18n_fr.json", (json) => this.jsonI18n_fr = json).then((result) => {
 				if (result) return true;
 				return db.fetchJson(db.githubScrapedUrlPath + versions[0] + "/" + "i18n_fr.json", (json) => this.jsonI18n_fr = json)
@@ -702,7 +786,6 @@ export class DB {
 				if (result) return true;
 				return db.fetchJson(db.githubScrapedUrlPath + versions[0] + "/" + "i18n_es.json", (json) => this.jsonI18n_es = json)
 			}),
-			db.fetchJson(this.gitFolderPath + "spells.json", (json) => this.jsonSpells = json),
 			db.fetchJson(this.gitFolderPath + "breeds.json", (json) => this.jsonBreeds = json),
 			db.fetchJson(this.gitFolderPath + "summons.json", (json) => this.jsonSummons = json),
 			db.fetchJson(this.gitFolderPath + "states.json", (json) => this.jsonStates = json),
@@ -718,7 +801,15 @@ export class DB {
 			this.promiseItemSets,
 			this.promiseItemTypes
 			// db.fetchJson(this.gitFolderPath + "bombspells.json", (json) =>  this.jsonBombSpells = json)
-		]);
+		];
+		if(this.checkFeature("spelllevels")) {
+			promises.push(db.fetchJson(this.gitFolderPath + "spells_new.json", (json) => this.jsonSpellsNew = json));
+			promises.push(db.fetchJson(this.gitFolderPath + "spell_levels.json", (json) => this.jsonSpellLevels = json));
+		} else {
+			promises.push(db.fetchJson(this.gitFolderPath + "spells.json", (json) => this.jsonSpells = json));
+		}
+
+		let promise = Promise.all(promises);
 
 		this.manipulateSets();
 
@@ -784,6 +875,32 @@ export class DB {
 		}
 	}
 
+	public checkFeature(name: string): boolean {
+		if (this.isFeature(name)) {
+			return this.checkFeatureVersion(jsonFeatures[name]);
+		}
+		return true;
+	}
+	public isFeature(name: string): boolean {
+		return jsonFeatures[name];
+	}
+	public checkFeatureVersion(version: string): boolean {
+		let va = versions.indexOf(this.version);
+		let vf = versions.indexOf(version);
+		return va <= vf; // (plus petit = plus récent dans le tableau)
+	}
+
+	public getSpellLevel(spellid: number, grade: number) : DofusSpellLevel | DofusSpell {
+		if(this.jsonSpellsNew) {
+			let spell = this.jsonSpellsNew[spellid];
+			grade = Math.min(Math.max(0, grade), spell.spellLevels.length - 1);
+			let spellLevelId = spell.spellLevels[grade];
+			let spellLevel = this.jsonSpellLevels[spellLevelId];
+			return spellLevel;
+		} else {
+			return this.jsonSpells[spellid + "-" + grade];
+		}
+	}
 }
 
 const container = DI.createContainer();
